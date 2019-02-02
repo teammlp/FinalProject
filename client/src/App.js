@@ -25,7 +25,7 @@ componentDidMount(){
           <p>bla bla bla bla</p>
         </div>
         <p className="App-intro">
-          The test value is::: {this.state.testValue}
+          The test value is: {this.state.testValue}
         </p>
       </div>
     );
