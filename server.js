@@ -15,6 +15,10 @@ if (process.env.NODE_ENV === "production") {
 app.get("/api/test", (req, res)=>{
   res.json({"test": "value"})
 })
+
+// app.get("/api/login", (req, res)=>{
+//   res.json({"username": "Pearl"})
+// })
 // Send every other request to the React app
 // Define any API routes before this runs
 app.get("*", (req, res) => {
