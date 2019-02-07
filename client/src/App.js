@@ -1,35 +1,25 @@
-import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import axios from 'axios';
+import React from "react";
+// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+// import HomePage from "./pages/HomePage";
+// import Login from "./pages/Login";
+// import Register from "./pages/Register";
+import Nav from "./components/Nav";
+import './App.css';
 
-class App extends Component {
-state = {
-  "testValue": "Getting....u see it here "
-}
-componentDidMount(){
-  console.log("Mounting App");
-  axios.get("/api/test")
-   .then(result=>{
-    console.log(result.data.test);
-    this.setState({"testValue": result.data.test})
-  })
-}
-
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to our final project!</h2>
-          <p>bla bla bla bla</p>
-        </div>
-        <p className="App-intro">
-          The test value is: {this.state.testValue}
-        </p>
+function App() {
+  return (
+   //  <Router>
+      <div>
+        <Nav />
+        {/* <Switch> */}
+          {/* <Route exact path="/" component={HomePage} /> */}
+          {/* <Route exact path="/login" component={Login} />
+          <Route exact path="/register" component={Register} /> */}
+          
+        {/* </Switch> */}
       </div>
-    );
-  }
+   //  </Router>
+  );
 }
 
 export default App;
