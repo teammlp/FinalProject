@@ -8,19 +8,24 @@ var db = mongoose.connection;
 var UserSchema = mongoose.Schema({
     username: {
         type: String,
-        index: true
+        index: true,
+        default: ""
     },
     password: {
-        type: String
+        type: String,
+        default: ""
     },
     email: {
-        type: String
+        type: String,
+        default: ""
     },
     name: {
-        type: String
+        type: String,
+        default: ""
     },
     profileImage: {
-        type: String
+        type: String,
+        default: ""
     }
 });
 

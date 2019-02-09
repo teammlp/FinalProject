@@ -13,8 +13,8 @@ function App() {
         <Nav />
         {/* <Switch> */}
           {/* <Route exact path="/" component={HomePage} /> */}
-          {/* <Route exact path="/login" component={Login} />
-          <Route exact path="/register" component={Register} /> */}
+          {/* <Route exact path="/login" component={Login} /> */}
+          {/* <Route exact path="/users/register" component={Register} /> */}
           
         {/* </Switch> */}
       </div>

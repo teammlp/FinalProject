@@ -1,11 +1,11 @@
 import axios from "axios";
 
-// export default {
-//   // Gets all books
-//   getBooks: function() {
-//     return axios.get("/api/books");
-//   },
-//   // Gets the book with the given id
+export default {
+  // Gets all new user information
+  getUsers: function() {
+    return axios.get("/api/register");
+  },
+  // Gets the book with the given id
 //   getBook: function(id) {
 //     return axios.get("/api/books/" + id);
 //   },
@@ -17,4 +17,4 @@ import axios from "axios";
 //   saveBook: function(bookData) {
 //     return axios.post("/api/books", bookData);
 //   }
-// };
+};
