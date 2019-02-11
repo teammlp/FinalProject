@@ -1,7 +1,12 @@
 
 const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
 
-const UserSessionSchema = new mongoose.Schema({
+mongoose.connect('mongodb://localhost/FinalProject');
+
+var db = mongoose.connection;
+
+const UserSessionSchema = mongoose.Schema({
   userId: {
     type: Number,
     default: -1
@@ -16,4 +21,4 @@ const UserSessionSchema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model('UserSession', CounterSchema);
+const UserSession = module.exports = mongoose.model('UserSession', UserSessionSchema);

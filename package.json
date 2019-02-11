@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "bcrypt-nodejs": "0.0.3",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "connect-flash": "*",
@@ -29,7 +30,6 @@
     "express-validator": "*",
     "if-env": "^1.0.4",
     "mongodb": "*",
-    "mongoose": "*",
     "morgan": "^1.9.1",
     "multer": "*",
     "passport": "*",

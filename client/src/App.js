@@ -1,25 +1,81 @@
-import React from "react";
-// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import HomePage from "./pages/HomePage";
-// import Login from "./pages/Login";
-// import Register from "./pages/Register";
-import Nav from "./components/Nav";
-import './App.css';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import User from "./pages/User";
+import Home from "./pages/Home";
+import "./App.css";
 
-function App() {
-  return (
-   //  <Router>
-      <div>
-        <Nav />
-        {/* <Switch> */}
-          {/* <Route exact path="/" component={HomePage} /> */}
-          {/* <Route exact path="/login" component={Login} /> */}
-          {/* <Route exact path="/users/register" component={Register} /> */}
-          
-        {/* </Switch> */}
+
+
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      authenticated: false,
+      adminAuthenticated: false
+    };
+
+    this.authenticate = this.authenticate.bind(this);
+    this.deAuthenticate = this.deAuthenticate.bind(this);
+  }
+
+  authenticate() {
+    this.setState({
+      authenticated: true
+    })
+  }
+
+  deAuthenticate() {
+    this.setState({
+      authenticated: false
+    })
+  }
+  
+  render() {
+    return (
+      <div className="App">
+        <Router>
+          <div className="master">
+            <Switch>
+              <Route exact path="/" render={props =>
+                <Home
+                  {...props}
+                  authenticate={this.authenticate}
+                  deAuthenticate={this.deAuthenticate}
+                  authenticated={this.state.authenticated}
+                />}
+              />
+              <Route exact path="/login" render={props =>
+                <Login
+                  {...props}
+                  authenticate={this.authenticate}
+                  deAuthenticate={this.deAuthenticate}
+                  authenticated={this.state.authenticated}
+                />}
+              />
+              <Route exact path="/register" render={props =>
+                <Register
+                  {...props}
+                  authenticate={this.authenticate}
+                  deAuthenticate={this.deAuthenticate}
+                  authenticated={this.state.authenticated}
+                />}
+              />
+              <Route exact path="/user" render={props =>
+                <User
+                  {...props}
+                  authenticate={this.authenticate}
+                  deAuthenticate={this.deAuthenticate}
+                  authenticated={this.state.authenticated}
+                />}
+              />
+              
+            </Switch>
+          </div>
+        </Router>
       </div>
-   //  </Router>
-  );
+    )
+  };
 }
-
-export default App;

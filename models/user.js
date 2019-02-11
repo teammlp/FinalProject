@@ -1,57 +1,47 @@
-var mongoose = require('mongoose');
-var bcrypt = require('bcryptjs');
+const mongoose = require("mongoose");
 
-mongoose.connect('mongodb://localhost/FinalProject');
+// Save a reference to the Schema constructor
+const Schema = mongoose.Schema;
 
-var db = mongoose.connection;
+var bcrypt   = require('bcrypt-nodejs');
 
-var UserSchema = mongoose.Schema({
+// Using the Schema constructor, create a new UserSchema object
+// This is similar to a Sequelize model
+const UserSchema = new Schema({
+    // `title` is required and of type String
     username: {
         type: String,
-        index: true,
-        default: ""
-    },
-    password: {
-        type: String,
-        default: ""
+        min: [1, 'Too few characters'],
+        max: 100,
+        required: [true, 'Please enter a username.'],
+        unique: true
     },
     email: {
         type: String,
-        default: ""
+        min: [3, 'Please enter an email in the correct format'],
+        required: [true, 'Please enter an email']
     },
-    name: {
+    password: {
         type: String,
-        default: ""
-    },
-    profileImage: {
-        type: String,
-        default: ""
+        min: [8, 'Your password must be at least 8 characters large'],
+        required: [true, 'Please enter a password.']
     }
 });
 
-var User = module.exports =  mongoose.model('User', UserSchema);
+// methods ======================
+// generating a hash
+UserSchema.methods.generateHash = function(password) {
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+};
 
-module.exports.getUserById = function(id, callback){
-    User.findById(id, callback);
-}
+// checking if password is valid
+UserSchema.methods.validPassword = function(password, hashed) {
+    return bcrypt.compareSync(password, hashed);
+};
 
-module.exports.getUserByUsername = function(username, callback){
-    var query = {username:username};
-    User.findOne(query, callback);
-}
+// This creates our model from the above schema, using mongoose's model method
+const User = mongoose.model("User", UserSchema);
 
-module.exports.comparePassword = function(candidatePassword, hash, callback){
-    bcrypt.compare("candidatePassword", hash, function(err, isMatch) {
-        callback(null, isMatch );
-    });
-}
 
-module.exports.createUser = function (newUser, callback){
-    bcrypt.genSalt(10, function(err, salt) {
-        bcrypt.hash("newUser.password", salt, function(err, hash) {
-            newUser.password = hash;
-            newUser.save(callback);
-        });
-    });
-    
-}
+// Export the Article model
+module.exports = User;
