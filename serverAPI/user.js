@@ -135,9 +135,4 @@ exports.deleteUser = function (req, res) {
                     // If an error occurred, send it to the client
                     return res.json(err);
                 });
-        })
-        .catch(function (err) {
-            // If an error occurred, send it to the client
-            return res.json(err);
-        });
 }
