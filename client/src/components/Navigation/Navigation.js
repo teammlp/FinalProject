@@ -16,7 +16,7 @@ const Navigation = () => (
 
       <Nav navbar>
         <NavItem >
-          <NavLink href="">Do something</NavLink>
+          <NavLink href="/">EzHunt</NavLink>
         </NavItem>
       </Nav>
       </div>

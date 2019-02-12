@@ -2,5 +2,5 @@
 
 module.exports = {
     User: require("./User"),
-    UserSession: require("./jobAppForm")
+    Book: require("./book")
 };

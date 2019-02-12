@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const mongoose = require("mongoose");
-const apiRoutes = require("./routes/apiRoutes");
+const apiRoutes = require("./routes/api/apiRoutes");
 const session = require('express-session');
 const userPassport = require("./passports/userPassport");
 // const config = require("./extra-config");
@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/FinalProject";
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/FinalProject";
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
 // Connect to the Mongo DB

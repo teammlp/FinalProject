@@ -49,6 +49,7 @@ export default class Login extends Component {
           alert("Username or password is Incorrect.");
         }
       }.bind(this)).catch(function (err) {
+        alert("Wrong username or password");
         console.log("NOT IN DATABASE");
         console.log(err);
       });

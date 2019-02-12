@@ -78,18 +78,14 @@ exports.saveUser = function (req, res) {
     var newuser = new db.User();
     req.body.password = newuser.generateHash(req.body.password);
 
-    // db.User.create(req.body)
-    //     .then(function (dbUser) {
-    //         return db..findByIdAndUpdate(req.body.admin, { $push: { users: dbUser._id } }, { new: true });
-    //     })
-    //     .then(function (dbAdmin) {
-    //         // If we were able to successfully update an Admin, send it back to the client
-    //         res.json(dbAdmin);
-    //     })
-    //     .catch(function (err) {
-    //         // If an error occurred, send it to the client
-    //         return res.json(err);
-    //     });
+    db.User.create(req.body)
+        .then(function (dbUser) {
+            return db.User.findByIdAndUpdate(req.body, { $push: { users: dbUser._id } }, { new: true });
+        })
+        .catch(function (err) {
+            // If an error occurred, send it to the client
+            return res.json(err);
+        });
 }
 
 exports.updateUser = function (req, res) {

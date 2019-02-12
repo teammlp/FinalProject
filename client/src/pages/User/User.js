@@ -30,10 +30,6 @@ class User extends Component {
                 });
             }
             this.getUserId(sessionStorage.getItem('userUsername'));
-            if (!sessionStorage.getItem(`gameCounter${sessionStorage.getItem("gameID")}`)) {
-                sessionStorage.removeItem(`numWrong${sessionStorage.getItem("gameID")}`);
-                sessionStorage.removeItem(`numCorrect${sessionStorage.getItem("gameID")}`);
-            }
         }
     }
 
