@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import Register from "../Register";
 import { userAPI } from "../../utils/API";
-import Navigation from "../../components/Navigation";
 import './Login.css';
 
 export default class Login extends Component {
@@ -89,7 +88,6 @@ export default class Login extends Component {
 
     return (
       <div>
-        <Navigation />
         <div className="loginWrap">
           <h1>Log In Or Register</h1>
           <div className="loginmodal-container">

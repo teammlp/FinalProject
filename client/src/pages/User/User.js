@@ -4,7 +4,6 @@ import { Redirect } from 'react-router-dom';
 import { userAPI} from "../../utils/API";
 import ButtonBtn from "../../components/ButtonBtn";
 import { FormBtn } from "../../components/Form";
-import Navigation from "../../components/Navigation";
 
 require('./User.css');
 
@@ -54,7 +53,6 @@ class User extends Component {
         return (!(sessionStorage.getItem("userAuth") === 'yes') ?
             <Redirect to={{ pathname: '/login' }} /> :
             <div>
-                <Navigation />
                 <div className="UserWrap">
                     <div className="row">
                         <div className="col-lg-6">

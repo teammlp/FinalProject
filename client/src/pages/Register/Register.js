@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { userAPI } from "../../utils/API";
-import Navigation from "../../components/Navigation";
 import './register.css';
 
 export default class Register extends Component {
@@ -206,7 +205,6 @@ export default class Register extends Component {
     render() {
         return (
             <div>
-                <Navigation />
                 <div id="registration-container" >
                     <h1>Registration</h1>
                     <section className="container">
