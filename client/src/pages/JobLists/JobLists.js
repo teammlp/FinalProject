@@ -146,7 +146,7 @@ static contextTypes = {
                 name="date"
                 placeholder="Date you applied"
               />
-              <p>Location</p><Location
+              <p>Location</p><Input
                 value={this.state.location}
                 onChange={this.handleInputChange}
                 name="location"
