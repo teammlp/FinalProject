@@ -13,7 +13,8 @@
     "react-dom": "^16.6.3",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.0-next.3e165448",
-    "reactstrap": "^7.1.0"
+    "reactstrap": "^7.1.0",
+    "@babel/runtime": "7.0.0-beta.55"
   },
   "scripts": {
     "start": "react-scripts start",
