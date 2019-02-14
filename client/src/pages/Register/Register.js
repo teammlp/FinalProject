@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect} from 'react-router-dom';
 import { userAPI } from "../../utils/API";
 import './register.css';
 
@@ -203,6 +203,14 @@ export default class Register extends Component {
     }
 
     render() {
+        const { from } = this.props.location.state || { from: { pathname: '/userForm' } };
+        const { redirectToReferrer } = this.state;
+
+        if (redirectToReferrer) {
+        return (
+            <Redirect to={from} />
+        )
+        }
         return (
             <div>
                 <div id="registration-container" >

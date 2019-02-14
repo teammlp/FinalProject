@@ -37,16 +37,31 @@ export default {
     getJobLists: function() {
         return axios.get("/api/jobLists");
       },
-      // Gets the book with the given id
       getJobList: function(id) {
         return axios.get("/api/jobLists/" + id);
       },
-      // Deletes the book with the given id
       deleteJobList: function(id) {
         return axios.delete("/api/jobLists/" + id);
       },
-      // Saves a book to the database
       saveJobList: function(jobListData) {
+          console.log(jobListData);
         return axios.post("/api/jobLists", jobListData);
-      }
+      },
+
+    getUserForms: function() {
+        return axios.get("/api/userForm");
+    },
+      // Gets the userForm with the given id
+    getUserForm: function(id) {
+        return axios.get("/api/userForm/" + id);
+    },
+      // Deletes the userForm with the given id
+    deleteUserForm: function(id) {
+        return axios.delete("/api/userForm/" + id);
+    },
+      // Saves a userForm to the database
+    saveUserForm: function(userFormData) {
+          console.log(userFormData);
+        return axios.post("/api/userForm", userFormData);
+    }
 };

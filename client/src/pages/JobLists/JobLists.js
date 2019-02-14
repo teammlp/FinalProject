@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import DeleteBtn from "../../components/DeleteBtn";
 import Jumbotron from "../../components/Jumbotron";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import { Redirect } from 'react-router-dom';
 import { userAPI } from "../../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
-import { Input, TextArea, FormBtn, Date, Location } from "../../components/Form";
+import { Input, TextArea, FormBtn, Date} from "../../components/Form";
 
 class JobLists extends Component {
   state = {
@@ -68,9 +68,9 @@ class JobLists extends Component {
   };
 
 
-static contextTypes = {
-    router: PropTypes.object,
-}
+// static contextTypes = {
+//     router: PropTypes.object,
+// }
 
 // componentDidMount() {
 //     if ((sessionStorage.getItem('userAuth') === 'yes') && sessionStorage.getItem("userUsername")) {
@@ -150,7 +150,6 @@ static contextTypes = {
                 onChange={this.handleInputChange}
                 name="location"
                 placeholder="Location"
-                IL
               />
               {/* <select id="cityList" value={this.state.selectValue} onChange={this.handleChange}>
                     <option value="Bengaluru">Bengaluru</option>
@@ -176,7 +175,7 @@ static contextTypes = {
             </Jumbotron>
             {this.state.jobLists.length ? (
               <List>
-                {this.state.jobLists.map(jobList => (
+                {this.state.jobLists.map( jobList => (
                   <ListItem key={jobList._id}>
                     <Link to={"/jobLists/" + jobList._id}>
                       <strong>

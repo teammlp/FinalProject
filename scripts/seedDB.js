@@ -16,8 +16,8 @@ const userSeed = [
 
 const jobListSeed = [
     {
-      company: "Facebook",
-      position: "CEO",
+      company: "Microsoft",
+      position: "COO",
       detail:
         "Company detail display here",
       date: new Date(Date.now()),
@@ -44,3 +44,34 @@ const jobListSeed = [
       console.error(err);
       process.exit(1);
     });
+
+    const userFormSeed = [
+      {
+        company: "Microsoft",
+        position: "COO",
+        detail:
+          "Company detail display here",
+        date: new Date(Date.now()),
+        location: "chicago, il"
+      },
+      {
+        company: "Facebook",
+        position: "CEO",
+        detail:
+          "Company detail display here",
+        date: new Date(Date.now()),
+        location: "chicago, il"
+      }
+    ];
+    
+    db.UserForm
+      .remove({})
+      .then(() => db.UserForm.collection.insertMany(userFormSeed))
+      .then(data => {
+        console.log(data.result.n + " records inserted!");
+        process.exit(0);
+      })
+      .catch(err => {
+        console.error(err);
+        process.exit(1);
+      });

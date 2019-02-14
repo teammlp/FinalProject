@@ -2,5 +2,6 @@
 
 module.exports = {
     User: require("./User"),
-    Book: require("./JobList")
+    JobList: require("./JobList"),
+    UserForm: require("./UserForm")
 };

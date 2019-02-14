@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import Register from "../Register";
+// import Register from "../Register";
 import { userAPI } from "../../utils/API";
 import './Login.css';
 
@@ -77,7 +77,7 @@ export default class Login extends Component {
   }
 
   render() {
-    const { from } = this.props.location.state || { from: { pathname: '/' } };
+    const { from } = this.props.location.state || { from: { pathname: '/userForm' } };
     const { redirectToReferrer } = this.state;
 
     if (redirectToReferrer) {
