@@ -3,6 +3,7 @@ import { Link} from 'react-router-dom';
 import ButtonBtn from "../../components/ButtonBtn";
 import logo from "../../images/tracker.jpg";
 import './Home.css';
+import Nav from "../../components/Nav"
 
 class Home extends Component {
 
@@ -15,7 +16,8 @@ class Home extends Component {
 
     render() {
       return (
-          <div className="homeWrap">
+        <div class="container-fluid">
+          <Nav />
               <div className="homeContain">
                   <div className="homeLogo">
                       <img alt="logo" src={logo} />
