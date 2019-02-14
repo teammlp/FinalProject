@@ -41,21 +41,37 @@ class Home extends Component {
         );
     }
     render() {
-      return (
-        <div class="container-fluid">
-          <Nav />
-              <div className="homeContain">
-                  <div className="homeLogo">
-                      <img alt="logo" src={logo} />
-                  </div>
-                 
-                  <ButtonBtn><Link to={"/login"}>LOGIN</Link></ButtonBtn>
-                  <ButtonBtn><Link to={"/register"}>REGISTER</Link></ButtonBtn>
-                  
-              </div>
-          </div>
-      )
-  }
+        return (
+            <div className="homeWrap">
+                <div className="homeContain">
+                    <div className="homeLogo">
+                        <img alt="logo" src={logo} />
+                    </div>
+
+                    <ButtonBtn><Link to={"/login"}>LOGIN</Link></ButtonBtn>
+                    <ButtonBtn><Link to={"/register"}>REGISTER</Link></ButtonBtn>
+
+                    <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
+                        <div className="carousel-inner">
+                            {this.profilesList()}
+                        </div>
+                        <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span className="sr-only">Previous</span>
+                        </a>
+                        <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span className="sr-only">Next</span>
+                        </a>
+                    </div>
+
+                </div>
+                <script>
+                    $('.carousel').carousel();
+                </script>
+            </div>
+        )
+    }
 }
 
 
