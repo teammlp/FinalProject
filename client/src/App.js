@@ -41,6 +41,7 @@ export default class App extends Component {
         <Router>
           <div className="master">
             <Switch>
+              
               <Route exact path="/" render={props =>
                 <Home
                   {...props}
@@ -73,8 +74,6 @@ export default class App extends Component {
                   authenticated={this.state.authenticated}
                 />}
               />
-              <Route exact path="/books" component={Books} />
-              <Route exact path="/books/:id" component={Detail} />
               
             </Switch>
           </div>

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import ButtonBtn from "../../components/ButtonBtn";
 import logo from "../../images/tracker.jpg";
 import './Home.css';
@@ -7,15 +7,12 @@ import Nav from "../../components/Nav"
 
 class Home extends Component {
 
-
     logout = () => {
         this.props.deAuthenticate();
         sessionStorage.removeItem("userAuth");
         sessionStorage.removeItem("userUsername");
         window.location.reload();
     }
-
-
 
     profilesList = () => {
         let profiles = [
@@ -40,57 +37,85 @@ class Home extends Component {
             </div>
         );
     }
+    
     render() {
-<<<<<<< Updated upstream
       return (
         <div class="container-fluid">
-          <Nav />
-              <div className="homeContain">
+           <Nav />
+             <div className="homeContain">
                   <div className="homeLogo">
                       <img alt="logo" src={logo} />
                   </div>
                  
                   <ButtonBtn><Link to={"/login"}>LOGIN</Link></ButtonBtn>
                   <ButtonBtn><Link to={"/register"}>REGISTER</Link></ButtonBtn>
-                  
+                  <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
+                         <div className="carousel-inner">
+                             {this.profilesList()}
+                         </div>
+                         <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                             <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                             <span className="sr-only">Previous</span>
+                         </a>
+                         <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                             <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                             <span className="sr-only">Next</span>
+                         </a>
+                     </div>
+                    <script>
+                                             $('.carousel').carousel();
+                 </script>
               </div>
           </div>
       )
   }
-=======
-        return (
-            <div className="homeWrap">
-                <div className="homeContain">
-                    <div className="homeLogo">
-                        <img alt="logo" src={logo} />
-                    </div>
-
-                    <ButtonBtn><Link to={"/login"}>LOGIN</Link></ButtonBtn>
-                    <ButtonBtn><Link to={"/register"}>REGISTER</Link></ButtonBtn>
-
-                    <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
-                        <div className="carousel-inner">
-                            {this.profilesList()}
-                        </div>
-                        <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span className="sr-only">Previous</span>
-                        </a>
-                        <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span className="sr-only">Next</span>
-                        </a>
-                    </div>
-
-                </div>
-                <script>
-                    $('.carousel').carousel();
-                </script>
-            </div>
-        )
-    }
->>>>>>> Stashed changes
 }
 
 
 export default Home;
+
+
+
+// import React, { Component } from "react";
+// import { Link } from 'react-router-dom';
+// import ButtonBtn from "../../components/ButtonBtn";
+// import logo from "../../images/tracker.jpg";
+// import './Home.css';
+// import Nav from "../../components/Nav"
+
+// class Home extends Component {
+
+
+//     logout = () => {
+//         this.props.deAuthenticate();
+//         sessionStorage.removeItem("userAuth");
+//         sessionStorage.removeItem("userUsername");
+//         window.location.reload();
+//     }
+
+
+
+    
+//     render(){
+//         if (sessionStorage.getItem('userAuth') === 'yes') {
+//         return (
+//             <div className="homeWrap">
+//                 <div className="homeContain">
+//                     <div className="homeLogo">
+//                         <img alt="logo" src={logo} />
+//                     </div>
+
+//                     <ButtonBtn><Link to={"/login"}>LOGIN</Link></ButtonBtn>
+//                     <ButtonBtn><Link to={"/register"}>REGISTER</Link></ButtonBtn>
+
+//                     
+
+//                 </div>
+//                 
+//             </div>
+//         )
+    
+//         }
+//     }
+// }
+// export default Home;
