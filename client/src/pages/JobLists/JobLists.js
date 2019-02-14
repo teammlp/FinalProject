@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn, Date, Location } from "../../components/Form";
-import Dropdown from "reactstrap/lib/Dropdown";
 
 class JobLists extends Component {
   state = {
