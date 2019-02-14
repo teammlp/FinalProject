@@ -1,0 +1,44 @@
+#registration-container {
+	padding-top: 130px;
+	margin: 0px auto;
+}
+#registration-container h1 {
+	text-transform: uppercase;
+	padding: 7px;
+	background: rgba(255, 255, 255, 0.781);
+	color: rgba(25, 149, 251, .80);
+	font-weight: 700;
+	font-size: 40px;
+	margin: 0 auto 26px;
+  }
+#registration-container .container-page {
+	max-width: 400px;
+    margin: 0 auto;
+}
+#registration-container input {
+    border-radius: 90px !important;
+    background-color: rgba(255, 255, 255, 0.863) !important; 
+    border: none;
+    padding: 7px;
+    width: 100%;
+}
+
+/* media query */
+
+@media (max-width: 1199.98px) {
+
+}
+@media (max-width: 991.98px) {
+
+}
+@media (max-width: 767.98px) {
+
+}
+@media (max-width: 575.98px) {
+	#registration-container h1 {
+		font-size: 30px;
+	}
+	#registration-container {
+		padding-top: 80px;
+	}
+}

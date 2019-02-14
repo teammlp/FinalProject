@@ -7,10 +7,10 @@ body{
   text-align: center;
 }
 
-.App-logo {
+/* .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
-}
+} */
 
 .App-header {
   background-color: #222;
@@ -23,7 +23,29 @@ body{
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-} */
+body {
+  font-family: 'Assistant', sans-serif !important;
+  /* background: url('images/track.png'); */
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgb(5, 124, 202);
+}
+@media (max-width: 1199.98px) {
+
+}
+@media (max-width: 991.98px) {
+    
+}
+@media (max-width: 767.98px) {
+  .gameContainer {
+      padding-top: 111px;
+  }
+}
+@media (max-width: 575.98px) {
+  .gameContainer {
+      padding-top: 80px;
+  }
+}

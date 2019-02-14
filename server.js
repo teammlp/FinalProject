@@ -1,24 +1,38 @@
 const express = require("express");
 const path = require("path");
+const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 3001;
 const app = express();
+const mongoose = require("mongoose");
+const apiRoutes = require("./routes/api/apiRoutes");
+const session = require('express-session');
+const userPassport = require("./passports/userPassport");
+// const config = require("./extra-config");
+
 
 // Define middleware here
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-// Define API routes here
-app.get("/api/test", (req, res)=>{
-  res.json({"test": "value"})
-})
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/FinalProject";
 
-// app.get("/api/login", (req, res)=>{
-//   res.json({"username": "Pearl"})
-// })
+// Set mongoose to leverage built in JavaScript ES6 Promises
+// Connect to the Mongo DB
+mongoose.Promise = Promise;
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+
+const authCheck = require('./middleware/attachAuthenticationStatus');
+// app.use(session({ secret: config.sessionKey, resave: true, saveUninitialized: true }));
+app.use(userPassport.initialize());
+app.use(userPassport.session());
+app.use(authCheck);
+
+// Define API routes here
+app.use("/api", apiRoutes);
 // Send every other request to the React app
 // Define any API routes before this runs
 app.get("*", (req, res) => {
@@ -26,5 +40,5 @@ app.get("*", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`🌎 ==> API server now on port ${PORT}!`);
+  console.log(`🌎 ==> Server now on port ${PORT}!`);
 });
