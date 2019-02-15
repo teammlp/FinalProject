@@ -3,7 +3,7 @@ import { Link} from 'react-router-dom';
 import ButtonBtn from "../../components/ButtonBtn";
 import logo from "../../images/tracker.jpg";
 import './Home.css';
-import Nav from "../../components/Nav"
+import Nav from "../../components/Nav";
 
 class Home extends Component {
 

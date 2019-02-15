@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text');
+
 /****** LOGIN MODAL ******/
 .loginmodal-container {
     color: black;
@@ -38,6 +40,9 @@
     height: 36px;
     padding: 0 8px;
   }
+  .LogOrReg{
+    text-align: center;
+  }
   
   .loginmodal-submit {
     /* border: 1px solid #3079ed; */
@@ -71,25 +76,33 @@
   
   .login-help{
     font-size: 14px;
+    text-align: center;
   }
   .login-help a{
     color: red;
+  }
+  form.login{
+    padding: 70px;
+    border: solid 2px gray;
+    border-radius: 15px;
+    /* background-color: #fff; */
   }
   
   .content {
     padding-top: 30px;
   }
-  .loginWrap h1 {
+  .loginWrap h2 {
     text-transform: uppercase;
     padding: 7px;
-    background: rgba(255, 255, 255, 0.781);
-    color: rgba(25, 149, 251, .80);
-    font-weight: 700;
-    font-size: 40px;
+    background: rgba(255, 255, 255, 0.911);
+    color: black;
+    font-weight: bold;
+    font-size: 60px;
     margin: 0 auto 26px;
+    font-family: 'Libre Barcode 39 Text', cursive;
   }
   .loginWrap {
-    padding-top: 130px;
+    padding-top: 30px;
   }
 
   .loginmodal-submit {

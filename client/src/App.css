@@ -25,13 +25,13 @@ body{
 
 body {
   font-family: 'Assistant', sans-serif !important;
-  /* background: url('images/track.png'); */
+  background: url('images/black-and-white-image-of-laptop-computer-mouse-and-book-on-table.jpg');
   min-height: 500px;
   background-attachment: fixed;
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: rgb(228, 234, 238);
+  /* background-color: rgb(228, 234, 238); */
 }
 @media (max-width: 1199.98px) {
 

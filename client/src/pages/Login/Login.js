@@ -3,6 +3,8 @@ import { Link, Redirect } from 'react-router-dom';
 // import Register from "../Register";
 import { userAPI } from "../../utils/API";
 import './Login.css';
+import Nav from "../../components/Nav"
+
 
 export default class Login extends Component {
 
@@ -88,8 +90,9 @@ export default class Login extends Component {
 
     return (
       <div>
+        <Nav/>
         <div className="loginWrap">
-          <h1>Log In Or Register</h1>
+          <h2 className="LogOrReg">Log In Or Register</h2>
           <div className="loginmodal-container">
             <form className="login" onSubmit={this.handleSubmit.bind(this)}>
               <input id="username-input" ref="user" type="text" name="user" placeholder="Username" onChange={this.handleUsernameChange} value={this.state.username} />

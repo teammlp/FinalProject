@@ -9,6 +9,7 @@ import DeleteBtn from "../../components/DeleteBtn";
 import Jumbotron from "../../components/Jumbotron";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
+import Nav from "../../components/Nav"
 
 require('./UserForm.css');
 
@@ -42,6 +43,7 @@ class UserForm extends Component {
     }
 
     componentDidMount() {
+
         this.loadUserForm();
         if ((sessionStorage.getItem('userAuth') === 'yes') && sessionStorage.getItem("userUsername")) {
             if (sessionStorage.getItem("userID")) {
@@ -111,9 +113,8 @@ class UserForm extends Component {
         return ( !(sessionStorage.getItem("userAuth") === 'yes') ?
     <Redirect to={{ pathname: '/' }} /> :
       <Container fluid>
-      <br/>
-      <br/>
-      <FormBtn onClick={this.logout}>logout</FormBtn>
+      <Nav/>
+        <FormBtn onClick={this.logout}>logout</FormBtn>
         <Row>
           <Col size="md-12">
             <Jumbotron>
@@ -181,9 +182,9 @@ class UserForm extends Component {
             <Jumbotron>
               <h1>Companies On My List</h1>
             </Jumbotron>
-            {this.state.userForms.length ? (
+            {/* {this.state.userForms.length ? (
               <List>
-                {this.state.userForm.map( userForm => (
+                {this.state.userForms.map( userForm => (
                   <ListItem key={userForm._id}>
                     <Link to={"/userForm/" + userForm._id}>
                       <strong>
@@ -194,7 +195,7 @@ class UserForm extends Component {
                   </ListItem>
                 ))}
               </List>
-            ) : (
+            ) : ( */}
               <h3>No Results to Display</h3>
             )}
           </Col>
