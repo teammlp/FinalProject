@@ -4,7 +4,7 @@ import React from "react";
 function Nav() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/">
+  <a className="navbar-brand" href="/">
   <img src="https://clipart.info/images/ccovers/1521073957easter-egg-hunt-clipart-png.png" width="30" height="30" className="d-inline-block align-top" alt="cute chicken" />
   &nbsp; ezHunt</a>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

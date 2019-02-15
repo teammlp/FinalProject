@@ -5,10 +5,10 @@ import { userAPI} from "../../utils/API";
 // import ButtonBtn from "../../components/ButtonBtn";
 import { Input, TextArea, FormBtn, Date } from "../../components/Form";
 
-import DeleteBtn from "../../components/DeleteBtn";
+// import DeleteBtn from "../../components/DeleteBtn";
 import Jumbotron from "../../components/Jumbotron";
 import { Col, Row, Container } from "../../components/Grid";
-import { List, ListItem } from "../../components/List";
+// import { List, ListItem } from "../../components/List";
 import Nav from "../../components/Nav"
 
 require('./UserForm.css');
