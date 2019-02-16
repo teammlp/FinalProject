@@ -7,6 +7,8 @@ import Home from "./pages/Home";
 import JobLists from "./pages/JobLists";
 import Detail from "./pages/Detail";
 import "./App.css";
+import TodoLists from './pages/TodoLists';
+
 
 
 
@@ -81,6 +83,8 @@ export default class App extends Component {
               <Route exact path="/jobLists/:id" component={Detail} />
 
               <Route exact path="/userForm/:id" component={Detail} />
+              <Route exact path="/todoList" component={TodoLists} />
+
             </Switch>
           </div>
         </Router>
