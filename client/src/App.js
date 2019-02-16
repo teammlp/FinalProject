@@ -79,12 +79,12 @@ export default class App extends Component {
               />
               <Route exact path="/jobLists" component={JobLists} />
 
-              {/* <Route exact path="/userForm" component={UserForm} /> */}
+              <Route exact path="/userForm" component={UserForm} />
 
               <Route exact path="/jobLists/:id" component={Detail} />
 
               <Route exact path="/userForm/:id" component={Detail} />
-              <Route exact path="/todoList" component={TodoLists} />
+              {/* <Route exact path="/todoList" component={TodoLists} /> */}
 
             </Switch>
           </div>

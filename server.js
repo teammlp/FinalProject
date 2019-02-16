@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const mongoose = require("mongoose");
-const apiRoutes = require("./routes/api/apiRoutes");
+const apiRoutes = require("./routes");
 const session = require('express-session');
 const userPassport = require("./passports/userPassport");
 // const config = require("./extra-config");
@@ -27,12 +27,12 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 const authCheck = require('./middleware/attachAuthenticationStatus');
 // app.use(session({ secret: config.sessionKey, resave: true, saveUninitialized: true }));
+app.use(apiRoutes);
 app.use(userPassport.initialize());
 app.use(userPassport.session());
 app.use(authCheck);
 
 // Define API routes here
-app.use("/api", apiRoutes);
 // Send every other request to the React app
 // Define any API routes before this runs
 app.get("*", (req, res) => {

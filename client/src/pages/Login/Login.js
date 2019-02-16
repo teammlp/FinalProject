@@ -4,10 +4,10 @@ import { Link, Redirect } from 'react-router-dom';
 import { userAPI } from "../../utils/API";
 import './Login.css';
 import Nav from "../../components/Nav";
-import TodoInput from "../../components/TodoInput";
-import TodoList from "../../components/TodoList";
+// import TodoInput from "../../components/TodoInput";
+// import TodoList from "../../components/TodoList";
 
-import uuid from "uuid";
+// import uuid from "uuid";
 
 export default class Login extends Component {
 
@@ -19,27 +19,24 @@ export default class Login extends Component {
       redirectToReferrer: false,
 
       // todo list state
-      items: [],
-      id: uuid(),
-      item: "",
-      editItem: false
+      // items: [],
+      // id: uuid(),
+      // item: "",
+      // editItem: false
     };
 
     this.handleUsernameChange = this.handleUsernameChange.bind(this);
     this.handlePasswordChange = this.handlePasswordChange.bind(this);
     this.loginUser = this.loginUser.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-    this.handleTodoSubmit= this.handleTodoSubmit.bind(this)
+    // this.handleChange = this.handleChange.bind(this);
+    // this.handleTodoSubmit= this.handleTodoSubmit.bind(this)
   }
 
-
-  
-
-  handleChange = (e) => {
-    this.setState({
-      item: e.target.value
-    });
-  };
+  // handleChange = (e) => {
+  //   this.setState({
+  //     item: e.target.value
+  //   });
+  // };
 
   handleUsernameChange(event) {
     this.setState({
@@ -81,23 +78,23 @@ export default class Login extends Component {
     });
   }
 
-  handleTodoSubmit(e){
-    e.preventDefault();
+  // handleTodoSubmit(e){
+  //   e.preventDefault();
     
-    const newItem = {
-      id: this.state.id,
-      title: this.state.item
-    }
-    console.log(newItem);
-    const updatedItems = {...this.state.items, newItem};
-    this.setState({
-      items: updatedItems,
-      item: "",
-      id: uuid(),
-      editItem: false
-    })
+  //   const newItem = {
+  //     id: this.state.id,
+  //     title: this.state.item
+  //   }
+  //   console.log(newItem);
+  //   const updatedItems = {...this.state.items, newItem};
+  //   this.setState({
+  //     items: updatedItems,
+  //     item: "",
+  //     id: uuid(),
+  //     editItem: false
+  //   })
 
-  }
+  // }
 
   handleSubmit(event) {
     event.preventDefault();
@@ -142,13 +139,13 @@ export default class Login extends Component {
             </div>
           </div>
         </div>
-        <div className="row">
+        {/* <div className="row">
           <div className="col-10 mx-auto col-md-8  mt-4">
             <h3 className="text-capitalize text-center">Todo Input</h3>
             <TodoInput item={this.state.item} handleChange={this.handleChange} handleTodoSubmit={this.handleTodoSubmit}/>
             <TodoList items={this.state.items}/>
           </div>
-        </div>
+        </div> */}
       </div>
     );
   }
