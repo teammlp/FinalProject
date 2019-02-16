@@ -3,7 +3,8 @@ import TodoItem from "../../components/TodoItem";
 
 export default class TodoList extends Component {
   render() {
-    const{items} = this.props;
+    const items = this.props.items;
+   
     return (
       <ul className="list-group mt-5">
         <h3 className="text-capitalize text-center">todo list</h3>

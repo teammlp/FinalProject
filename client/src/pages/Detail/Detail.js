@@ -48,7 +48,7 @@ class Detail extends Component {
         </Row>
         <Row>
           <Col size="md-2">
-            <Link to="/">← Back to main page</Link>
+            <Link to="/userForm">← Back to main page</Link>
           </Col>
           <Col>
             <FormBtn onClick={this.handleFormSubmit} >
