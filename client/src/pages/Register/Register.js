@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, Redirect} from 'react-router-dom';
 import { userAPI } from "../../utils/API";
 import './register.css';
+import Nav from "../../components/Nav";
 
 export default class Register extends Component {
 
@@ -213,6 +214,7 @@ export default class Register extends Component {
         }
         return (
             <div>
+                <Nav/>
                 <div id="registration-container" >
                     <h1>Registration</h1>
                     <section className="container">
@@ -257,7 +259,7 @@ export default class Register extends Component {
                                 </div>
                             </form>
                             <div className="login-help">
-                                <p>Already have an account? <Link to={"/login"}> Login </Link></p>
+                                <p>Already have an account? <i className="fas fa-cog fa-spin"/><Link to={"/login"}> Login </Link></p>
                             </div>
                         </div>
                     </section>

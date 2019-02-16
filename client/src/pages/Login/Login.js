@@ -29,7 +29,7 @@ export default class Login extends Component {
     this.handlePasswordChange = this.handlePasswordChange.bind(this);
     this.loginUser = this.loginUser.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.handleTodoSubmit= this.handleTodoSubmit.bind(this);
+    this.handleTodoSubmit= this.handleTodoSubmit.bind(this)
   }
 
 
@@ -133,12 +133,12 @@ export default class Login extends Component {
           <h2 className="LogOrReg">Log In Or Register</h2>
           <div className="loginmodal-container">
             <form className="login" onSubmit={this.handleSubmit.bind(this)}>
-              <input id="username-input" ref="user" type="text" name="user" placeholder="Username" onChange={this.handleUsernameChange} value={this.state.username} />
+              <input  id="username-input" ref="user" type="text" name="user" placeholder="Username" onChange={this.handleUsernameChange} value={this.state.username} />
               <input id="password-input" ref="password" type="password" name="pass" placeholder="Password" onChange={this.handlePasswordChange} value={this.state.password} />
               <input type="submit" name="login" className="login loginmodal-submit" value="Login" />
             </form>
             <div className="login-help">
-              <Link to={"/register"}> Register </Link>
+              <Link to={"/register"}> Register <i className="fas fa-pencil-alt fa-xs"/></Link>
             </div>
           </div>
         </div>

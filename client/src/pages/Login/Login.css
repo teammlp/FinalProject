@@ -2,7 +2,7 @@
 
 /****** LOGIN ******/
 .loginmodal-container {
-    color: black;
+    color: rgb(43, 99, 73);
     padding: 30px;
     max-width: 350px;
     width: 100% !important;
@@ -46,7 +46,7 @@
     text-transform: uppercase;
     padding: 7px;
     background: rgba(255, 255, 255, 0.911);
-    color: black;
+    color: rgb(43, 99, 73);
     font-weight: bold;
     font-size: 60px;
     margin: 0 auto 26px;
@@ -58,7 +58,7 @@
 
   .loginmodal-submit {
     color: rgb(255, 255, 255)!important;
-    background: rgb(17, 17, 17);
+    background: rgb(49, 114, 92);
     font-weight: 200!important;
     font-family: 'Monoton', cursive;
     text-transform: uppercase!important;
@@ -71,7 +71,7 @@
   }
   .loginmodal-submit:hover {
     background: #ffffff; 
-    color: rgb(8, 8, 8)!important;
+    color:  rgb(60, 112, 91)!important;
     transition: all 0.7s;
     transform: scale(1.1);
     border: solid 1px rgb(2, 2, 2)!important;
