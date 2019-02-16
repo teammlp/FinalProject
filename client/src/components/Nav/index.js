@@ -3,40 +3,63 @@ import React from "react";
 
 function Nav() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-  <a className="navbar-brand" href="/">
-  <img src="https://clipart.info/images/ccovers/1521073957easter-egg-hunt-clipart-png.png" width="30" height="30" className="d-inline-block align-top" alt="cute chicken" />
-  &nbsp; ezHunt</a>
-  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span className="navbar-toggler-icon"></span>
-  </button>
-  <div className="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul className="navbar-nav justify-content-end">
-      <li className="nav-item active">
-        <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
-      </li>
-      <li className="nav-item active">
-        <a className="nav-link" href="/">Jobs</a>
-      </li>
-      <li className="nav-item active">
-        <a className="nav-link" href="/">About</a>
-      </li>
-      <li className="nav-item dropdown">
-        <a className="nav-link dropdown-toggle" href="/jobLists" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Jobs
-        </a>
-        <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a className="dropdown-item" href="/">Add Job</a>
-          <a className="dropdown-item" href="/">Job History</a>
-          <a className="dropdown-item" href="/">Something else here</a>
+    <div className="full-width-container header">
+      <div className="row">
+        <div className="four columns">
+          <span className="logo">
+            <a href="/">
+              <img
+                src="https://clipart.info/images/ccovers/1521073957easter-egg-hunt-clipart-png.png"
+                alt="job application" width="50" height="50" className="d-inline-block align-top" alt="cute chicken"
+              />
+              &nbsp; ezHunt
+            </a>
+          </span>
         </div>
-      </li>
-      <li className="nav-item active" >
-        <a className="nav-link" href="/" id="Logout">Logout</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+        <div className="eight columns menu">
+          <div className="row">
+            <div className="four columns">
+              <a
+                onclick="trackEvent('landing_go_to_advisor_page_clicked')"
+                href="/advisors"
+              >
+                JOBS
+              </a>
+            </div>
+            <div className="two columns">
+              <a href="/app/talks">TODO</a>
+            </div>
+            <div className="two columns">
+              <a
+                onclick="trackEvent('landing_pricing_clicked')"
+                href="/pricing"
+                className="login"
+              >
+                NOTES
+              </a>
+            </div>
+            <div className="two columns">
+              <a
+                onclick="trackEvent('landing_login_clicked')"
+                href="/home"
+                className="login"
+              >
+                LOGIN
+              </a>
+            </div>
+            <div className="two columns">
+              <a
+                onclick="trackEvent('landing_signup_clicked')"
+                href="/signup"
+                className="login"
+              >
+                SIGNUP
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 

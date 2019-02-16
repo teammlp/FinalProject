@@ -40,13 +40,13 @@ class Home extends Component {
 
     render() {
       return (
-        <div class="container-fluid">
+        <div className="top-container">
            <Nav />
-             <div className="homeContain">
-                  <div className="homeLogo">
+             <div className="purple-gradient-bkgd colored-background">&nbsp;</div>
+                  {/* <div className="homeLogo">
                       <img alt="logo" src={logo} />
-                  </div>
-                 
+                  </div> */}
+                 <div> {/* add className here? */}
                   <ButtonBtn><Link to={"/login"}>LOGIN</Link></ButtonBtn>
                   <ButtonBtn><Link to={"/register"}>REGISTER</Link></ButtonBtn>
                   <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">

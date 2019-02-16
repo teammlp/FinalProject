@@ -1,5 +1,77 @@
+div {
+  display: block;
+}
 
+.top-container {
+    height: 100%;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
 
+/* .colored-background {
+  height: 756px;
+  z-index: -10000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+}
+
+.purple-gradient-bkgd {
+  background: -webkit-linear-gradient(-45deg, #166851 0%, #199266 100%);
+  background: linear-gradient(135deg, #166851 0%, #199266 100%);
+} */
+
+.header {
+  padding: 30px 50px;
+  color: #fff;
+  line-height: 50px;
+}
+
+.logo {
+  font-size: 34px;
+  font-weight: 600;
+}
+
+.column,
+.columns {
+  width: 100%;
+  float: left;
+  box-sizing: border-box;
+}
+
+.header .menu {
+  float: right;
+  text-align: right;
+  font-size: 13px;
+  font-weight: 100;
+}
+
+@media (min-width: 550px) {
+  .column,
+  .columns {
+    margin-left: 4%;
+  }
+
+  .two.columns {
+    width: 13.3333333333%;
+  }
+
+  .four.columns {
+    width: 30.6666666667%;
+  }
+
+  .eight.columns {
+    width: 65.3333333333%;
+  }
+
+  .column:first-child,
+  .columns:first-child {
+    margin-left: 0;
+  }
+}
 
 /* .homeWrap h1 {
     text-transform: uppercase;
