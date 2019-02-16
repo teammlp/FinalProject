@@ -28,7 +28,7 @@ class Detail extends Component {
               </h1>
               <hr/>
               <h1>
-                {this.state.userForm.position}
+                {this.state.userForm.location}
               </h1>
             </Jumbotron>
           </Col>

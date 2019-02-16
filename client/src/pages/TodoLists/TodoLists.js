@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 // import Register from "../Register";
-import { userAPI } from "../../utils/API";
+// import { userAPI } from "../../utils/API";
 import './TodoList.css';
 import Nav from "../../components/Nav";
 import TodoInput from "../../components/TodoInput";
@@ -66,7 +66,7 @@ export default class TodoLists extends Component {
             <h3 className="text-capitalize text-center">Todo Input</h3>
             <TodoInput item={this.state.item} handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
             {console.log(items)}
-            <TodoList items={this.state.items}/>
+            {/* <TodoList items={this.state.items}/> */}
           </div>
         </div>
       </div>

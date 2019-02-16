@@ -188,7 +188,7 @@ class UserForm extends Component {
                   <ListItem key={userForm._id}>
                     <Link to={"/userForm/" + userForm._id}>
                       <strong>
-                        {userForm.position} at 📍 {userForm.company}
+                        {userForm.position} at  {userForm.company}, 📍 {userForm.location}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => this.deleteUserForm(userForm._id)} />
