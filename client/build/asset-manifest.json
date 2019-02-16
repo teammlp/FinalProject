@@ -1,14 +1,13 @@
 {
-  "main.css": "/static/css/main.09416c06.chunk.css",
-  "main.js": "/static/js/main.c47ea0ab.chunk.js",
-  "main.js.map": "/static/js/main.c47ea0ab.chunk.js.map",
-  "static/js/1.17d99e07.chunk.js": "/static/js/1.17d99e07.chunk.js",
-  "static/js/1.17d99e07.chunk.js.map": "/static/js/1.17d99e07.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.229c360f.js",
-  "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
+  "runtime~main.js": "/static/js/runtime~main.41117e05.js",
+  "runtime~main.js.map": "/static/js/runtime~main.41117e05.js.map",
+  "vendors.js": "/static/js/vendors.359502df.chunk.js",
+  "vendors.js.map": "/static/js/vendors.359502df.chunk.js.map",
+  "main.css": "/static/css/main.fcab0f71.chunk.css",
+  "main.js": "/static/js/main.777934ac.chunk.js",
+  "main.js.map": "/static/js/main.777934ac.chunk.js.map",
   "static/media/tracker.jpg": "/static/media/tracker.563db0d5.jpg",
-  "static/css/main.09416c06.chunk.css.map": "/static/css/main.09416c06.chunk.css.map",
-  "index.html": "/index.html",
-  "precache-manifest.896742d8a368287dea7535e436252984.js": "/precache-manifest.896742d8a368287dea7535e436252984.js",
-  "service-worker.js": "/service-worker.js"
+  "static/media/App.css": "/static/media/black-and-white-image-of-laptop-computer-mouse-and-book-on-table.b28b8d2f.jpg",
+  "static/media/register.css": "/static/media/camera-lens.25da824f.jpg",
+  "index.html": "/index.html"
 }
