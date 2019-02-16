@@ -65,6 +65,7 @@ export default class TodoLists extends Component {
           <div className="col-10 mx-auto col-md-8  mt-4">
             <h3 className="text-capitalize text-center">Todo Input</h3>
             <TodoInput item={this.state.item} handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
+            {console.log(items)}
             <TodoList items={this.state.items}/>
           </div>
         </div>

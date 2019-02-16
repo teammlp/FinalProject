@@ -5,10 +5,10 @@ import { userAPI} from "../../utils/API";
 // import ButtonBtn from "../../components/ButtonBtn";
 import { Input, TextArea, FormBtn, Date } from "../../components/Form";
 
-// import DeleteBtn from "../../components/DeleteBtn";
+import DeleteBtn from "../../components/DeleteBtn";
 import Jumbotron from "../../components/Jumbotron";
 import { Col, Row, Container } from "../../components/Grid";
-// import { List, ListItem } from "../../components/List";
+import { List, ListItem } from "../../components/List";
 import Nav from "../../components/Nav"
 
 require('./UserForm.css');
@@ -182,7 +182,7 @@ class UserForm extends Component {
             <Jumbotron>
               <h1>Companies On My List</h1>
             </Jumbotron>
-            {/* {this.state.userForms.length ? (
+            {this.state.userForms.length ? (
               <List>
                 {this.state.userForms.map( userForm => (
                   <ListItem key={userForm._id}>
@@ -195,7 +195,7 @@ class UserForm extends Component {
                   </ListItem>
                 ))}
               </List>
-            ) : ( */}
+            ) : (
               <h3>No Results to Display</h3>
             )}
           </Col>
