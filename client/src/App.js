@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import User from "./pages/User";
+import UserForm from "./pages/UserForm";
 import Home from "./pages/Home";
-import Books from "./pages/Books";
+import JobLists from "./pages/JobLists";
 import Detail from "./pages/Detail";
 import "./App.css";
+import TodoLists from './pages/TodoLists';
+
 
 
 
@@ -66,15 +68,23 @@ export default class App extends Component {
                   authenticated={this.state.authenticated}
                 />}
               />
-              <Route exact path="/user" render={props =>
-                <User
+              <Route exact path="/userForm" render={props =>
+                <UserForm
                   {...props}
                   authenticate={this.authenticate}
                   deAuthenticate={this.deAuthenticate}
                   authenticated={this.state.authenticated}
                 />}
               />
-              
+              <Route exact path="/jobLists" component={JobLists} />
+
+              {/* <Route exact path="/userForm" component={UserForm} /> */}
+
+              <Route exact path="/jobLists/:id" component={Detail} />
+
+              <Route exact path="/userForm/:id" component={Detail} />
+              <Route exact path="/todoList" component={TodoLists} />
+
             </Switch>
           </div>
         </Router>

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect} from 'react-router-dom';
 import { userAPI } from "../../utils/API";
-import Navigation from "../../components/Navigation";
 import './register.css';
+import Nav from "../../components/Nav";
 
 export default class Register extends Component {
 
@@ -204,9 +204,17 @@ export default class Register extends Component {
     }
 
     render() {
+        const { from } = this.props.location.state || { from: { pathname: '/userForm' } };
+        const { redirectToReferrer } = this.state;
+
+        if (redirectToReferrer) {
+        return (
+            <Redirect to={from} />
+        )
+        }
         return (
             <div>
-                <Navigation />
+                <Nav/>
                 <div id="registration-container" >
                     <h1>Registration</h1>
                     <section className="container">
@@ -251,7 +259,7 @@ export default class Register extends Component {
                                 </div>
                             </form>
                             <div className="login-help">
-                                <p>Already have an account? <Link to={"/login"}> Login </Link></p>
+                                <p>Already have an account? <i className="fas fa-cog fa-spin"/><Link to={"/login"}> Login </Link></p>
                             </div>
                         </div>
                     </section>

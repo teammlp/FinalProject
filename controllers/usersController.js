@@ -1,5 +1,4 @@
 const db = require('../models');
-const User = require('../models/User');
 const passport = require("passport");
 
 // login

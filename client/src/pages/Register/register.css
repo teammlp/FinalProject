@@ -1,15 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Arima+Madurai|Berkshire+Swash|Libre+Barcode+39+Text|Monoton');
+
 #registration-container {
-	padding-top: 130px;
+	padding-top: 60px;
 	margin: 0px auto;
+	text-align: center;
+	background-image: url("../Register/image/camera-lens.jpg");
+	height: 700px;
 }
 #registration-container h1 {
 	text-transform: uppercase;
-	padding: 7px;
-	background: rgba(255, 255, 255, 0.781);
-	color: rgba(25, 149, 251, .80);
-	font-weight: 700;
-	font-size: 40px;
-	margin: 0 auto 26px;
+    padding: 7px;
+    background: rgba(255, 255, 255, 0.911);
+    color: rgb(43, 99, 73);
+    font-weight: bold;
+    font-size: 60px;
+    margin: 0 auto 26px;
+    font-family: 'Libre Barcode 39 Text', cursive;
   }
 #registration-container .container-page {
 	max-width: 400px;
@@ -20,8 +26,51 @@
     background-color: rgba(255, 255, 255, 0.863) !important; 
     border: none;
     padding: 7px;
-    width: 100%;
+	width: 100%;
+	color: darkcyan;
+    font-family: 'Berkshire Swash', cursive;
 }
+small, p#email-feedback {
+	color: rgb(20, 8, 129);
+	font-family: 'Arima Madurai', cursive;
+}
+
+button[type=submit] {
+    color: rgb(255, 255, 255)!important;
+    background: rgb(49, 114, 92);
+    font-weight: 200!important;
+    font-family: 'Monoton', cursive;
+    text-transform: uppercase!important;
+    font-size: 20px!important;
+    border: solid 2px rgb(252, 244, 244)!important;
+    padding: 7px 20px!important;
+    border-radius: 10px!important;
+    display: block!important;
+    margin: 23px auto 0px;
+  }
+  button[type=submit]:hover {
+    background: #ffffff; 
+    color: rgb(60, 112, 91)!important;
+    transition: all 0.7s;
+    transform: scale(1.1);
+    border: solid 1px rgb(2, 2, 2)!important;
+  }
+
+  .login-help {
+    text-align: center;
+  }
+  .login-help p {
+	color: rgb(19, 99, 72);
+	font-family: 'Arima Madurai', cursive;
+	font-weight: bolder;
+	margin-top: 10px;
+  }
+  .login-help a{
+    color: rgb(238, 65, 65);
+    font-size: 40px;
+    padding-top: 5px;
+    font-family: 'Libre Barcode 39 Text', cursive;
+  }
 
 /* media query */
 

@@ -34,19 +34,34 @@ export default {
         return axios.post(`/api/user/login`,cred);
     },
 
-    getBooks: function() {
-        return axios.get("/api/books");
+    getJobLists: function() {
+        return axios.get("/api/jobLists");
       },
-      // Gets the book with the given id
-      getBook: function(id) {
-        return axios.get("/api/books/" + id);
+      getJobList: function(id) {
+        return axios.get("/api/jobLists/" + id);
       },
-      // Deletes the book with the given id
-      deleteBook: function(id) {
-        return axios.delete("/api/books/" + id);
+      deleteJobList: function(id) {
+        return axios.delete("/api/jobLists/" + id);
       },
-      // Saves a book to the database
-      saveBook: function(bookData) {
-        return axios.post("/api/books", bookData);
-      }
+      saveJobList: function(jobListData) {
+          console.log(jobListData);
+        return axios.post("/api/jobLists", jobListData);
+      },
+
+    getUserForms: function() {
+        return axios.get("/api/userForm");
+    },
+      // Gets the userForm with the given id
+    getUserForm: function(id) {
+        return axios.get("/api/userForm/" + id);
+    },
+      // Deletes the userForm with the given id
+    deleteUserForm: function(id) {
+        return axios.delete("/api/userForm/" + id);
+    },
+      // Saves a userForm to the database
+    saveUserForm: function(userFormData) {
+          console.log(userFormData);
+        return axios.post("/api/userForm", userFormData);
+    }
 };

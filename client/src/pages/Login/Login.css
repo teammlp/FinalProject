@@ -1,119 +1,80 @@
-/****** LOGIN MODAL ******/
+@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash|Libre+Barcode+39+Text|Monoton');
+
+/****** LOGIN ******/
 .loginmodal-container {
-    color: black;
+    color: rgb(43, 99, 73);
     padding: 30px;
     max-width: 350px;
     width: 100% !important;
     margin: 0 auto;
   }
-  
-  .loginmodal-container h1 {
-    text-align: center;
-    font-size: 1.8em;
-  }
-  
-  .loginmodal-container input[type=submit] {
-    width: 100%;
-    display: block;
-    margin-bottom: 10px;
-    position: relative;
-  }
   .loginmodal-container input[type=text] {
     margin-bottom: 20px;
+    color: darkcyan;
+    font-family: 'Berkshire Swash', cursive;
   }
   .loginmodal-container input[type=text], input[type=password] {
-    border-radius: 90px !important;
+    border-radius: 10px !important;
     background-color: rgba(255, 255, 255, 0.863) !important; 
     border: none;
-    padding: 7px;
+    padding: 7px 20px;
     width: 100%;
+    text-align: left;
+    justify-content: center;
+    font-family: 'Berkshire Swash', cursive;
   }
- 
-  
-  .loginmodal {
+  .LogOrReg{
     text-align: center;
-    font-size: 14px;
-    font-family: 'Arial', sans-serif;
-    font-weight: 700;
-    height: 36px;
-    padding: 0 8px;
   }
   
-  .loginmodal-submit {
-    /* border: 1px solid #3079ed; */
-    border: 0px;
-    color: #fff;
-    text-shadow: 0 1px rgba(0,0,0,0.1); 
-    background-color: #4d90fe;
-    padding: 17px 0px;
-    font-size: 14px;
-  }
-  
-  .loginmodal-submit:hover {
-    /* border: 1px solid #2f5bb7; */
-    border: 0px;
-    text-shadow: 0 1px rgba(0,0,0,0.3);
-    background-color: #357ae8;
-  }
-  
-  .loginmodal-container a {
-    text-decoration: none;
-    font-size: 17px;
-    color: #fff;
-    font-weight: 400;
+  .login-help {
     text-align: center;
-    display: inline-block;
-  } 
-  .loginmodal-container a:hover {
-    color: #1a1a1a;
-    text-decoration: none;
-  } 
-  
-  .login-help{
-    font-size: 14px;
   }
   .login-help a{
     color: red;
+    font-size: 40px;
+    padding-top: 5px;
+    font-family: 'Libre Barcode 39 Text', cursive;
+  }
+  form.login{
+    padding: 70px;
+    border: solid 2px gray;
+    border-radius: 15px;
   }
   
-  .content {
-    padding-top: 30px;
-  }
-  .loginWrap h1 {
+  .loginWrap h2 {
     text-transform: uppercase;
     padding: 7px;
-    background: rgba(255, 255, 255, 0.781);
-    color: rgba(25, 149, 251, .80);
-    font-weight: 700;
-    font-size: 40px;
+    background: rgba(255, 255, 255, 0.911);
+    color: rgb(43, 99, 73);
+    font-weight: bold;
+    font-size: 60px;
     margin: 0 auto 26px;
+    font-family: 'Libre Barcode 39 Text', cursive;
   }
   .loginWrap {
-    padding-top: 130px;
+    padding-top: 30px;
   }
 
   .loginmodal-submit {
-    color: #fff!important;
-    background: #1995fb; /* Old browsers */
-    background: -moz-linear-gradient(top, #1995fb 0%, #0079db 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #1995fb 0%,#0079db 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #1995fb 0%,#0079db 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1995fb', endColorstr='#0079db',GradientType=0 ); /* IE6-9 */
-    font-weight: 700!important;
+    color: rgb(255, 255, 255)!important;
+    background: rgb(49, 114, 92);
+    font-weight: 200!important;
+    font-family: 'Monoton', cursive;
     text-transform: uppercase!important;
-    font-size: 30px!important;
-    border: solid 5px #fff!important;
-    padding: 0px 40px!important;
-    border-radius: 90px!important;
+    font-size: 20px!important;
+    border: solid 2px rgb(252, 244, 244)!important;
+    padding: 7px 20px!important;
+    border-radius: 10px!important;
     display: block!important;
     margin: 23px auto 0px;
   }
   .loginmodal-submit:hover {
-    background: #0079db; /* Old browsers */
-    background: -moz-linear-gradient(top, #0079db 0%, #1995fb 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #0079db 0%,#1995fb 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, #0079db 0%,#1995fb 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0079db', endColorstr='#1995fb',GradientType=0 ); /* IE6-9 */
+    background: #ffffff; 
+    color:  rgb(60, 112, 91)!important;
+    transition: all 0.7s;
+    transform: scale(1.1);
+    border: solid 1px rgb(2, 2, 2)!important;
   }
 
 

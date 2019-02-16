@@ -25,3 +25,10 @@ export function FormBtn(props) {
     </button>
   );
 }
+export function Date(props) {
+  return (
+    <div className="form-group">
+      <input type="Date" className="form-control" {...props} />
+    </div>
+  );
+}

@@ -1,0 +1,74 @@
+import React, { Component } from 'react';
+import { Link, Redirect } from 'react-router-dom';
+// import Register from "../Register";
+import { userAPI } from "../../utils/API";
+import './TodoList.css';
+import Nav from "../../components/Nav";
+import TodoInput from "../../components/TodoInput";
+import TodoList from "../../components/TodoList";
+
+import uuid from "uuid";
+
+export default class TodoLists extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      // todo list state
+      items: [],
+      id: uuid(),
+      item: "",
+      editItem: false
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit= this.handleSubmit.bind(this);
+  }
+
+  handleChange = (e) => {
+    this.setState({
+      item: e.target.value
+    });
+  };
+
+  handleSubmit(e){
+    e.preventDefault();
+    
+    const newItem = {
+      id:this.state.id,
+      title: this.state.item
+    };
+    console.log(newItem);
+    const updatedItems = {...this.state.items, newItem};
+    this.setState({
+      items: updatedItems,
+      item: "",
+      id: uuid(),
+      editItem: false
+    });
+
+  };
+
+  render() {
+    const { from } = this.props.location.state || { from: { pathname: '/login' } };
+    const { redirectToReferrer } = this.state;
+
+    if (redirectToReferrer) {
+      return (
+        <Redirect to={from} />
+      )
+    }
+
+    return (
+      <div>
+        <Nav/>
+          
+        <div className="row">
+          <div className="col-10 mx-auto col-md-8  mt-4">
+            <h3 className="text-capitalize text-center">Todo Input</h3>
+            <TodoInput item={this.state.item} handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
+            <TodoList items={this.state.items}/>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
