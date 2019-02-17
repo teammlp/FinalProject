@@ -1,3 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text');
+
+.jumbotron {
+    font-family: 'Crimson Text', serif;
+    height: 30px!important;
+    color: rgb(72, 109, 110);
+}
+.List{
+    background-color: rgb(239, 241, 241);
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    font-family: 'Crimson Text', serif;
+    color: rgb(72, 109, 110);
+}
+
 .UserWrap .list-group-item {
     background: transparent !important;
     border:none !important;

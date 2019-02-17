@@ -6,7 +6,7 @@ import "./style.css";
 function DeleteBtn(props) {
   return (
     <span className="delete-btn" {...props} role="button" tabIndex="0">
-      -✗-
+      <i className="far fa-trash-alt fa-star-christmas fa-spin"></i>
     </span>
   );
 }
