@@ -111,24 +111,43 @@ class UserForm extends Component {
 
     render() {
         return ( !(sessionStorage.getItem("userAuth") === 'yes') ?
-    <Redirect to={{ pathname: '/' }} /> :
+    <Redirect to={{ pathname: '/login' }} /> :
       <Container fluid>
       <Nav/>
         <FormBtn onClick={this.logout}>logout</FormBtn>
         <Row>
           <Col size="md-12">
             <Jumbotron>
+              <h3>Welcome to your EzHunt Vision Board!</h3>
               <hr/>
-              <h3>What Companies have you applied?</h3>
-              <hr/>
+              {/* <p>Keep track on the job you applied and plan ahead, make your life more organized 🗂</p> */}
             </Jumbotron>
             </Col>
         </Row>
         <Row>
-          <Col size="md-3">
+        <Col size="md-6 sm-6">
+            {/* <Jumbotron> */}
+              <h3 className="List">Companies On My List <i className="fas fa-archive fa-xs"></i></h3>
+            {/* </Jumbotron> */}
+            {this.state.userForms.length ? (
+              <List>
+                {this.state.userForms.map( userForm => (
+                  <ListItem key={userForm._id}>
+                    <Link to={"/userForm/" + userForm._id}>
+                      <strong>
+                        {userForm.position} at  {userForm.company}, 📍 {userForm.location}
+                      </strong>
+                    </Link>
+                    <DeleteBtn onClick={() => this.deleteUserForm(userForm._id)} />
+                  </ListItem>
+                ))}
+              </List>
+            ) : (
+              <h3>No Results to Display</h3>
+            )}
           </Col>
-
           <Col size="md-6">
+          <h3 className="List">New application <i className="far fa-copy fa-xs"></i></h3>
             <form>
               <Input
                 value={this.state.company}
@@ -142,30 +161,24 @@ class UserForm extends Component {
                 name="position"
                 placeholder="Position (required)"
               />
-              <TextArea
-                value={this.state.detail}
-                onChange={this.handleInputChange}
-                name="detail"
-                placeholder="Write your comment (Optional)"
-              />
               <Date
                 value={this.state.date}
                 onChange={this.handleInputChange}
                 name="date"
                 placeholder="Date you applied"
               />
-              <p>Location</p><Input
+              <Input
                 value={this.state.location}
                 onChange={this.handleInputChange}
                 name="location"
                 placeholder="Location"
               />
-              {/* <select id="cityList" value={this.state.selectValue} onChange={this.handleChange}>
-                    <option value="Bengaluru">Bengaluru</option>
-                    <option value="Hyderabad">Hyderabad</option>
-                    <option value="Chennai">Chennai</option>
-                    <option value="Mumbai">Mumbai</option> 
-                </select> */}
+              <TextArea
+                value={this.state.detail}
+                onChange={this.handleInputChange}
+                name="detail"
+                placeholder="Write your comment (Optional)"
+              />
               <FormBtn
                 disabled={!(this.state.company && this.state.position)}
                 onClick={this.handleFormSubmit}
@@ -174,51 +187,10 @@ class UserForm extends Component {
               </FormBtn>
             </form>
           </Col>
-          </Row>
-          <Row>
-          <Col size="md-2">
-          </Col>
-          <Col size="md-8 sm-8">
-            <Jumbotron>
-              <h1>Companies On My List</h1>
-            </Jumbotron>
-            {this.state.userForms.length ? (
-              <List>
-                {this.state.userForms.map( userForm => (
-                  <ListItem key={userForm._id}>
-                    <Link to={"/userForm/" + userForm._id}>
-                      <strong>
-                        {userForm.position} at 📍 {userForm.company}
-                      </strong>
-                    </Link>
-                    <DeleteBtn onClick={() => this.deleteUserForm(userForm._id)} />
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-              <h3>No Results to Display</h3>
-            )}
-          </Col>
-          <Col size="md-2"/>
         </Row>
       </Container>
     );
   }
-    //     return (!(sessionStorage.getItem("userAuth") === 'yes') ?
-    //         <Redirect to={{ pathname: '/login' }} /> :
-    //         <div>
-    //             <div className="UserWrap">
-    //                 <div className="row">
-    //                     <div className="col-lg-6">
-    //                         <h1>Current</h1>
-
-    //                     </div>
-    //                     <FormBtn onClick={this.logout}>logout</FormBtn>
-    //                 </div>
-    //             </div>
-    //         </div>
-    //     );
-    // }
 }
 
 export default UserForm;

@@ -13,7 +13,7 @@ export function Input(props) {
 export function TextArea(props) {
   return (
     <div className="form-group">
-      <textarea className="form-control" rows="17" {...props} />
+      <textarea className="form-control" rows="7" {...props} />
     </div>
   );
 }
