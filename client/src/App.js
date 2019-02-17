@@ -7,7 +7,7 @@ import Home from "./pages/Home";
 import JobLists from "./pages/JobLists";
 import Detail from "./pages/Detail";
 import "./App.css";
-import TodoLists from "./pages/TodoLists";
+// import TodoLists from "./pages/TodoLists";
 import Footer from "./components/Footer/Footer"
 
 

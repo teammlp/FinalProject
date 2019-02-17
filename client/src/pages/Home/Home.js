@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import ButtonBtn from "../../components/ButtonBtn";
 import logo from "../../images/tracker.jpg";
 import './Home.css';
@@ -17,23 +17,26 @@ class Home extends Component {
     profilesList = () => {
         let profiles = [
             {
-                source: "Indeed",
-                description: "Todays Job Listing",
-                postUrl: "https://www.indeed.com/viewjob?jk=bcbb008d958aa019&tk=1d3i2k7k3agdr800&from=serp&vjs=3&advn=7563612448552419&adid=141554971&sjdu=i6xVERweJM_pVUvgf-Mzud6v7vx4W2vba62rTobId36J1r29Sj03s_2Kk7DbjLum"
+                sourceImage: "https://odsc.com/wp-content/uploads/2015/12/Indeed-Logo-1-1.jpg",
+                description: "Indeed Job Listing",
+                postUrl: "https://www.indeed.com"
+            },
+            {
+                sourceImage: "https://odsc.com/wp-content/uploads/2015/12/Indeed-Logo-1-1.jpg",
+                description: "Built In Chicago Job Listing",
+                postUrl: "https://www.builtinchicago.org/"
             }
         ];
         return profiles.map((profile) =>
-            <div className={profiles[0] === profile ? "carousel-item active" : "carousel-item"}>
+            <div style={{ textAlign: "center" }} className={profiles[0] === profile ? "carousel-item active" : "carousel-item"}>
+                <div>
+                    {profile.sourceImage} 
+                </div>
                 <a href={profile.postUrl}>
-                    {profile.source}
-
                     <div>
                         {profile.description}
                     </div>
                 </a>
-
-
-
             </div>
         );
     }
@@ -63,12 +66,12 @@ class Home extends Component {
                          </a>
                      </div>
                     <script>
-                                             $('.carousel').carousel();
+                        $('.carousel').carousel();
                  </script>
-              </div>
-          </div>
-      )
-  }
+                </div>
+            </div>
+        )
+    }
 }
 
 
