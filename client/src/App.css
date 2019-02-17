@@ -41,6 +41,11 @@ a {
   color: white;
 }
 
+a:hover {
+  color: unset;
+  text-decoration: none;
+}
+
 @media (max-width: 1199.98px) {
 
 }

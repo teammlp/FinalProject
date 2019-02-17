@@ -49,6 +49,15 @@ div {
   font-weight: 100;
 }
 
+.header .menu a {
+    color: #ac8ee9;
+    text-decoration: none;
+    margin-left: 50px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 400;
+}
+
 @media (min-width: 550px) {
   .column,
   .columns {
