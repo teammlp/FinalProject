@@ -21,7 +21,7 @@ function Nav() {
             <div className="four columns">
               <a
                 onclick="trackEvent('landing_go_to_advisor_page_clicked')"
-                href="/advisors"
+                href="#carouselExampleControls"
               >
                 JOBS
               </a>
@@ -32,16 +32,16 @@ function Nav() {
             <div className="two columns">
               <a
                 onclick="trackEvent('landing_pricing_clicked')"
-                href="/pricing"
+                href="#about"
                 className="login"
               >
-                NOTES
+                About
               </a>
             </div>
             <div className="two columns">
               <a
                 onclick="trackEvent('landing_login_clicked')"
-                href="/home"
+                href="/login"
                 className="login"
               >
                 LOGIN
@@ -50,7 +50,7 @@ function Nav() {
             <div className="two columns">
               <a
                 onclick="trackEvent('landing_signup_clicked')"
-                href="/signup"
+                href="/register"
                 className="login"
               >
                 SIGNUP

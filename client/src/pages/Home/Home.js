@@ -63,8 +63,7 @@ class Home extends Component {
                   <ButtonBtn><Link to={"/register"}>REGISTER</Link></ButtonBtn>
                   <br>
                   </br>
-                  <br>
-                  </br>
+                  <hr mt-5/>
                   <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
                          <div className="carousel-inner">
                              {this.profilesList()}
