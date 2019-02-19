@@ -48,6 +48,36 @@ export default class TodoLists extends Component {
 
   };
 
+  clearList = ()=>{
+    this.setState({
+      items:[]
+    })
+  }
+
+  handleDelete = (id) => {
+    const filteredItems = this.state.items.filter(item=> item.id !== id)
+    this.setState({
+      items: filteredItems
+    });
+    console.log(id, "trash clicked");
+  }
+
+  handleEdit = id =>{
+    console.log(id, "pen clicked");
+    
+    const filteredItems = this.state.items.filter(item=> item.id !== id)
+   
+    const selectedItem = this.state.items.find(item => item === id)
+    console.log(selectedItem);
+    
+    this.setState({
+      items: filteredItems,
+      item: selectedItem.title,
+      editItem: true,
+      id: id
+    });
+  }
+
   render() {
     // const { from } = this.props.location.state || { from: { pathname: '/login' } };
     // const { redirectToReferrer } = this.state;
@@ -66,11 +96,12 @@ export default class TodoLists extends Component {
           <div className="col-10 mx-auto col-md-8  mt-4">
             <h3 className="text-capitalize text-center">Todo Input</h3>
             <TodoInput 
-              title={this.state.item} 
+              item={this.state.item} 
               handleChange={this.handleChange} 
-              handleSubmit={this.handleSubmit}/>
+              handleSubmit={this.handleSubmit}
+              editItem={this.editItem}/>
             <TodoItem items={this.state.items}/>
-            <TodoList items={this.state.items}/>
+            <TodoList items={this.state.items} clearList={this.clearList} handleDelete={this.handleDelete} handleEdit={this.handleEdit}/>
           </div>
         </div>
       </div>

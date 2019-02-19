@@ -6,20 +6,20 @@ import {userAPI} from "../../utils/API";
 import { TextArea, FormBtn } from "../../components/Form";
 import Nav from "../../components/Nav";
 import TodoItem from "../../components/TodoItem";
-require('./Detail.css');
-// import TodoInput from "../../components/TodoInput";
-// import TodoList from "../../components/TodoList";
 
-// import uuid from "uuid";
+import TodoInput from "../../components/TodoInput";
+import TodoList from "../../components/TodoList";
+import uuid from "uuid";
+require('./Detail.css');
+
 
 class Detail extends Component {
   state = {
     userForm: {},
-    Update: ""
-    // items: [],
-    // id: uuid(),
-    // item: "",
-    // editItem: false
+    items: [],
+    id: uuid(),
+    item: "",
+    editItem: false
   };
   componentDidMount() {
     userAPI.getUserForm(this.props.match.params.id)
@@ -32,13 +32,55 @@ class Detail extends Component {
       [name]: value
     });
   };
-
-  handleFormSubmit = event => {
-    event.preventDefault();
-    const newUpdate = {
-      update: this.state.update
+  handleSubmit = e =>{
+    e.preventDefault();
+    
+    const newItem = {
+      id:this.state.id,
+      title: this.state.item
     };
+    console.log(newItem);
+
+    const updatedItems = {...this.state.items, newItem};
+    this.setState({
+      items: updatedItems,
+      item: "",
+      id: uuid(),
+      editItem: false
+    });
+
   };
+
+  clearList = ()=>{
+    this.setState({
+      items:[]
+    })
+  }
+
+  handleDelete = (id) => {
+    const filteredItems = this.state.items.filter(item=> item.id !== id)
+    this.setState({
+      items: filteredItems
+    });
+    console.log(id, "trash clicked");
+  }
+
+  handleEdit = id =>{
+    console.log(id, "pen clicked");
+    
+    const filteredItems = this.state.items.filter(item=> item.id !== id)
+   
+    const selectedItem = this.state.items.find(item => item === id)
+    console.log(selectedItem);
+    
+    this.setState({
+      items: filteredItems,
+      item: selectedItem.title,
+      editItem: true,
+      id: id
+    });
+  }
+
 
   render() {
     return (
@@ -86,17 +128,24 @@ class Detail extends Component {
           </form>
           </Col>
         </Row>
-        {/* <Row>
+        <Row>
         <Col size="md-10">
-        <TodoInput />
-        <TodoList />
+        <TodoInput 
+              title={this.state.item} 
+              name="item"
+              handleInputChange={this.handleInputChange} 
+              handleSubmit={this.handleSubmit} editItem={this.editItem}/>
+            <TodoItem items={this.state.items} learList={this.clearList} handleDelete={this.handleDelete} handleEdit={this.handleEdit}/>
+            {/* <TodoList items={this.state.items} clearList={this.clearList} handleDelete={this.handleDelete} handleEdit={this.handleEdit}/> */}
         </Col>
-        </Row> */}
+        </Row>
         <Row>
           <Col size="md-6">
             <Link to="/userForm">← Back to main page</Link>
           </Col>
         </Row>
+        <hr/>
+        <hr/>
       </Container>
     );
   }
