@@ -4,58 +4,148 @@ import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
 import {userAPI} from "../../utils/API";
 import { TextArea, FormBtn } from "../../components/Form";
+import Nav from "../../components/Nav";
+import TodoItem from "../../components/TodoItem";
+
+import TodoInput from "../../components/TodoInput";
+import TodoList from "../../components/TodoList";
+import uuid from "uuid";
+require('./Detail.css');
+
 
 class Detail extends Component {
   state = {
-    userForm: {}
+    userForm: {},
+    items: [],
+    id: uuid(),
+    item: "",
+    editItem: false
   };
-  // When this component mounts, grab the book with the _id of this.props.match.params.id
-  // e.g. localhost:3000/userForm/599dcb67f0f16317844583fc
   componentDidMount() {
     userAPI.getUserForm(this.props.match.params.id)
       .then(res => this.setState({ userForm: res.data }))
       .catch(err => console.log(err));
   }
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+  handleSubmit = e =>{
+    e.preventDefault();
+    
+    const newItem = {
+      id:this.state.id,
+      title: this.state.item
+    };
+    console.log(newItem);
+
+    const updatedItems = {...this.state.items, newItem};
+    this.setState({
+      items: updatedItems,
+      item: "",
+      id: uuid(),
+      editItem: false
+    });
+
+  };
+
+  clearList = ()=>{
+    this.setState({
+      items:[]
+    })
+  }
+
+  handleDelete = (id) => {
+    const filteredItems = this.state.items.filter(item=> item.id !== id)
+    this.setState({
+      items: filteredItems
+    });
+    console.log(id, "trash clicked");
+  }
+
+  handleEdit = id =>{
+    console.log(id, "pen clicked");
+    
+    const filteredItems = this.state.items.filter(item=> item.id !== id)
+   
+    const selectedItem = this.state.items.find(item => item === id)
+    console.log(selectedItem);
+    
+    this.setState({
+      items: filteredItems,
+      item: selectedItem.title,
+      editItem: true,
+      id: id
+    });
+  }
+
 
   render() {
     return (
       <Container fluid>
-        <Row>
+      <Nav/>
+      <Row>
           <Col size="md-12">
             <Jumbotron>
-              <h1>
-                {this.state.userForm.company}  {this.state.userForm.position}
-              </h1>
+              <h3>Job Application Detailed Info</h3>
               <hr/>
-              <h1>
-                {this.state.userForm.location}
-              </h1>
             </Jumbotron>
+            </Col>
+        </Row>
+        <Row>
+          <Col size="md-12">
+           <div className="detailInfo">  
+              <h3>
+              Company Name:  {this.state.userForm.company}||
+              Position: {this.state.userForm.position}|| Location: {this.state.userForm.location}
+              </h3>
+            </div>
           </Col>
         </Row>
         <Row>
-          <Col size="md-10 md-offset-1">
+          <Col size="md-6">
             <article>
-              <h1>Detail</h1>
+              <h3>About Company</h3>
               <p>
                 {this.state.userForm.detail}
+                <TodoItem/>
               </p>
             </article>
           </Col>
-        </Row>
-        <Row>
-          <TextArea/>
-        </Row>
-        <Row>
-          <Col size="md-2">
-            <Link to="/userForm">← Back to main page</Link>
-          </Col>
-          <Col>
+          <Col size="md-6">
+          <form>
+            <TextArea
+                value={this.state.update}
+                onChange={this.handleInputChange}
+                name="update"
+                placeholder="Update your application status here..."
+              />
             <FormBtn onClick={this.handleFormSubmit} >
                 Submit
             </FormBtn>
+          </form>
           </Col>
         </Row>
+        <Row>
+        <Col size="md-10">
+        <TodoInput 
+              title={this.state.item} 
+              name="item"
+              handleInputChange={this.handleInputChange} 
+              handleSubmit={this.handleSubmit} editItem={this.editItem}/>
+            <TodoItem items={this.state.items} learList={this.clearList} handleDelete={this.handleDelete} handleEdit={this.handleEdit}/>
+            {/* <TodoList items={this.state.items} clearList={this.clearList} handleDelete={this.handleDelete} handleEdit={this.handleEdit}/> */}
+        </Col>
+        </Row>
+        <Row>
+          <Col size="md-6">
+            <Link to="/userForm">← Back to main page</Link>
+          </Col>
+        </Row>
+        <hr/>
+        <hr/>
       </Container>
     );
   }

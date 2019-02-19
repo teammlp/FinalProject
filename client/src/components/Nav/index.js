@@ -1,5 +1,5 @@
 import React from "react";
-// require('./Nav.css');
+require("./nav.css");
 
 function Nav() {
   return (
@@ -9,14 +9,14 @@ function Nav() {
           <span className="logo">
             <a href="/">
               <img
-                src="https://clipart.info/images/ccovers/1521073957easter-egg-hunt-clipart-png.png"
+                src="https://cdn3.iconfinder.com/data/icons/business-and-office-2-2/96/54-512.png"
                 alt="job application" width="50" height="50" className="d-inline-block align-top" alt="cute chicken"
               />
-              &nbsp; ezHunt
+              &nbsp; <span id="ezHunt">ezHunt</span>
             </a>
           </span>
         </div>
-        <div className="eight columns menu">
+        <div className="eight columns menu" id="menu">
           <div className="row">
             <div className="four columns">
               <a
@@ -35,7 +35,7 @@ function Nav() {
                 href="#about"
                 className="login"
               >
-                About
+                ABOUT
               </a>
             </div>
             <div className="two columns">

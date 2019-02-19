@@ -48,12 +48,12 @@
     background: rgba(255, 255, 255, 0.911);
     color: rgb(43, 99, 73);
     font-weight: bold;
-    font-size: 60px;
+    font-size: 50px;
     margin: 0 auto 26px;
     font-family: 'Libre Barcode 39 Text', cursive;
   }
   .loginWrap {
-    padding-top: 30px;
+    padding-top: 15px;
   }
 
   .loginmodal-submit {
