@@ -27,7 +27,7 @@ function Nav() {
               </a>
             </div>
             <div className="two columns">
-              <a href="/app/talks">TO DO</a>
+              <a href="/app/talks">TODO</a>
             </div>
             <div className="two columns">
               <a
@@ -35,7 +35,7 @@ function Nav() {
                 href="#about"
                 className="login"
               >
-                About
+                ABOUT
               </a>
             </div>
             <div className="two columns">
@@ -53,7 +53,7 @@ function Nav() {
                 href="/register"
                 className="login"
               >
-                SIGN UP
+                SIGNUP
               </a>
             </div>
           </div>
