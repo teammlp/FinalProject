@@ -39,7 +39,7 @@ class Home extends Component {
         ];
         return profiles.map((profile) =>
             <div style={{ textAlign: "center" }} className={profiles[0] === profile ? "carousel-item active" : "carousel-item"}>
-                <img src={profile.sourceImage} />
+                <img  src={profile.sourceImage} />
 
                 <a href={profile.postUrl} target="_blank">
                     <div>
