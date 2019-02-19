@@ -1,23 +1,18 @@
-import React from "react"
-//  import { Card } from "react-bootstrap"
-// import { Button } from 'react-bootstrap';
-
-
+import React from "react";
+import "./Footer.css";
 
 function Footer(props) {
-    return (
-        <footer>FOOTER</footer>
-//         <Card>
-//   <Card.Header>Featured</Card.Header>
-//   <Card.Body>
-//     <Card.Title>Special title treatment</Card.Title>
-//     <Card.Text>
-//       With supporting text below as a natural lead-in to additional content.
-//     </Card.Text>
-//     <Button variant="primary">Go somewhere</Button>
-//   </Card.Body>
-// </Card>
-    );
+  return (
+    <div id="footer">
+    <div class="card">
+      <div class="card-body">
+        <p class="card-text">
+          <a id="footer-text">Made with <span className="icon-heart">💜</span>by team MLP  </a>&copy; 2019
+        </p>
+      </div>
+    </div>
+    </div>
+  );
 }
 
 export default Footer;

@@ -31,8 +31,13 @@ div {
 }
 
 .logo {
-  font-size: 34px;
+  font-size: 30px;
   font-weight: 600;
+  /* display: flex; */
+}
+
+.row {
+  margin-right: 15px;
 }
 
 .column,
@@ -45,7 +50,7 @@ div {
 .header .menu {
   float: right;
   text-align: right;
-  font-size: 13px;
+  font-size: 17px;
   font-weight: 100;
 }
 
@@ -58,29 +63,7 @@ div {
     font-weight: 400;
 }
 
-@media (min-width: 550px) {
-  .column,
-  .columns {
-    margin-left: 4%;
-  }
 
-  .two.columns {
-    width: 13.3333333333%;
-  }
-
-  .four.columns {
-    width: 30.6666666667%;
-  }
-
-  .eight.columns {
-    width: 65.3333333333%;
-  }
-
-  .column:first-child,
-  .columns:first-child {
-    margin-left: 0;
-  }
-}
 
 /* .homeWrap h1 {
     text-transform: uppercase;
