@@ -4,12 +4,11 @@ import { Redirect, Link } from 'react-router-dom';
 import { userAPI} from "../../utils/API";
 // import ButtonBtn from "../../components/ButtonBtn";
 import { Input, TextArea, FormBtn, Date } from "../../components/Form";
-
 import DeleteBtn from "../../components/DeleteBtn";
 import Jumbotron from "../../components/Jumbotron";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
-import Nav from "../../components/Nav"
+import Nav from "../../components/Nav";
 
 require('./UserForm.css');
 
@@ -28,14 +27,6 @@ class UserForm extends Component {
           location: ""
       };
     }
-    // state = {
-    //     userForm: [],
-    //     company: "",
-    //     position: "",
-    //     detail: "",
-    //     date: "",
-    //     location: ""
-    //   };
     
 
     static contextTypes = {
@@ -118,9 +109,9 @@ class UserForm extends Component {
         <Row>
           <Col size="md-12">
             <Jumbotron>
-              <h3>Welcome to your EzHunt Vision Board!</h3>
+              <h3>Welcome to your EzHunt DashBoard!</h3>
+              {/* want to display User name on the welcome line */}
               <hr/>
-              {/* <p>Keep track on the job you applied and plan ahead, make your life more organized 🗂</p> */}
             </Jumbotron>
             </Col>
         </Row>

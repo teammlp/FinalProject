@@ -74,7 +74,7 @@ exports.saveUser = function (req, res) {
         password: {password of user},
     }
     */
-    var newuser = new db.User();
+    const newuser = new db.User();
     req.body.password = newuser.generateHash(req.body.password);
 
     db.User.create(req.body)

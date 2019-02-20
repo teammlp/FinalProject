@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import ButtonBtn from "../../components/ButtonBtn";
-import logo from "../../images/tracker.jpg";
 import "./Home.css";
 import Nav from "../../components/Nav";
 
@@ -47,7 +46,7 @@ class Home extends Component {
           profiles[0] === profile ? "carousel-item active" : "carousel-item"
         }
       >
-        <img src={profile.sourceImage}/>
+        <img src={profile.sourceImage} alt="sourceImage"/>
 
         <a href={profile.postUrl} target="_blank">
           <div>{profile.description}</div>
