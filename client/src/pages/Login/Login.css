@@ -7,6 +7,7 @@
     max-width: 350px;
     width: 100% !important;
     margin: 0 auto;
+    
   }
   .loginmodal-container input[type=text] {
     margin-bottom: 20px;
@@ -22,9 +23,11 @@
     text-align: left;
     justify-content: center;
     font-family: 'Berkshire Swash', cursive;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   .LogOrReg{
     text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   
   .login-help {
@@ -33,13 +36,14 @@
   .login-help a{
     color: red;
     font-size: 40px;
-    padding-top: 5px;
+    padding-top: 10px;
     font-family: 'Libre Barcode 39 Text', cursive;
   }
   form.login{
     padding: 70px;
     border: solid 2px gray;
     border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   
   .loginWrap h2 {
@@ -72,8 +76,8 @@
   .loginmodal-submit:hover {
     background: #ffffff; 
     color:  rgb(60, 112, 91)!important;
-    transition: all 0.7s;
-    transform: scale(1.1);
+    /* transition: all 0.7s;
+    transform: scale(1.1); */
     border: solid 1px rgb(2, 2, 2)!important;
   }
 
