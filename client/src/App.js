@@ -89,6 +89,7 @@ export default class App extends Component {
             </Switch>
           </div>
         </Router>
+        <hr/>
         <Footer/>
       </div>
     )

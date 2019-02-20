@@ -16,19 +16,21 @@
     font-size: 50px;
     margin: 0 auto 26px;
     font-family: 'Libre Barcode 39 Text', cursive;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 #registration-container .container-page {
 	max-width: 400px;
     margin: 0 auto;
 }
 #registration-container input {
-    border-radius: 90px !important;
+    border-radius: 10px !important;
     background-color: rgba(255, 255, 255, 0.863) !important; 
     border: none;
     padding: 7px;
 	width: 100%;
 	color: darkcyan;
     font-family: 'Berkshire Swash', cursive;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 small, p#email-feedback {
 	color: rgb(20, 8, 129);
@@ -51,8 +53,8 @@ button[type=submit] {
   button[type=submit]:hover {
     background: #ffffff; 
     color: rgb(60, 112, 91)!important;
-    transition: all 0.7s;
-    transform: scale(1.1);
+    /* transition: all 0.7s;
+    transform: scale(1.1); */
     border: solid 1px rgb(2, 2, 2)!important;
   }
 

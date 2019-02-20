@@ -55,6 +55,7 @@ class Detail extends Component {
     this.setState({
       items:[]
     })
+    console.log(this.clearList,"clearlist clicked");
   }
 
   handleDelete = (id) => {
@@ -98,8 +99,9 @@ class Detail extends Component {
           <Col size="md-12">
            <div className="detailInfo">  
               <h3>
-              Company Name:  {this.state.userForm.company}||
-              Position: {this.state.userForm.position}|| Location: {this.state.userForm.location}
+              <span> Company Name: </span>{this.state.userForm.company}
+              <span> Position:</span> {this.state.userForm.position} 
+              <span> Location: </span> {this.state.userForm.location}
               </h3>
             </div>
           </Col>
@@ -110,38 +112,22 @@ class Detail extends Component {
               <h3>About Company</h3>
               <p>
                 {this.state.userForm.detail}
-                <TodoItem/>
               </p>
             </article>
           </Col>
           <Col size="md-6">
-          <form>
-            <TextArea
-                value={this.state.update}
-                onChange={this.handleInputChange}
-                name="update"
-                placeholder="Update your application status here..."
-              />
-            <FormBtn onClick={this.handleFormSubmit} >
-                Submit
-            </FormBtn>
-          </form>
-          </Col>
-        </Row>
-        <Row>
-        <Col size="md-10">
-        <TodoInput 
+          <TodoInput 
               title={this.state.item} 
               name="item"
               handleInputChange={this.handleInputChange} 
               handleSubmit={this.handleSubmit} editItem={this.editItem}/>
             <TodoItem items={this.state.items} learList={this.clearList} handleDelete={this.handleDelete} handleEdit={this.handleEdit}/>
-            {/* <TodoList items={this.state.items} clearList={this.clearList} handleDelete={this.handleDelete} handleEdit={this.handleEdit}/> */}
-        </Col>
+            <TodoList items={this.state.items} clearList={this.clearList} handleDelete={this.handleDelete} handleEdit={this.handleEdit}/>
+          </Col>
         </Row>
         <Row>
           <Col size="md-6">
-            <Link to="/userForm">← Back to main page</Link>
+            <Link to="/userForm" className="backLink">← Back to main page</Link>
           </Col>
         </Row>
         <hr/>

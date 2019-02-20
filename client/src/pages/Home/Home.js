@@ -65,7 +65,7 @@ class Home extends Component {
           <div className="row">
             <div className="five columns jumbo-text">
               <div className="title">
-                <h1>Organization Tools</h1>
+                <h1>Organizational Tools</h1>
                 <h3>for your job hunt</h3>
                 <div> 
                   <ButtonBtn>

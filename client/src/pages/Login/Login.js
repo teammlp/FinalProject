@@ -137,6 +137,7 @@ export default class Login extends Component {
             <div className="login-help">
               <Link to={"/register"}> Register <i className="fas fa-pencil-alt fa-xs"/></Link>
             </div>
+            <hr/>
           </div>
         </div>
         {/* <div className="row">
