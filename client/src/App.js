@@ -8,6 +8,7 @@ import Detail from "./pages/Detail";
 import "./App.css";
 import TodoLists from "./pages/TodoLists";
 import Footer from "./components/Footer/Footer";
+import Carousel from "./components/Carousel/Carousel";
 
 
 export default class App extends Component {
