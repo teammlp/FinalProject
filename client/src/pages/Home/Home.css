@@ -17,7 +17,7 @@ div {
 h1 {
   font-size: 43px;
   letter-spacing: -1.3px;
-  color: #fff;
+  color: rebeccapurple;
   font-weight: 700;
   letter-spacing: 0px;
 }
@@ -25,7 +25,7 @@ h1 {
 h3 {
   letter-spacing: -0.5px;
   font-size: 35px;
-  color: rgba(255,255,255,0.9);
+  color: rgba(255, 255, 255, 0.9);
   font-weight: 100;
   padding-bottom: 8px;
 }
@@ -44,18 +44,6 @@ h3 {
   background: -webkit-linear-gradient(-45deg, #166851 0%, #199266 100%);
   background: linear-gradient(135deg, #166851 0%, #199266 100%);
 } */
-
-.header {
-  padding: 30px 50px;
-  color: #fff;
-  line-height: 50px;
-}
-
-.logo {
-  font-size: 30px;
-  font-weight: 600;
-  /* display: flex; */
-}
 
 .row {
   margin-right: 15px;
@@ -76,12 +64,14 @@ h3 {
 }
 
 .header .menu a {
-  color: #ac8ee9;
+  color: blueviolet;
   text-decoration: none;
   margin-left: 50px;
   text-transform: uppercase;
   letter-spacing: 3px;
   font-weight: 400;
+  font-size: x-large;
+  text-shadow: -2px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
 .jumbo {
@@ -99,53 +89,16 @@ h3 {
   color: black;
 }
 
-.screenshot-container {
-  border-radius: 8px;
-  position: relative;
-  height: 600px;
-}
-
-.screenshot-container img {
-  max-width: 950px;
-  width: 100%;
-  position: relative;
-}
-
-.screenshot-container img.content {
-  box-shadow: 0px 10px 25px rgba(25,4,69,0.1);
-  min-width: 856px;
-  border-radius: 0px 0px 4px 4px;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-}
-
-.container img {
-  transition: visibility 0s, opacity 0.5s ease-out;
-}
-
-.container img {
-  transition: visibility 0s, opacity 0.5s ease-out;
-}
-
-.carousel-control-prev {
-  left: -35px;
-}
-
-.carousel-inner {
-  margin-top: 50px;
-  margin-left: 115px;
-}
-
 @media (min-width: 550px) {
   .column:first-child,
   .columns:first-child {
     margin-left: 0;
   }
 
-  .one.column, .one.columns {
+  .one.column,
+  .one.columns {
     width: 4.66666666667%;
-}
+  }
 
   .column,
   .columns {
@@ -161,14 +114,13 @@ h3 {
     width: 48%;
   }
 
-  .seven.columns{
+  .seven.columns {
     width: 56.3333333333%;
   }
 
   .eight.columns {
     width: 65.3333333333%;
   }
-
 }
 
 /* .homeWrap h1 {
