@@ -127,7 +127,7 @@ class Detail extends Component {
         </Row>
         <Row>
           <Col size="md-6">
-            <Link to="/userForm" className="backLink">← Back to main page</Link>
+            <a onClick={() => this.props.history.goBack()}>← Back to main page</a>
           </Col>
         </Row>
         <hr/>
