@@ -1,6 +1,9 @@
 import React from "react";
-import IndeedImg from "../../images/Indeed-Logo-1-1.jpg";
 import "./Carousel.css";
+import IndeedImg from '../../images/Indeed.jpeg';
+import BuiltImg from '../../images/Built.png';
+import StackImg from '../../images/Stack.png';
+import GlassImg from '../../images/Glass.png';
 
 
 
@@ -12,18 +15,17 @@ import "./Carousel.css";
                 postUrl: "https://www.indeed.com"
             },
             {
-                sourceImage: IndeedImg,
+                sourceImage: BuiltImg,
                 description: "Built In Chicago Job Listing",
                 postUrl: "https://www.builtinchicago.org/"
             },
             {
-                sourceImage:
-                    IndeedImg,
+                sourceImage:GlassImg,
                 description: "Glassdoor Job Listing",
                 postUrl: "https://www.glassdoor.com/index.htm"
             },
             {
-                sourceImage: IndeedImg,
+                sourceImage: StackImg,
                 description: "Stackoverflow Job Listing",
                 postUrl: "https://stackoverflow.com/jobs?med=site-ui&ref=jobs-tab"
             }
