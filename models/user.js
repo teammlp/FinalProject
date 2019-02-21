@@ -25,7 +25,8 @@ const UserSchema = new Schema({
         type: String,
         min: [8, 'Your password must be at least 8 characters large'],
         required: [true, 'Please enter a password.']
-    }
+    },
+    userForms : [{ type: Schema.Types.ObjectId, ref: "UserForm" }]
 });
 
 // methods ======================

@@ -48,8 +48,8 @@ export default {
         return axios.post("/api/task", taskData);
       },
 
-    getUserForms: function() {
-        return axios.get("/api/userForm");
+    getUserForms: function(id) {
+        return axios.get(`/api/userForm/?_user=${id}`);
     },
       // Gets the userForm with the given id
     getUserForm: function(id) {

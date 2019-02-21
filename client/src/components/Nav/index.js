@@ -1,7 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom"
 require("./nav.css");
 
-function Nav() {
+
+function Nav(props) {
+  // will be null if user is not defined
   return (
     <div className="full-width-container header">
       <div className="row">
@@ -20,7 +23,7 @@ function Nav() {
           <div className="row">
             <div className="four columns">
               <a
-                onclick="trackEvent('landing_go_to_advisor_page_clicked')"
+                onClick="trackEvent('landing_go_to_advisor_page_clicked')"
                 href="#carouselExampleControls"
               >
                 JOBS
@@ -38,24 +41,39 @@ function Nav() {
                 ABOUT
               </a>
             </div>
-            <div className="two columns">
-              <a
-                onclick="trackEvent('landing_login_clicked')"
-                href="/login"
-                className="login"
-              >
-                LOGIN
+            {
+              props.user ?
+              <div className="two columns">
+                  <Link
+                    to={{
+                      pathname: "/userForm",
+                      state:{user: props.user}
+                    }}
+                  >{props.user.username}
+                  </Link>
+                </div>
+                :
+                <>
+                  <div className="two columns">
+                    <a
+                      onclick="trackEvent('landing_login_clicked')"
+                      href="/login"
+                      className="login"
+                    >
+                      LOGIN
               </a>
-            </div>
-            <div className="two columns">
-              <a
-                onclick="trackEvent('landing_signup_clicked')"
-                href="/register"
-                className="login"
-              >
-                SIGNUP
+                  </div>
+                  <div className="two columns">
+                    <a
+                      onclick="trackEvent('landing_signup_clicked')"
+                      href="/register"
+                      className="login"
+                    >
+                      SIGNUP
               </a>
-            </div>
+                  </div>
+                </>
+            }
           </div>
         </div>
       </div>

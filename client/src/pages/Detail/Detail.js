@@ -121,7 +121,7 @@ class Detail extends Component {
               name="item"
               handleInputChange={this.handleInputChange} 
               handleSubmit={this.handleSubmit} editItem={this.editItem}/>
-            <TodoItem items={this.state.items} learList={this.clearList} handleDelete={this.handleDelete} handleEdit={this.handleEdit}/>
+            {/* <TodoItem items={this.state.items} learList={this.clearList} handleDelete={this.handleDelete} handleEdit={this.handleEdit}/> */}
             <TodoList items={this.state.items} clearList={this.clearList} handleDelete={this.handleDelete} handleEdit={this.handleEdit}/>
           </Col>
         </Row>

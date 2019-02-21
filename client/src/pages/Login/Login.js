@@ -12,6 +12,7 @@ export default class Login extends Component {
       username: '',
       password: '',
       redirectToReferrer: false,
+      userForms: null
     };
 
     this.handleUsernameChange = this.handleUsernameChange.bind(this);
@@ -41,7 +42,8 @@ export default class Login extends Component {
           sessionStorage.setItem('userAuth', 'yes');
           sessionStorage.setItem("userUsername", username);
           this.setState({
-            redirectToReferrer: true
+            redirectToReferrer: true,
+            user: data.data.user
           });
         }
         else {
@@ -77,12 +79,12 @@ export default class Login extends Component {
   }
 
   render() {
-    const { from } = this.props.location.state || { from: { pathname: '/userForm' } };
+    const destination =   { pathname: '/userForm', state: { user: this.state.user } };
     const { redirectToReferrer } = this.state;
 
     if (redirectToReferrer) {
       return (
-        <Redirect to={from} />
+        <Redirect to={destination} />
       )
     }
 

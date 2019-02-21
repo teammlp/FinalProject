@@ -27,11 +27,28 @@ exports.pleasegodlogin = (req, res, next) => {
                 user: userData
             })
         }
-        return res.json({
-            success: true,
-            message: 'You have successfully logged in!',
-            user: userData
-        });
+        if (userData.userForms && userData.userForms.length) {
+            const queries = userData.userForms.map(_id => ({_id}));
+            db.UserForm.find({
+                $or: queries
+            }).then( userForms => {
+                userData.userForms = userForms;
+                console.log(userForms);
+                res.json({
+                    success: true,
+                    message: 'You have successfully logged in!',
+                    user: userData
+                })
+            });
+        } else {
+            res.json({
+                success: true,
+                message: 'You have successfully logged in!',
+                user: userData
+            })
+        }
+        
+
     })(req, res, next);
 };
 
@@ -113,21 +130,21 @@ exports.updateUser = function (req, res) {
 exports.deleteUser = function (req, res) {
 
     db.User.findById(req.params.id)
-                .then(function (result) {
-                    const newUsers = [];
-                    result.users.forEach(id => {
-                        if (id == req.params.id) {
-                            db.User.findByIdAndRemove(id)
-                                .catch(function (err) {
-                                    // If an error occurred, send it to the client
-                                    return res.json(err);
-                                });;
-                        }
-                        else newUsers.push(id);
-                    });
-                })
-                .catch(function (err) {
-                    // If an error occurred, send it to the client
-                    return res.json(err);
-                });
+        .then(function (result) {
+            const newUsers = [];
+            result.users.forEach(id => {
+                if (id == req.params.id) {
+                    db.User.findByIdAndRemove(id)
+                        .catch(function (err) {
+                            // If an error occurred, send it to the client
+                            return res.json(err);
+                        });;
+                }
+                else newUsers.push(id);
+            });
+        })
+        .catch(function (err) {
+            // If an error occurred, send it to the client
+            return res.json(err);
+        });
 }

@@ -227,13 +227,13 @@ export default class Register extends Component {
 
                                     <div id="username-form" ref="usernameForm" className="form-group col-lg-12">
                                         {/* <label>Username</label> */}
-                                        <input type="" name="" ref="username" placeholder="Username" className="form-control" id="username-input" value={this.state.username} onChange={this.handleUsernameValidation} />
+                                        <input type="" name="" ref="username" placeholder="Enter Username" className="form-control" id="username-input" value={this.state.username} onChange={this.handleUsernameValidation} />
                                         <small id="username-feedback" ref="usernameFeedback" className=""></small>
                                     </div>
 
                                     <div id="password-form" className="form-group col-lg-12" ref="passwordForm">
                                         {/* <label>Password</label> */}
-                                        <input type="password" name="" placeholder="Password" ref="password" className="form-control" id="password-input" value={this.state.password} onChange={this.handlePasswordValidation} />
+                                        <input type="password" name="" placeholder="Enter Password" ref="password" className="form-control" id="password-input" value={this.state.password} onChange={this.handlePasswordValidation} />
                                         <small id="password-feedback" ref="passwordFeedback" className=""></small>
                                     </div>
 
@@ -245,7 +245,7 @@ export default class Register extends Component {
 
                                     <div id="email-form" className="form-group col-lg-12" ref="emailForm">
                                         {/* <label>Email Address</label> */}
-                                        <input type="email" name="" placeholder="Email Address" ref="email" className="form-control" id="email-input" value={this.state.email} onChange={this.handleEmailValidation} />
+                                        <input type="email" name="" placeholder="Enter Email Address" ref="email" className="form-control" id="email-input" value={this.state.email} onChange={this.handleEmailValidation} />
 
                                         <p id="email-feedback" className="" ref="emailFeedback"></p>
                                         <small id="email-additional-feedback" ref="emailAdditionalFeedback" className="form-text text-muted"></small>
