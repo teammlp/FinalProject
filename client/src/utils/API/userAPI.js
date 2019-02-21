@@ -34,22 +34,22 @@ export default {
         return axios.post(`/api/user/login`,cred);
     },
 
-    getJobLists: function() {
-        return axios.get("/api/jobLists");
+    getTasks: function() {
+        return axios.get("/api/task");
       },
-      getJobList: function(id) {
-        return axios.get("/api/jobLists/" + id);
+      getTask: function(id) {
+        return axios.get("/api/task/" + id);
       },
-      deleteJobList: function(id) {
-        return axios.delete("/api/jobLists/" + id);
+      deleteTask: function(id) {
+        return axios.delete("/api/task/" + id);
       },
-      saveJobList: function(jobListData) {
-          console.log(jobListData);
-        return axios.post("/api/jobLists", jobListData);
+      saveTask: function(taskData) {
+          console.log(taskData);
+        return axios.post("/api/task", taskData);
       },
 
-    getUserForms: function() {
-        return axios.get("/api/userForm");
+    getUserForms: function(id) {
+        return axios.get(`/api/userForm/?_user=${id}`);
     },
       // Gets the userForm with the given id
     getUserForm: function(id) {

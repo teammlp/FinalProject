@@ -1,0 +1,42 @@
+.screenshot-container {
+    border-radius: 8px;
+    position: relative;
+    height: 600px;
+  }
+  
+  .screenshot-container img {
+    max-width: 950px;
+    width: 100%;
+    position: relative;
+  }
+  
+  .screenshot-container img.content {
+    box-shadow: 0px 10px 25px rgba(25,4,69,0.1);
+    min-width: 856px;
+    border-radius: 0px 0px 4px 4px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+  
+  .container img {
+    transition: visibility 0s, opacity 0.5s ease-out;
+  }
+  
+  .container img {
+    transition: visibility 0s, opacity 0.5s ease-out;
+  }
+  
+  .carousel-control-prev {
+    left: -35px;
+  }
+  
+  .carousel-inner {
+    margin-top: 50px;
+    margin-left: 115px;
+  }
+
+  .Images{
+    height: 200px;
+    width: 50%;
+  }

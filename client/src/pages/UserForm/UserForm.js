@@ -1,137 +1,122 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Redirect, Link } from 'react-router-dom';
-import { userAPI} from "../../utils/API";
+import { userAPI } from "../../utils/API";
 // import ButtonBtn from "../../components/ButtonBtn";
 import { Input, TextArea, FormBtn, Date } from "../../components/Form";
-
 import DeleteBtn from "../../components/DeleteBtn";
 import Jumbotron from "../../components/Jumbotron";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
-import Nav from "../../components/Nav"
+import Nav from "../../components/Nav";
 
 require('./UserForm.css');
 
 class UserForm extends Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
 
-      this.state = {
-          userID: "",
-          username: "",
-          userForms: [],
-          company: "",
-          position: "",
-          detail: "",
-          date: "",
-          location: ""
-      };
+    this.state = {
+      user: {},
+      userID: "",
+      username: "",
+      userForms: [],
+      company: "",
+      position: "",
+      detail: "",
+      date: "",
+      location: ""
+    };
+  }
+
+
+  static contextTypes = {
+    router: PropTypes.object,
+  }
+
+  componentDidMount() {
+    const {user} = this.props.location.state;
+    this.setState({
+      userForms: user.userForms,
+      user: user
+    })
+    if ((sessionStorage.getItem('userAuth') === 'yes') && sessionStorage.getItem("userUsername")) {
+      this.setState({
+        username: sessionStorage.getItem('userUsername'),
+      });
     }
-    // state = {
-    //     userForm: [],
-    //     company: "",
-    //     position: "",
-    //     detail: "",
-    //     date: "",
-    //     location: ""
-    //   };
-    
+  }
 
-    static contextTypes = {
-        router: PropTypes.object,
+  logout = () => {
+    this.props.deAuthenticate();
+    sessionStorage.removeItem("userAuth");
+    sessionStorage.removeItem("userUsername");
+    sessionStorage.removeItem("userID");
+    window.location.reload();
+  }
+
+  loadUserForm = () => {
+    userAPI.getUserForms(this.state.user._id)
+      .then(res => {
+        console.log(res);
+        this.setState({ userForms: res.data, company: "", position: "", detail: "", date: "", location: "" })
+      })
+      .catch(err => console.log(err, "Why error, huh?"));
+  };
+  deleteUserForm = id => {
+    userAPI.deleteUserForm(id)
+      .then(res => this.loadUserForm())
+      .catch(err => console.log(err));
+  };
+
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+    if (this.state.company && this.state.position) {
+      userAPI.saveUserForm({
+        _user: this.props.location.state.user._id,
+        company: this.state.company,
+        position: this.state.position,
+        detail: this.state.detail,
+        date: this.state.date,
+        location: this.state.location
+      })
+        .then(res => this.loadUserForm())
+        .catch(err => console.log(err));
     }
 
-    componentDidMount() {
+  };
 
-        this.loadUserForm();
-        if ((sessionStorage.getItem('userAuth') === 'yes') && sessionStorage.getItem("userUsername")) {
-            if (sessionStorage.getItem("userID")) {
-                this.setState({
-                    username: sessionStorage.getItem('userUsername')
-                });
-            }
-            this.getUserId(sessionStorage.getItem('userUsername'));
-        }
-    }
-
-    loadUserForm = () => {
-        userAPI.getUserForms()
-          .then(res =>
-            this.setState({ userForms: res.data, company: "", position: "", detail: "", date: "", location: "" })
-          )
-          .catch(err => console.log(err, "Why error, huh?"));
-      };
-
-    getUserId = userUsername => {
-        userAPI.getUser(userUsername)
-            .then(res => {
-                console.log("get username", res);
-                this.setState({ userID: res.data._id });
-            })
-            .catch(err => console.log(err));
-    }
-
-    logout = () => {
-        this.props.deAuthenticate();
-        sessionStorage.removeItem("userAuth");
-        sessionStorage.removeItem("userUsername");
-        sessionStorage.removeItem("userID");
-        window.location.reload();
-    }
-
-    deleteUserForm = id => {
-        userAPI.deleteUserForm(id)
-          .then(res => this.loadUserForm())
-          .catch(err => console.log(err));
-      };
-    
-      handleInputChange = event => {
-        const { name, value } = event.target;
-        this.setState({
-          [name]: value
-        });
-      };
-
-      handleFormSubmit = event => {
-        event.preventDefault();
-        if (this.state.company && this.state.position) {
-          userAPI.saveUserForm({
-            company: this.state.company,
-            position: this.state.position,
-            detail: this.state.detail,
-            date: this.state.date,
-            location: this.state.location
-          })
-            .then(res => this.loadUserForm())
-            .catch(err => console.log(err));
-        }
-        
-      };
-
-    render() {
-        return ( !(sessionStorage.getItem("userAuth") === 'yes') ?
-    <Redirect to={{ pathname: '/login' }} /> :
+  render() {
+    const { user, userForms } = this.state;
+    return (!(sessionStorage.getItem("userAuth") === 'yes') ?
+      <Redirect to={{ pathname: '/login' }} /> :
       <Container fluid>
-      <Nav/>
+        <Nav user={user}/>
         <FormBtn onClick={this.logout}>logout</FormBtn>
         <Row>
           <Col size="md-12">
             <Jumbotron>
-              <h3>Welcome to your EzHunt Vision Board!</h3>
-              <hr/>
-              {/* <p>Keep track on the job you applied and plan ahead, make your life more organized 🗂</p> */}
+              <h3>Welcome to your EzHunt DashBoard!</h3>
+              {/* want to display User name on the welcome line */}
+              <hr />
             </Jumbotron>
-            </Col>
+          </Col>
         </Row>
         <Row>
-        <Col size="md-6 sm-6">
+          <Col size="md-6 sm-6">
             {/* <Jumbotron> */}
-              <h3 className="List">Companies On My List <i className="fas fa-archive fa-xs"></i></h3>
+            <h3 className="List">Companies On My List <i className="fas fa-archive fa-xs"></i></h3>
             {/* </Jumbotron> */}
-            {this.state.userForms.length ? (
+            {userForms.length ? (
               <List>
-                {this.state.userForms.map( userForm => (
+                {userForms.map(userForm => (
                   <ListItem key={userForm._id}>
                     <Link to={"/userForm/" + userForm._id}>
                       <strong>
@@ -143,11 +128,11 @@ class UserForm extends Component {
                 ))}
               </List>
             ) : (
-              <h3>No Results to Display</h3>
-            )}
+                <h3>No Results to Display</h3>
+              )}
           </Col>
           <Col size="md-6">
-          <h3 className="List">New application <i className="far fa-copy fa-xs"></i></h3>
+            <h3 className="List">New application <i className="far fa-copy fa-xs"></i></h3>
             <form>
               <Input
                 value={this.state.company}

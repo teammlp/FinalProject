@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const userFormController = require("../../controllers/userFormController");
 
-// Matches with "/api/jobLists"
+// Matches with "/api/userForm"
 router.route("/")
   .get(userFormController.findAll)
   .post(userFormController.create);

@@ -1,17 +1,31 @@
 #ezHunt {
   font-family: "Josefin Sans", sans-serif;
-  font-size: 35px;
+  font-size: 44px;
   font-weight: normal;
+  color: green;
+  text-shadow: -2px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  font-weight: 600;
+}
+
+.header {
+  padding: 30px 50px;
+  color: #fff;
+  line-height: 50px;
+  margin-top: 15px;
+  margin-right: 10px;
 }
 
 .logo img {
   max-width: 125px;
+  margin-left: 30px;
 }
 
 .logo {
   display: flex;
   text-align: center;
   font-weight: normal;
+  font-size: 54px;
+  font-weight: 600;
   /* margin-left: auto;
     margin-right: auto; */
 }

@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
-// import Register from "../Register";
 import { userAPI } from "../../utils/API";
 import './Login.css';
 import Nav from "../../components/Nav";
-// import TodoInput from "../../components/TodoInput";
-// import TodoList from "../../components/TodoList";
-
-// import uuid from "uuid";
 
 export default class Login extends Component {
 
@@ -17,26 +12,13 @@ export default class Login extends Component {
       username: '',
       password: '',
       redirectToReferrer: false,
-
-      // todo list state
-      // items: [],
-      // id: uuid(),
-      // item: "",
-      // editItem: false
+      userForms: null
     };
 
     this.handleUsernameChange = this.handleUsernameChange.bind(this);
     this.handlePasswordChange = this.handlePasswordChange.bind(this);
     this.loginUser = this.loginUser.bind(this);
-    // this.handleChange = this.handleChange.bind(this);
-    // this.handleTodoSubmit= this.handleTodoSubmit.bind(this)
   }
-
-  // handleChange = (e) => {
-  //   this.setState({
-  //     item: e.target.value
-  //   });
-  // };
 
   handleUsernameChange(event) {
     this.setState({
@@ -60,7 +42,8 @@ export default class Login extends Component {
           sessionStorage.setItem('userAuth', 'yes');
           sessionStorage.setItem("userUsername", username);
           this.setState({
-            redirectToReferrer: true
+            redirectToReferrer: true,
+            user: data.data.user
           });
         }
         else {
@@ -77,24 +60,6 @@ export default class Login extends Component {
       password: ""
     });
   }
-
-  // handleTodoSubmit(e){
-  //   e.preventDefault();
-    
-  //   const newItem = {
-  //     id: this.state.id,
-  //     title: this.state.item
-  //   }
-  //   console.log(newItem);
-  //   const updatedItems = {...this.state.items, newItem};
-  //   this.setState({
-  //     items: updatedItems,
-  //     item: "",
-  //     id: uuid(),
-  //     editItem: false
-  //   })
-
-  // }
 
   handleSubmit(event) {
     event.preventDefault();
@@ -114,12 +79,12 @@ export default class Login extends Component {
   }
 
   render() {
-    const { from } = this.props.location.state || { from: { pathname: '/userForm' } };
+    const destination =   { pathname: '/userForm', state: { user: this.state.user } };
     const { redirectToReferrer } = this.state;
 
     if (redirectToReferrer) {
       return (
-        <Redirect to={from} />
+        <Redirect to={destination} />
       )
     }
 
