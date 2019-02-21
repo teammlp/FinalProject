@@ -37,7 +37,7 @@ import GlassImg from '../../images/Glass.png';
                     profiles[0] === profile ? "carousel-item active" : "carousel-item"
                 }
             >
-                <img src={profile.sourceImage} alt="sourceImage" />
+                <img class="Images" src={profile.sourceImage} alt="sourceImage" />
 
                 <a href={profile.postUrl} target="_blank">
                     <div>{profile.description}</div>
