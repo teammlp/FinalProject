@@ -2,7 +2,7 @@
 
 .jumbotron {
     font-family: 'Crimson Text', serif;
-    height: 30px!important;
+    /* height: 30px!important; */
     color: rgb(72, 109, 110);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

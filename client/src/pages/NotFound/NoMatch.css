@@ -1,0 +1,16 @@
+#not-found {
+    margin-top: 30px;
+}
+
+/* #not-found-h2 a {
+    color: blue;
+} */
+
+#not-found-h2 a {
+    color: blue;
+}
+
+h2:hover {
+    /* color: green; */
+    text-decoration: underline;
+}

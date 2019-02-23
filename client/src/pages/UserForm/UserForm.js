@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Redirect, Link } from 'react-router-dom';
 // import DatePicker from 'react-datepicker';
-import moment from 'moment';
+// import moment from 'moment';
 import { userAPI } from "../../utils/API";
 // import ButtonBtn from "../../components/ButtonBtn";
 import { Input, TextArea, FormBtn, Date } from "../../components/Form";

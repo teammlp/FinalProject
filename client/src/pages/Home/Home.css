@@ -56,6 +56,10 @@ h3 {
   box-sizing: border-box;
 }
 
+.menu {
+  background-color:rgba(0,0,0,0.1);
+}
+
 .header .menu {
   float: right;
   text-align: right;
