@@ -59,6 +59,9 @@ export default {
     deleteUserForm: function(id) {
         return axios.delete("/api/userForm/" + id);
     },
+    updateUserForm: function(id){
+        return axios.update("/api/userForm" + id);
+    },
       // Saves a userForm to the database
     saveUserForm: function(userFormData) {
           console.log(userFormData);

@@ -28,7 +28,7 @@ export function FormBtn(props) {
 export function Date(props) {
   return (
     <div className="form-group">
-      <input type="Date" className="form-control" {...props} />
+      <input type="date" className="form-control" {...props} />
     </div>
   );
 }

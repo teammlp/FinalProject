@@ -3,13 +3,10 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
 import {userAPI} from "../../utils/API";
-import { TextArea, FormBtn } from "../../components/Form";
 import Nav from "../../components/Nav";
-import TodoItem from "../../components/TodoItem";
 import TodoInput from "../../components/TodoInput";
 import TodoList from "../../components/TodoList";
 import uuid from "uuid";
-import Create from '../../components/Create-Task'
 require('./Detail.css');
 
 
@@ -80,6 +77,13 @@ class Detail extends Component {
       editItem: true,
       id: id
     });
+  }
+  detailUpdate= () =>{
+    userAPI.updateUserForm(this.state.userForm._id)
+    .then(res => {
+      console.log(res);
+      this.setState({userForm: res.data, detail:""})
+    }). catch(err => console.log(err, "hey error!"))
   }
 
 

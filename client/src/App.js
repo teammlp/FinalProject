@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import UserForm from "./pages/UserForm";
 import Home from "./pages/Home";
+import Notfound from "./pages/NotFound";
 import Detail from "./pages/Detail";
 import "./App.css";
 import TodoLists from "./pages/TodoLists";
@@ -84,6 +85,8 @@ export default class App extends Component {
               <Route exact path="/task" component={Task} />
 
                <Route exact path="/JobBoard" component={JobBoard} />
+
+                <Route component={Notfound} />
 
             </Switch>
           </div>

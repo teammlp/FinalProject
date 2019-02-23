@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Redirect, Link } from 'react-router-dom';
 // import DatePicker from 'react-datepicker';
+import moment from 'moment';
 import { userAPI } from "../../utils/API";
 // import ButtonBtn from "../../components/ButtonBtn";
 import { Input, TextArea, FormBtn, Date } from "../../components/Form";
@@ -161,6 +162,9 @@ class UserForm extends Component {
                 onChange={this.handleInputChange}
                 name="date"
                 placeholder="Date you applied"
+                timeFormat="HH:mm"
+                timeIntervals={15}
+                dateFormat="MMMM d, yyyy h:mm aa"
               />
               <Input
                 value={this.state.location}

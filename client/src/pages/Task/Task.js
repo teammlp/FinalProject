@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from "prop-types";
 import Create from '../../components/Create-Task'
 import Tasks from '../../components/Task'
 import Guess from '../../components/Guess'
@@ -54,6 +55,10 @@ export default class Task extends Component {
 
   closeModal = () => {
     this.setState(() => ({selectedTask: undefined}))
+  }
+  
+  static contextTypes = {
+    router: PropTypes.object,
   }
 
   onSubmit = (event) => {
