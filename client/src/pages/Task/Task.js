@@ -19,22 +19,22 @@ export default class Task extends Component {
 
   componentDidMount = () => {
     try {
-        const json = localStorage.getItem('tasks')
-        const tasks = JSON.parse(json)
+      const json = localStorage.getItem('tasks')
+      const tasks = JSON.parse(json)
 
-        if (tasks) {
-            this.setState(() => ({tasks}))
-        }
-    } catch(e) {
-        this.setState(() => ({selectedTask: 'Something went wrong!'}))
+      if (tasks) {
+        this.setState(() => ({ tasks }))
+      }
+    } catch (e) {
+      this.setState(() => ({ selectedTask: 'Something went wrong!' }))
     }
   }
 
   componentDidUpdate = (prevProps, prevState) => {
-      if(prevState.tasks.length !== this.state.tasks.length) {
-          const json = JSON.stringify(this.state.tasks)
-          localStorage.setItem('tasks', json)
-      }
+    if (prevState.tasks.length !== this.state.tasks.length) {
+      const json = JSON.stringify(this.state.tasks)
+      localStorage.setItem('tasks', json)
+    }
   }
 
   deleteTask = (taskTodelete) => {
@@ -46,17 +46,17 @@ export default class Task extends Component {
   whatTodo = () => {
     const randNum = Math.floor(Math.random() * this.state.tasks.length)
     const task = this.state.tasks[randNum]
-    this.setState(() => ({selectedTask: task}))
+    this.setState(() => ({ selectedTask: task }))
   }
 
   deleteAll = () => {
-    this.setState(() => ({tasks: []}))
+    this.setState(() => ({ tasks: [] }))
   }
 
   closeModal = () => {
-    this.setState(() => ({selectedTask: undefined}))
+    this.setState(() => ({ selectedTask: undefined }))
   }
-  
+
   static contextTypes = {
     router: PropTypes.object,
   }
@@ -64,65 +64,66 @@ export default class Task extends Component {
   onSubmit = (event) => {
     event.preventDefault()
     const singletask = event.target.elements.singletask.value.trim().toLowerCase()
-    if(!singletask) {
-        this.setState(() => ({selectedTask: 'Please enter a task!'}))
-    } else if(this.state.tasks.indexOf(singletask) > -1) {
-        this.setState(() => ({selectedTask: 'This task already exists!'}))
+    if (!singletask) {
+      this.setState(() => ({ selectedTask: 'Please enter a task!' }))
+    } else if (this.state.tasks.indexOf(singletask) > -1) {
+      this.setState(() => ({ selectedTask: 'This task already exists!' }))
     } else this.setState((prevState) => ({ tasks: [...prevState.tasks, singletask] }))
     event.target.elements.singletask.value = ''
   }
   render() {
     return (!(sessionStorage.getItem("userAuth") === 'yes') ?
-    <Redirect to={{ pathname: '/login' }} /> :
+      <Redirect to={{ pathname: '/login' }} /> :
       <div>
-      <Container fluid>
-        <Jumbotron>
-          <h3>Enter your tasks to achieve your Goal!</h3>
-        </Jumbotron>
-        <Row>
-          <Col size="md-12 sm-12">
-        <Create 
-        onSubmit={this.onSubmit} 
-        />
-        { this.state.tasks.length > 0 ?
-          <Guess
-            whatTodo={this.whatTodo}
-          />
-          : null
-        }
-        {
-          this.state.tasks.length === 0 &&
-          <div className="text-center">
-            <h4>Please Enter a task!</h4>
-          </div>
-        }
-        { this.state.tasks.length > 0 ?
-        
-          <Tasks
-            tasks={this.state.tasks}
-            deleteTask={this.deleteTask}
-          />
-          : null
-        }
-        { this.state.tasks.length > 0 ?
-          <Deleteall
-            deleteAll={this.deleteAll}
-          />
-          : null
-        }
-        <ModalAlert
-            selectedTask={this.state.selectedTask}
-            closeModal={this.closeModal}
-        />
-        </Col>
-        </Row>
-        <Row>
-          <Col size="md-12">
-        <Link />
-            <a href="/userForm" onClick={() => this.props.history.goBack()}>← Back to main page</a>
-          </Col>
-       </Row>
-       </Container>
+        <Container fluid>
+          <Jumbotron>
+            <h3>Enter your tasks to achieve your Goal!</h3>
+          </Jumbotron>
+          <Row>
+            <Col size="md-12 sm-12">
+              <Create
+                onSubmit={this.onSubmit}
+              />
+              {this.state.tasks.length > 0 ?
+                <Guess
+                  whatTodo={this.whatTodo}
+                />
+                : null
+              }
+              {
+                this.state.tasks.length === 0 &&
+                <div className="text-center">
+                  <h4>Please Enter a task!</h4>
+                </div>
+              }
+              {this.state.tasks.length > 0 ?
+
+                <Tasks
+                  tasks={this.state.tasks}
+                  deleteTask={this.deleteTask}
+                />
+                : null
+              }
+              {this.state.tasks.length > 0 ?
+                <Deleteall
+                  deleteAll={this.deleteAll}
+                />
+                : null
+              }
+              <ModalAlert
+                selectedTask={this.state.selectedTask}
+                closeModal={this.closeModal}
+              />
+            </Col>
+          </Row>
+          <Row>
+            <Col size="md-12">
+              <a onClick={() => this.props.history.goBack()}>
+                ← Back to main page
+                </a>
+            </Col>
+          </Row>
+        </Container>
       </div>
     )
   }
