@@ -6,10 +6,10 @@ import {userAPI} from "../../utils/API";
 import { TextArea, FormBtn } from "../../components/Form";
 import Nav from "../../components/Nav";
 import TodoItem from "../../components/TodoItem";
-
 import TodoInput from "../../components/TodoInput";
 import TodoList from "../../components/TodoList";
 import uuid from "uuid";
+import Create from '../../components/Create-Task'
 require('./Detail.css');
 
 
@@ -125,9 +125,10 @@ class Detail extends Component {
             <TodoList items={this.state.items} clearList={this.clearList} handleDelete={this.handleDelete} handleEdit={this.handleEdit}/>
           </Col>
         </Row>
+        
         <Row>
           <Col size="md-6">
-            <a onClick={() => this.props.history.goBack()}>← Back to main page</a>
+            <a href="/userForm" onClick={() => this.props.history.goBack()}>← Back to main page</a>
           </Col>
         </Row>
         <hr/>

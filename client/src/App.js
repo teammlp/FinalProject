@@ -9,6 +9,8 @@ import "./App.css";
 import TodoLists from "./pages/TodoLists";
 import Footer from "./components/Footer/Footer";
 import Carousel from "./components/Carousel/Carousel";
+import Task from './pages/Task';
+import JobBoard from './pages/JobBoard';
 
 
 export default class App extends Component {
@@ -79,6 +81,9 @@ export default class App extends Component {
 
               <Route exact path="/userForm/:id" component={Detail} />
               <Route exact path="/todoLists" component={TodoLists} />
+              <Route exact path="/task" component={Task} />
+
+               <Route exact path="/JobBoard" component={JobBoard} />
 
             </Switch>
           </div>

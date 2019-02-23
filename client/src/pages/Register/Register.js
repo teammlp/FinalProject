@@ -188,8 +188,6 @@ export default class Register extends Component {
 
         if (!userData.username || !userData.email || !userData.password) {
             return alert("Please don't leave fields blank");
-        }else{
-            alert("You registered successfully, Please Login!");
         }
 
         // If we have an email and password, run the signUpUser function
@@ -207,7 +205,7 @@ export default class Register extends Component {
     }
 
     render() {
-        const { from } = this.props.location.state || { from: { pathname: '/login' } };
+        const { from } = this.props.location.state || { from: { pathname: '/userForm' } };
         const { redirectToReferrer } = this.state;
 
         if (redirectToReferrer) {

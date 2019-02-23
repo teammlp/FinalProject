@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom"
+import { FormBtn} from "../../components/Form";
 require("./nav.css");
 
 
@@ -24,14 +25,14 @@ function Nav(props) {
             <div className="four columns">
               <a
                 onClick="trackEvent('landing_go_to_advisor_page_clicked')"
-                href="#carouselExampleControls"
+                href="/JobBoard"
               >
                 JOBS
               </a>
             </div>
-            <div className="two columns">
-              <a href="/app/talks">TODO</a>
-            </div>
+            {/* <div className="two columns">
+              <a href="/task">TODO</a>
+            </div> */}
             <div className="two columns">
               <a
                 onclick="trackEvent('landing_pricing_clicked')"
@@ -47,11 +48,14 @@ function Nav(props) {
                   <Link
                     to={{
                       pathname: "/userForm",
+                      pathname: "/detail",
                       state:{user: props.user}
                     }}
                   >{props.user.username}
                   </Link>
+              <a href="/task">TODO</a>
                 </div>
+                
                 :
                 <>
                   <div className="two columns">

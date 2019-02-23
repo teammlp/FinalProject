@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Berkshire+Swash|Libre+Barcode+39+Text|Monoton');
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text');
 
 /****** LOGIN ******/
 .loginmodal-container {
@@ -12,7 +13,7 @@
   .loginmodal-container input[type=text] {
     margin-bottom: 20px;
     color: darkcyan;
-    font-family: 'Berkshire Swash', cursive;
+    font-family: 'Crimson Text', serif;
   }
   .loginmodal-container input[type=text], input[type=password] {
     border-radius: 10px !important;
@@ -22,7 +23,7 @@
     width: 100%;
     text-align: left;
     justify-content: center;
-    font-family: 'Berkshire Swash', cursive;
+    font-family: 'Crimson Text', serif;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   .LogOrReg{

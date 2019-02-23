@@ -1,0 +1,9 @@
+.deleteall  {
+
+    padding: 1rem 0;
+  }
+  
+  .deleteall .red-btn  {
+    /* margin-left: 40%; */
+    background-color: #f03f3f;
+  }

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Redirect, Link } from 'react-router-dom';
+// import DatePicker from 'react-datepicker';
 import { userAPI } from "../../utils/API";
 // import ButtonBtn from "../../components/ButtonBtn";
 import { Input, TextArea, FormBtn, Date } from "../../components/Form";
@@ -120,7 +121,7 @@ class UserForm extends Component {
                   <ListItem key={userForm._id}>
                     <Link to={"/userForm/" + userForm._id}>
                       <strong>
-                        {userForm.position} at  {userForm.company}, 📍 {userForm.location}
+                        {userForm.position} at  {userForm.company}, 📍 {userForm.location}  on {userForm.date}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => this.deleteUserForm(userForm._id)} />
@@ -146,6 +147,15 @@ class UserForm extends Component {
                 name="position"
                 placeholder="Position (required)"
               />
+              {/* <DatePicker
+                selected={this.state.startDate}
+                onChange={this.handleInputChange}
+                showTimeSelect
+                timeFormat="HH:mm"
+                timeIntervals={15}
+                dateFormat="MMMM d, yyyy h:mm aa"
+                timeCaption="time"
+              /> */}
               <Date
                 value={this.state.date}
                 onChange={this.handleInputChange}
