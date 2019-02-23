@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Guess = (props) => (
-    <div className="center-text guess">
+    <div className="text-center guess">
         <button onClick={props.whatTodo} className="btn btn-primary">What to do?</button>
     </div>
 )

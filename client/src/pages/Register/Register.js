@@ -163,6 +163,7 @@ export default class Register extends Component {
                 } else if (data.statusText === "OK") {
                     this.props.authenticate();
                     sessionStorage.setItem('userAuth', 'yes');
+                    sessionStorage.setItem('user', userData)
                     sessionStorage.setItem("userUsername", username);
                     this.setState({
                         redirectToReferrer: true
@@ -205,14 +206,22 @@ export default class Register extends Component {
     }
 
     render() {
-        const { from } = this.props.location.state || { from: { pathname: '/userForm' } };
-        const { redirectToReferrer } = this.state;
+        const destination =   { pathname: '/userForm', state: { user: this.state.user } };
+    const { redirectToReferrer } = this.state;
 
-        if (redirectToReferrer) {
-        return (
-            <Redirect to={from} />
-        )
-        }
+    if (redirectToReferrer) {
+      return (
+        <Redirect to={destination} />
+      )
+    }
+        // const { from } = this.props.location.state || { from: { pathname: '/userForm' } };
+        // const { redirectToReferrer } = this.state;
+
+        // if (redirectToReferrer) {
+        // return (
+        //     <Redirect to={from} />
+        // )
+        // }
         return (
             <div>
                 <Nav/>

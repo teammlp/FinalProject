@@ -30,9 +30,6 @@ function Nav(props) {
                 JOBS
               </a>
             </div>
-            {/* <div className="two columns">
-              <a href="/task">TODO</a>
-            </div> */}
             <div className="two columns">
               <a
                 onclick="trackEvent('landing_pricing_clicked')"
@@ -48,12 +45,11 @@ function Nav(props) {
                   <Link
                     to={{
                       pathname: "/userForm",
-                      pathname: "/detail",
                       state:{user: props.user}
                     }}
                   >{props.user.username}
                   </Link>
-              <a href="/task">TODO</a>
+              <a href="/task">TASKS</a>
                 </div>
                 
                 :

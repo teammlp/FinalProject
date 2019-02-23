@@ -11,6 +11,8 @@ import Jumbotron from "../../components/Jumbotron";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import Nav from "../../components/Nav";
+import { confirmAlert } from 'react-confirm-alert'; // Import
+import 'react-confirm-alert/src/react-confirm-alert.css' // Import css
 
 require('./UserForm.css');
 
@@ -78,8 +80,11 @@ class UserForm extends Component {
     });
   };
 
+  
+
   handleFormSubmit = event => {
     event.preventDefault();
+    
     if (this.state.company && this.state.position) {
       userAPI.saveUserForm({
         _user: this.props.location.state.user._id,
@@ -126,6 +131,7 @@ class UserForm extends Component {
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => this.deleteUserForm(userForm._id)} />
+                    {/* <button onClick={this.submit}>Confirm dialog</button> */}
                   </ListItem>
                 ))}
               </List>
@@ -162,9 +168,6 @@ class UserForm extends Component {
                 onChange={this.handleInputChange}
                 name="date"
                 placeholder="Date you applied"
-                timeFormat="HH:mm"
-                timeIntervals={15}
-                dateFormat="MMMM d, yyyy h:mm aa"
               />
               <Input
                 value={this.state.location}
