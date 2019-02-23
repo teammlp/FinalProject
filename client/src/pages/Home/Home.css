@@ -57,7 +57,9 @@ h3 {
 }
 
 .menu {
-  background-color:rgba(0,0,0,0.1);
+  /* background-color:rgba(0,0,0,0.1); */
+  box-shadow: 0 4px 40px rgba(25,4,69,0.1);
+  border-radius: 15px;
 }
 
 .header .menu {
@@ -80,12 +82,16 @@ h3 {
 
 .jumbo {
   margin-top: 45px;
+  margin-bottom: 65px;
   text-align: center;
   color: black;
+  box-shadow: 0 4px 40px rgba(25,4,69,0.1);
+  border-radius: 15px;
 }
 
 .jumbo-text {
   margin-top: 90px;
+  margin-bottom: 90px;
 }
 
 .jumbo-text .title {
@@ -124,6 +130,10 @@ h3 {
 
   .eight.columns {
     width: 65.3333333333%;
+  }
+
+  .ten.columns {
+    width: 83.3333333333%;
   }
 }
 

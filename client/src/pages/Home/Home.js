@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import ButtonBtn from "../../components/ButtonBtn";
 import "./Home.css";
 import Nav from "../../components/Nav";
-import Carousel from "../../components/Carousel/Carousel";
+// import Carousel from "../../components/Carousel/Carousel";
 
 class Home extends Component {
   logout = () => {
@@ -19,7 +19,7 @@ class Home extends Component {
         <Nav />
         <div className="container jumbo">
           <div className="row">
-            <div className="five columns jumbo-text">
+            <div className="columns jumbo-text">
               <div className="title">
                 <h1>Organizational Tools</h1>
                 <h3>for your job hunt</h3>
@@ -37,7 +37,7 @@ class Home extends Component {
             </div>
             {/*end five columns jumbo-text */}
             {/* <div className="one column">&nbsp;</div> */}
-            <Carousel />
+            {/* <Carousel /> */}
           </div>
           {/* end row*/}
         </div>
