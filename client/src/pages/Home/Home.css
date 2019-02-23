@@ -123,6 +123,14 @@ h3 {
   }
 }
 
+@media screen and (max-width: 600px) {
+  .jumbo {
+    margin-top: 0px;
+    text-align: center;
+    color: black;
+  }
+}
+
 /* .homeWrap h1 {
     text-transform: uppercase;
     padding: 7px;

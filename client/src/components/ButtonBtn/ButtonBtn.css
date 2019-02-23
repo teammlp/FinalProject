@@ -11,8 +11,8 @@
     border: solid 5px #fff!important;
     padding: 0px 15px!important;
     border-radius: 90px!important;
-    display: block!important;
-    margin: 23px auto -12px;
+    /* display: block!important; */
+    margin: 23px 8px -12px;
 }
 .btn-primary:hover {
     background: #ac8ee9; /* Old browsers */

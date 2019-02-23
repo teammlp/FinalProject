@@ -17,7 +17,6 @@ class Home extends Component {
     return (
       <div className="top-container">
         <Nav />
-        <div className="purple-gradient-bkgd colored-background">&nbsp;</div>
         <div className="container jumbo">
           <div className="row">
             <div className="five columns jumbo-text">
@@ -29,7 +28,7 @@ class Home extends Component {
                     <Link to={"/login"}>LOGIN</Link>
                   </ButtonBtn>
                   <ButtonBtn>
-                    <Link to={"/register"}>REGISTER</Link>
+                    <Link to={"/register"}>SIGNUP</Link>
                   </ButtonBtn>
                   {/* <hr mt-5/> */}
                 </div>

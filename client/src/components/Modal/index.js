@@ -1,6 +1,6 @@
-import React from 'react'
-import Modal from 'react-modal'
-require("./Modal.css");
+import React from "react"
+import Modal from "react-modal"
+import "./Modal.css";
 
 const customStyle = {
     content : {
@@ -36,4 +36,4 @@ const ModalAlert = (props) => (
     </Modal>
 )
 
-export default ModalAlert
+export default ModalAlert;
