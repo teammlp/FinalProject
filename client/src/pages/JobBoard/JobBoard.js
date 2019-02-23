@@ -8,7 +8,7 @@ export default class JobBoard extends Component {
         return (
           <div>
             <Link/>
-            <a href="/" onClick={() => this.props.history.goBack()}>← Back to main page</a>
+            <a href="/" onClick={() => this.props.history.goBack()} id="back-link">← Back to main page</a>
           </div>
         );
       }

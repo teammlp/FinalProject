@@ -2,12 +2,12 @@
     margin-top: 30px;
 }
 
-/* #not-found-h2 a {
-    color: blue;
-} */
+#not-found-a {
+    color: #007bff;
+}
 
-#not-found-h2 a {
-    color: blue;
+#not-found-a:hover {
+    color: green;
 }
 
 h2:hover {

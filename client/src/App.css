@@ -47,6 +47,24 @@ a:hover {
   text-decoration: none;
 }
 
+#job-search {
+  color: rgba(255, 38, 0, 0.844);
+}
+
+#job-search:hover {
+  color: green;
+  text-decoration: underline;
+}
+
+#back-link {
+  color: #007bff;
+}
+
+#back-link:hover {
+  text-decoration: underline;
+  color: green;
+}
+
 @media (max-width: 1199.98px) {
 
 }

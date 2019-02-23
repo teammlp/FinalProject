@@ -17,7 +17,7 @@ function NotFound() {
                 🙄
               </span>
             </h1>
-            <h2 id="not-found-h2"><Link to="/">Go back Home</Link></h2>
+            <h2><Link to="/" id="not-found-a">Go back Home</Link></h2>
           </Jumbotron>
         </Col>
       </Row>
