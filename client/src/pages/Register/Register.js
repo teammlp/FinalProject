@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Redirect} from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { userAPI } from "../../utils/API";
 
 import Nav from "../../components/Nav";
@@ -15,7 +15,8 @@ export default class Register extends Component {
             password: '',
             passwordRepeat: '',
             email: '',
-            emailRepeat: ''
+            emailRepeat: '',
+            user: {}
         };
 
         this.handleUsernameValidation = this.handleUsernameValidation.bind(this);
@@ -152,24 +153,23 @@ export default class Register extends Component {
     }
 
     signUpUser(userData) {
-        let username = userData.username;
         userAPI.saveUser(userData.username, userData.password, userData.email)
             .then(function (data) {
                 console.log(data);
-                var message = data.data.message ? data.data.message : '';
+                const user = data.data.user;
 
-                if (message.includes("duplicate")) {
-                    alert("Sorry, that username has been taken");
-                } else if (data.statusText === "OK") {
+                if (data.statusText === "OK") {
                     this.props.authenticate();
                     sessionStorage.setItem('userAuth', 'yes');
-                    sessionStorage.setItem('user', userData)
-                    sessionStorage.setItem("userUsername", username);
+                    sessionStorage.setItem('user', user)
+                    sessionStorage.setItem("userUsername", user.username);
                     this.setState({
-                        redirectToReferrer: true
+                        redirectToReferrer: true,
+                        user
                     });
                 }
-            }.bind(this)).catch(function (err) {
+            }.bind(this))
+            .catch(function (err) {
                 console.log(err);
             });
     }
@@ -206,14 +206,14 @@ export default class Register extends Component {
     }
 
     render() {
-        const destination =   { pathname: '/userForm', state: { user: this.state.user } };
-    const { redirectToReferrer } = this.state;
+        const destination = { pathname: '/userForm', state: { user: this.state.user } };
+        const { redirectToReferrer } = this.state;
 
-    if (redirectToReferrer) {
-      return (
-        <Redirect to={destination} />
-      )
-    }
+        if (redirectToReferrer) {
+            return (
+                <Redirect to={destination} />
+            )
+        }
         // const { from } = this.props.location.state || { from: { pathname: '/userForm' } };
         // const { redirectToReferrer } = this.state;
 
@@ -224,7 +224,7 @@ export default class Register extends Component {
         // }
         return (
             <div>
-                <Nav/>
+                <Nav />
                 <div id="registration-container" >
                     <h1>Registration</h1>
                     <section className="container">
@@ -269,7 +269,7 @@ export default class Register extends Component {
                                 </div>
                             </form>
                             <div className="login-help">
-                                <p>Already have an account? <i className="fas fa-cog fa-spin"/><Link to={"/login"}> Login </Link></p>
+                                <p>Already have an account? <i className="fas fa-cog fa-spin" /><Link to={"/login"}> Login </Link></p>
                             </div>
                         </div>
                     </section>

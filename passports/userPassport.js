@@ -2,6 +2,13 @@ var User = require("../models/user");
 var passport = require("passport");
 var LocalStrategy = require("passport-local").Strategy;
 
+function errHandler(err) {
+	console.error('There was an error performing the operation');
+	console.log(err);
+	console.log(err.code);
+	return console.error(err.message);
+  }
+
 // Telling passport we want to use a Local Strategy. In other words, we want login with a username/email and password
 passport.use('user-local', new LocalStrategy(
 	// Our user will sign in using an email, rather than a "username"
@@ -29,6 +36,48 @@ passport.use('user-local', new LocalStrategy(
 			});
 	}
 ));
+
+passport.use('local-signup', new LocalStrategy(
+	// Our user will sign in using an email, rather than a "username"
+	{
+		usernameField: "username",
+		passwordField: 'password',
+		passReqToCallback: true
+	},
+	function (req, username, password, done) {
+		process.nextTick(function () {
+			User.findOne({ username }, function (err, user) {
+				if (err) {
+					return errHandler(err);
+				}
+				if (user) {
+					console.log('user already exists');
+					return done(null, false, { errMsg: 'username already exists' });
+				}
+				else {
+					var newUser = new User();
+					newUser.username = req.body.username;
+					newUser.username = username;
+					newUser.email = req.body.email
+					newUser.password = newUser.generateHash(password);
+					newUser.save(function (err) {
+						if (err) {
+							console.log(err);
+							if (err.message == 'User validation failed') {
+								console.log(err.message);
+								return done(null, false, { errMsg: 'Please fill all fields' });
+							}
+							return errHandler(err);
+						}
+						console.log('New user successfully created...', newUser.username);
+						console.log('username', username);
+						console.log(newUser);
+						return done(null, newUser);
+					});
+				}
+			});
+		});
+	}));
 
 passport.serializeUser(function (user, done) {
 	done(null, user.id);

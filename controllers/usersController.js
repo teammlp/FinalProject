@@ -28,10 +28,10 @@ exports.pleasegodlogin = (req, res, next) => {
             })
         }
         if (userData.userForms && userData.userForms.length) {
-            const queries = userData.userForms.map(_id => ({_id}));
+            const queries = userData.userForms.map(_id => ({ _id }));
             db.UserForm.find({
                 $or: queries
-            }).then( userForms => {
+            }).then(userForms => {
                 userData.userForms = userForms;
                 console.log(userForms);
                 res.json({
@@ -47,7 +47,7 @@ exports.pleasegodlogin = (req, res, next) => {
                 user: userData
             })
         }
-        
+
 
     })(req, res, next);
 };
@@ -83,7 +83,7 @@ exports.getUser = function (req, res) {
         });
 }
 
-exports.saveUser = function (req, res) {
+exports.saveUser = function (req, res, next) {
     /*DELETE_ON_PRODUCTION
       req.body syntax:
     {
@@ -91,17 +91,32 @@ exports.saveUser = function (req, res) {
         password: {password of user},
     }
     */
-    const newuser = new db.User();
-    req.body.password = newuser.generateHash(req.body.password);
-
-    db.User.create(req.body)
-        .then(function (dbUser) {
-            return db.User.findByIdAndUpdate(req.body, { $push: { users: dbUser._id } }, { new: true });
-        })
-        .catch(function (err) {
-            // If an error occurred, send it to the client
-            return res.json(err);
+    passport.authenticate("local-signup", function (err, user, info) {
+        if (err) {
+            return next(err); // will generate a 500 error
+        }
+        if (!user) {
+            return res.status(409).json({ errMsg: info.errMsg });
+        }
+        req.login(user, function (err) {
+            if (err) {
+                console.error(err);
+                return next(err);
+            }
+            return res.json({success: true, user});
         });
+    })(req, res, next);
+    // const newuser = new db.User();
+    // req.body.password = newuser.generateHash(req.body.password);
+
+    // db.User.create(req.body)
+    //     .then(function (dbUser) {
+    //         return db.User.findByIdAndUpdate(req.body, { $push: { users: dbUser._id } }, { new: true });
+    //     })
+    //     .catch(function (err) {
+    //         // If an error occurred, send it to the client
+    //         return res.json(err);
+    //     });
 }
 
 exports.updateUser = function (req, res) {
