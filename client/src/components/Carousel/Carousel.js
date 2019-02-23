@@ -40,7 +40,7 @@ import GlassImg from '../../images/Glass.png';
                 <img class="Images" src={profile.sourceImage} alt="sourceImage" />
 
                 <a href={profile.postUrl} target="_blank">
-                    <div>{profile.description}</div>
+                    <div id="carousel-description">{profile.description}</div>
                 </a>
             </div>
         ));

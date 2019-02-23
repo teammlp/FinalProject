@@ -13,7 +13,8 @@
 }
 
 .card-text {
-    color: rgba(74,74,74,0.7);
+    color: green;
+    text-shadow: -2px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
     font-size: 15px;
 }
 

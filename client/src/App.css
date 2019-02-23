@@ -49,6 +49,7 @@ a:hover {
 
 #job-search {
   color: rgba(255, 38, 0, 0.844);
+  text-shadow: -2px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
 #job-search:hover {
@@ -58,6 +59,7 @@ a:hover {
 
 #back-link {
   color: #007bff;
+  text-shadow: -2px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
 #back-link:hover {
