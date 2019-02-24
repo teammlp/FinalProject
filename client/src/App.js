@@ -92,7 +92,7 @@ export default class App extends Component {
             </Switch>
           </div>
         </Router>
-        <hr/>
+        {/* <hr/> */}
         <Footer/>
       </div>
     )

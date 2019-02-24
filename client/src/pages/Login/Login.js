@@ -88,7 +88,6 @@ export default class Login extends Component {
       <div>
         <Nav/>
         <div className="loginWrap">
-          <h2 className="LogOrReg">Log In Or Register</h2>
           <div className="loginmodal-container">
             <form className="login" onSubmit={this.handleSubmit.bind(this)}>
               <input  id="username-input" ref="user" type="text" name="user" placeholder="Username" onChange={this.handleUsernameChange} value={this.state.username} />
@@ -96,9 +95,9 @@ export default class Login extends Component {
               <input type="submit" name="login" className="login loginmodal-submit" value="Login" />
             </form>
             <div className="login-help">
-              <Link to={"/register"}> Register <i className="fas fa-pencil-alt fa-xs"/></Link>
+              <Link to={"/register"}> Register &nbsp;<i className="fas fa-pencil-alt fa-xs"/></Link>
             </div>
-            <hr/>
+            {/* <hr/> */}
           </div>
         </div>
         {/* <div className="row">

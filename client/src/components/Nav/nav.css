@@ -58,6 +58,8 @@
   #menu {
     text-align: center;
     margin-top: 20px;
+    background-color: unset;
+    box-shadow: unset;
   }
 
   .logo {
