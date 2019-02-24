@@ -1,19 +1,22 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import ButtonBtn from "../../components/ButtonBtn";
 import "./Home.css";
 import Nav from "../../components/Nav";
+import { deserializeUser, logoutUser } from "../../utils/helpers";
 // import Carousel from "../../components/Carousel/Carousel";
 
 class Home extends Component {
   logout = () => {
     this.props.deAuthenticate();
-    sessionStorage.removeItem("userAuth");
-    sessionStorage.removeItem("userUsername");
+    logoutUser();
     window.location.reload();
   };
 
   render() {
+    const user = deserializeUser();
+    if (user)
+      return <Redirect to={{ pathname: "/userForm", state: {user} }} />
     return (
       <div className="top-container">
         <Nav />

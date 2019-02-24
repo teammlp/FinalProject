@@ -12,14 +12,15 @@ import Footer from "./components/Footer/Footer";
 import Carousel from "./components/Carousel/Carousel";
 import Task from './pages/Task';
 import JobBoard from './pages/JobBoard';
+import { deserializeUser } from './utils/helpers';
 
 
 export default class App extends Component {
   constructor(props) {
     super(props);
-
+    const user = deserializeUser();
     this.state = {
-      authenticated: false,
+      authenticated: !!user,
       adminAuthenticated: false
     };
 

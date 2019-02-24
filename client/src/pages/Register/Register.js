@@ -4,6 +4,7 @@ import { userAPI } from "../../utils/API";
 
 import Nav from "../../components/Nav";
 import './register.css';
+import { serializeUser } from '../../utils/helpers';
 
 export default class Register extends Component {
 
@@ -160,9 +161,7 @@ export default class Register extends Component {
 
                 if (data.statusText === "OK") {
                     this.props.authenticate();
-                    sessionStorage.setItem('userAuth', 'yes');
-                    sessionStorage.setItem('user', user)
-                    sessionStorage.setItem("userUsername", user.username);
+                    serializeUser(user);
                     this.setState({
                         redirectToReferrer: true,
                         user
