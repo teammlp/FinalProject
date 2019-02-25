@@ -1,0 +1,13 @@
+.logo img {
+    max-width: 125px;
+    margin-left: 30px;
+  }
+  
+  .logo {
+    display: flex;
+    text-align: center;
+    font-weight: normal;
+    font-size: 54px;
+    font-weight: 600;
+    margin-top: 0;
+  }

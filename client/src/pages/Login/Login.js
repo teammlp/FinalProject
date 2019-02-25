@@ -95,7 +95,7 @@ export default class Login extends Component {
               <input type="submit" name="login" className="login loginmodal-submit" value="Login" />
             </form>
             <div className="login-help">
-              <Link to={"/register"}> Register &nbsp;<i className="fas fa-pencil-alt fa-xs"/></Link>
+              <Link to={"/register"}> Sign Up &nbsp;<i className="fas fa-pencil-alt fa-xs"/></Link>
             </div>
             {/* <hr/> */}
           </div>

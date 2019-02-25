@@ -1,15 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Crimson+Text');
 
-.jumbotron {
+.dashboard h1{
     font-family: 'Crimson Text', serif;
-    /* height: 30px!important; */
+    padding: 15px;
     color: rgb(72, 109, 110);
+    text-align: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 25px;
+    text-shadow: -2px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 .List{
-    background-color: rgb(239, 241, 241);
+    /* background-color: rgb(239, 241, 241); */
     padding: 10px;
     border-radius: 6px;
+    border-bottom-style: double;
     text-align: center;
     font-family: 'Crimson Text', serif;
     color: rgb(72, 109, 110);
@@ -39,53 +43,13 @@ strong {
     padding: 7px;
     width: 100%;
 }
-.UserWrap .highScore h3,
-.UserWrap .highScore h4,
-.UserWrap h3 {
-    font-size: 22px;
-    color: #fff;
-    font-weight: 200;
-    max-width: 740px;
-    margin: 10px auto;
-    padding: 0 50px;
-}
-.UserWrap .form-group {
-    max-width: 400px;
-    margin-left:auto;
-    margin-right:auto;
-    
-}
-.UserWrap .col-lg-6 {
-    padding-right: 0px !important;
-}
-.UserWrap .btn-success {
-    float: none !important;
-    margin-bottom: 40px !important;
-}
-.UserWrap h1{
-    text-transform: uppercase;
-    padding: 7px;
-    background: rgba(255, 255, 255, 0.781);
-    color: rgba(25, 149, 251, .80);
-    font-weight: 700;
-    font-size: 20px;
-    margin: 0 auto 26px;
-}
-.UserWrap .YourScore.col-lg-6 {
-    padding-left: 0px !important;
-}
-.UserWrap h5 {
-    color: #fff;
-    text-transform: uppercase;
-    padding-bottom: 10px;
-}
-
-
 
 /* media query */
 
 @media (max-width: 1199.98px) {
-
+    .jumbotron {
+        font-size: 20px;
+    }
 }
 @media (max-width: 991.98px) {
     .UserWrap h1{
@@ -101,5 +65,8 @@ strong {
 @media (max-width: 575.98px) {
     .UserWrap {
         padding-top: 80px;
+    }
+    .jumbotron {
+        font-size: 20px;
     }
 }

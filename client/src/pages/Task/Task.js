@@ -7,10 +7,10 @@ import Deleteall from "../../components/Delete-All";
 import ModalAlert from "../../components/Modal";
 import Link from "../../components/Link";
 import { Redirect } from "react-router-dom";
-import Jumbotron from "../../components/Jumbotron";
+import Logo from "../../components/Logo";
 import { Col, Row, Container } from "../../components/Grid";
-import "./Task.css";
 import { deserializeUser } from "../../utils/helpers";
+import "./Task.css";
 
 export default class Task extends Component {
   state = {
@@ -82,9 +82,13 @@ export default class Task extends Component {
     ) : (
       <div>
         <Container fluid>
-          <Jumbotron>
-            <h3>Enter your tasks to achieve your Goal!</h3>
-          </Jumbotron>
+        <Logo/>
+          <Row>
+            <Col size="md-12">
+            <h2>Enter your tasks to achieve your Goal!</h2>
+            </Col>
+          </Row>
+
           <Row>
             <Col size="md-12 sm-12">
               <Create onSubmit={this.onSubmit} />
@@ -92,8 +96,8 @@ export default class Task extends Component {
                 <Guess whatTodo={this.whatTodo} />
               ) : null}
               {this.state.tasks.length === 0 && (
-                <div className="text-center">
-                  <h4>Please Enter a task!</h4>
+                <div className="text-center mustEnter">
+                  <h2>Please Enter a task!</h2>
                 </div>
               )}
               {this.state.tasks.length > 0 ? (
@@ -109,8 +113,8 @@ export default class Task extends Component {
             </Col>
           </Row>
           <Row>
-            <Col size="md-12">
-              <a onClick={() => this.props.history.goBack()}>
+            <Col size="md-12" >
+              <a id="backLink" onClick={() => this.props.history.goBack()}>
                 ← Back to main page
               </a>
             </Col>

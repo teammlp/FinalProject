@@ -1,34 +1,45 @@
 @import url('https://fonts.googleapis.com/css?family=Crimson+Text');
 .detailInfo {
     background-color: rgb(247, 246, 243);
-    padding: 20px;
+    padding: 30px;
     font-family: 'Crimson Text', serif;
-    font-weight: bold;
+    margin-left: 20px;
     text-align: center;
     border-radius: 6px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     
 }
-.detailInfo span{
-    color: brown;
+.detailInfo dt{
+    color:rgb(241, 71, 71);
     word-spacing: 10px;
     letter-spacing: 2px;
-    font-size: 30px;
+    font-size: 25px;
+    line-height: 55px;
+    text-align: left;
+    font-family: 'Crimson Text', serif;
 }
-article, textarea{
+#comment, textarea{
     text-align: center;
     background-color: rgb(247, 246, 243);
     padding: 20px;
     font-family: 'Crimson Text', serif;
-    margin-top: 18px;
     border-radius: 6px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-h3{
+h2{
     color: rgb(72, 109, 110);
+    font-family: 'Crimson Text', serif;
+    text-align: center;
+    margin-bottom: 15px;
 }
-p {
+p, dd {
     font-family: 'Crimson Text', serif;
     color:black;
+    padding: 15px;
+}
+blockquote{
+    background-color: rgb(253, 253, 253);
+    padding: 20px;
+    border-radius: 4px;
 }

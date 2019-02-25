@@ -17,8 +17,9 @@
 .loginmodal-container input[type="text"],
 input[type="password"] {
   border-radius: 10px !important;
-  background-color: rgba(255, 255, 255, 0.863) !important;
+  /* background-color: rgba(255, 255, 255, 0.863) !important; */
   border: none;
+  border-bottom-style: double;
   padding: 7px 20px;
   width: 100%;
   text-align: left;
@@ -26,13 +27,10 @@ input[type="password"] {
   font-family: "Crimson Text", serif;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.LogOrReg {
-  text-align: center;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
 
 .login-help {
   text-align: center;
+  margin-top: 10px;
 }
 .login-help a {
   color: red;
@@ -58,8 +56,8 @@ form.login {
   font-family: "Libre Barcode 39 Text", cursive;
 }
 .loginWrap {
-  padding-top: 15px;
-  margin-top: 4em;
+  /* padding-top: 15px; */
+  margin-top: 2em;
 }
 
 .loginmodal-submit {

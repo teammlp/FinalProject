@@ -1,9 +1,19 @@
 .deleteall  {
-
-    padding: 1rem 0;
+  color: rgb(255, 255, 255) !important;
+  /* background: rgb(49, 114, 92); */
+  font-weight: 200 !important;
+  font-family: "Monoton", cursive;
+  text-transform: uppercase !important;
+  font-size: 20px !important;
+  padding: 7px 20px !important;
+  border-radius: 10px !important;
+  display: block !important;
+  margin: 23px auto 0px;
   }
-  
   .deleteall .red-btn  {
     /* margin-left: 40%; */
     background-color: #f03f3f;
+  }
+  .deleteall .red-btn:hover{
+    color: white;
   }
