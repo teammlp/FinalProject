@@ -1,24 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Arima+Madurai|Berkshire+Swash|Libre+Barcode+39+Text|Monoton');
 @import url('https://fonts.googleapis.com/css?family=Crimson+Text');
 
-#registration-container {
+#registration-container h2 {
 	padding-top: 15px;
-	margin: 0px auto;
-	text-align: center;
-	/* background-image: url("../Register/image/camera-lens.jpg"); */
-	/* height: 600px; */
+	margin-bottom: 15px;
+  text-align: center;
+  font-size: 40px;
+  color: rgb(19, 99, 72);
+	font-family: 'Crimson Text', serif;
 }
-#registration-container h1 {
-	  text-transform: uppercase;
-    padding: 7px;
-    background: rgba(255, 255, 255, 0.911);
-    color: rgb(43, 99, 73);
-    font-weight: bold;
-    font-size: 50px;
-    margin: 0 auto 26px;
-    font-family: 'Libre Barcode 39 Text', cursive;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
 #registration-container .container-page {
 	max-width: 400px;
     margin: 0 auto;
@@ -28,9 +18,9 @@
     background-color: rgba(255, 255, 255, 0.863) !important; 
     border: none;
     padding: 7px;
-	width: 100%;
-	color: darkcyan;
-  font-family: 'Crimson Text', serif;
+	  width: 100%;
+	  color: darkcyan;
+    font-family: 'Crimson Text', serif;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 small, p#email-feedback {

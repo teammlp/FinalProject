@@ -7,7 +7,6 @@ import { userAPI } from "../../utils/API";
 // import ButtonBtn from "../../components/ButtonBtn";
 import { Input, TextArea, FormBtn, Date } from "../../components/Form";
 import DeleteBtn from "../../components/DeleteBtn";
-import Jumbotron from "../../components/Jumbotron";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import Nav from "../../components/Nav";
@@ -113,11 +112,10 @@ class UserForm extends Component {
         <FormBtn onClick={this.logout}>logout</FormBtn>
         <Row>
           <Col size="md-12">
-            <Jumbotron>
-              <h3>Welcome to your EzHunt DashBoard!</h3>
+            <div className="dashboard">
+              <h1>Welcome to your "ezHunt" DashBoard!</h1>
               {/* want to display User name on the welcome line */}
-              <hr />
-            </Jumbotron>
+            </div>
           </Col>
         </Row>
         <Row>
@@ -134,7 +132,7 @@ class UserForm extends Component {
                     <Link to={"/userForm/" + userForm._id}>
                       <strong>
                         {userForm.position} at {userForm.company}, 📍{" "}
-                        {userForm.location} on {userForm.date}
+                        {userForm.location}
                       </strong>
                     </Link>
                     <DeleteBtn

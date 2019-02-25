@@ -12,9 +12,10 @@ const customStyle = {
         transform             : 'translate(-50%, -50%)',
         padding               : '6rem 8rem',
         borderRadius          : '4px',
-        background            : 'rgb(15, 15, 15)',
+        background            : 'rgb(239, 247, 244)',
         border                : 'none',
-        textAlign             : 'center'
+        textAlign             : 'center',
+        color                 : 'white'
     }
 }
   

@@ -12,7 +12,7 @@ const Create = (props) => (
                     <input type="text" name="singletask" autoComplete="off" className="text-capitalize" />
                 </div>
                 <div className="center-text">
-                    <button type="submit" className="btn btn-rounded btn-outlined purple-btn">Submit</button>
+                    <button type="submit" className="btn">Submit</button>
                 </div>
             </form>
         </div>

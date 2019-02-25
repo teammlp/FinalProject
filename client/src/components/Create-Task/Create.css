@@ -6,11 +6,12 @@
 }
   
   .create .card  {
-    background-color: #81a5ad;
+    background-color: #bdd6cc;
     box-shadow: 0 0 14px 0 rgba(0, 0, 0, .19);
     padding: 2rem 12rem;
     margin-top: 50px;
   }
+ 
   input {
     font-family: 'Crimson Text', serif;
     justify-content: space-between;
