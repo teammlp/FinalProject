@@ -6,7 +6,8 @@ const app = express();
 const mongoose = require("mongoose");
 const apiRoutes = require("./routes");
 const session = require('express-session');
-const userPassport = require("./passports/userPassport");
+const userPassport = require("passport");
+require("./passports/userPassport");
 // const config = require("./extra-config");
 
 
@@ -27,10 +28,10 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 const authCheck = require('./middleware/attachAuthenticationStatus');
 // app.use(session({ secret: config.sessionKey, resave: true, saveUninitialized: true }));
-app.use(apiRoutes);
 app.use(userPassport.initialize());
 app.use(userPassport.session());
 app.use(authCheck);
+app.use(apiRoutes);
 
 // Define API routes here
 // Send every other request to the React app

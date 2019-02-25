@@ -36,6 +36,15 @@
     margin-left: 115px;
   }
 
+  #carousel-description {
+    color: #007bff;
+    text-shadow: -2px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  }
+
+  #carousel-description:hover {
+    text-decoration: underline;
+  }
+
   .Images{
     height: 200px;
     width: 50%;

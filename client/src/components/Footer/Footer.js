@@ -7,7 +7,7 @@ function Footer() {
     <div className="card">
       <div className="card-body">
         <p className="card-text">
-          <a id="footer-text">Made with <span className="icon-heart" role="img">💜</span>by team MLP  </a>&copy; 2019
+          <a id="footer-text">Made with <span className="icon-heart" role="img">💜</span>by team &nbsp; M L P &nbsp; &copy; 2019</a>
         </p>
       </div>
     </div>

@@ -1,6 +1,6 @@
 #footer {
   display: block;
-  /* position: fixed; */
+  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -8,24 +8,38 @@
 }
 
 .card {
-    background-color: transparent;
-    border: none;
+  background-color: transparent;
+  border: none;
 }
 
 .card-text {
-    color: rgba(74,74,74,0.7);
-    font-size: 15px;
+  color: green;
+  text-shadow: -2px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  font-size: 15px;
 }
 
 #footer-text {
-    float: center;
-    margin-left: 15px;
+  float: center;
+  margin-left: 15px;
+  font-family: "Lato", sans-serif;
 }
 
 .icon-heart {
-    font-size: 12px;
-    color: #f34c50;
-    opacity: 1;
-    margin-left: 2px;
-    margin-right: 2px;
+  font-size: 12px;
+  color: #f34c50;
+  opacity: 1;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+@media screen and (max-width: 600px) {
+  #footer {
+    position: unset;
+  }
+
+  .card-text {
+    box-shadow: 0 4px 40px rgba(25, 4, 69, 0.1);
+    background-color: rgba(211, 211, 211, 0.4);
+    border-radius: 5px;
+  }
 }

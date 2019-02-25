@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom"
+import { FormBtn} from "../../components/Form";
 require("./nav.css");
 
 
@@ -24,13 +25,10 @@ function Nav(props) {
             <div className="four columns">
               <a
                 onClick="trackEvent('landing_go_to_advisor_page_clicked')"
-                href="#carouselExampleControls"
+                href="/JobBoard"
               >
                 JOBS
               </a>
-            </div>
-            <div className="two columns">
-              <a href="/app/talks">TODO</a>
             </div>
             <div className="two columns">
               <a
@@ -51,7 +49,9 @@ function Nav(props) {
                     }}
                   >{props.user.username}
                   </Link>
+              <a href="/task">TASKS</a>
                 </div>
+                
                 :
                 <>
                   <div className="two columns">

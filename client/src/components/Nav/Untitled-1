@@ -1,0 +1,16 @@
+element.style {
+    color: orange;
+    background-color: red;
+    padding: 13px;
+    width: 45%;
+    margin: 5px;
+}
+
+
+color: blue;
+    text-decoration: none;
+    margin-left: 50px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 400;
+    text-shadow: -1px 0 green, 0 1px green, 1px 0 green, 0 -1px green;

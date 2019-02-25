@@ -24,18 +24,28 @@
 }
 
 body {
-  /* font-family: 'Assistant', sans-serif !important; */
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 1.5em;
   letter-spacing: 0.3px;
-  background: url('images/desk.jpg');
-  /* min-height: 500px; */
+  /* background: url('images/desk.jpg'); */
   background-attachment: fixed;
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
   /* background-color: rgb(228, 234, 238); */
   margin-left: 10px;
+}
+
+body::after {
+  content: "";
+  background: url("images/desk.jpg");
+  opacity: 0.7;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }
 
 a {
@@ -47,19 +57,44 @@ a:hover {
   text-decoration: none;
 }
 
-@media (max-width: 1199.98px) {
+#job-search {
+  color: rgba(255, 38, 0, 0.844);
+  text-shadow: -2px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
 
+#job-search:hover {
+  color: green;
+  text-decoration: underline;
+}
+
+#back-link {
+  color: #007bff;
+  text-shadow: -2px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+#back-link:hover {
+  text-decoration: underline;
+  color: green;
+}
+
+@media (max-width: 1199.98px) {
 }
 @media (max-width: 991.98px) {
-    
 }
 @media (max-width: 767.98px) {
   .gameContainer {
-      padding-top: 111px;
+    padding-top: 111px;
   }
 }
 @media (max-width: 575.98px) {
   .gameContainer {
-      padding-top: 80px;
+    padding-top: 80px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    background: url("images/desk.jpg");
+    background-repeat: repeat-y;
   }
 }

@@ -56,6 +56,13 @@ h3 {
   box-sizing: border-box;
 }
 
+.menu {
+  /* background-color:rgba(0,0,0,0.1); */
+  box-shadow: 0 4px 40px rgba(25, 4, 69, 0.1);
+  background-color: #ffc10714;
+  border-radius: 15px;
+}
+
 .header .menu {
   float: right;
   text-align: right;
@@ -76,12 +83,17 @@ h3 {
 
 .jumbo {
   margin-top: 45px;
+  margin-bottom: 65px;
   text-align: center;
   color: black;
+  box-shadow: 0 4px 40px rgba(25, 4, 69, 0.1);
+  background-color: #ffc10714;
+  border-radius: 15px;
 }
 
 .jumbo-text {
   margin-top: 90px;
+  margin-bottom: 90px;
 }
 
 .jumbo-text .title {
@@ -120,6 +132,28 @@ h3 {
 
   .eight.columns {
     width: 65.3333333333%;
+  }
+
+  .ten.columns {
+    width: 83.3333333333%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .jumbo {
+    margin-top: 0px;
+    text-align: center;
+    color: black;
+    background-color: unset;
+    box-shadow: unset;
+    border-radius: 0;
+  }
+
+  .jumbo-text {
+    padding: 25px;
+    box-shadow: 0 4px 40px rgba(25, 4, 69, 0.1);
+    background-color: rgba(211, 211, 211, 0.4);
+    border-radius: 15px;
   }
 }
 

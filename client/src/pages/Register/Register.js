@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Link, Redirect} from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { userAPI } from "../../utils/API";
 
 import Nav from "../../components/Nav";
 import './register.css';
+import { serializeUser } from '../../utils/helpers';
 
 export default class Register extends Component {
 
@@ -15,7 +16,8 @@ export default class Register extends Component {
             password: '',
             passwordRepeat: '',
             email: '',
-            emailRepeat: ''
+            emailRepeat: '',
+            user: {}
         };
 
         this.handleUsernameValidation = this.handleUsernameValidation.bind(this);
@@ -152,23 +154,21 @@ export default class Register extends Component {
     }
 
     signUpUser(userData) {
-        let username = userData.username;
         userAPI.saveUser(userData.username, userData.password, userData.email)
             .then(function (data) {
                 console.log(data);
-                var message = data.data.message ? data.data.message : '';
+                const user = data.data.user;
 
-                if (message.includes("duplicate")) {
-                    alert("Sorry, that username has been taken");
-                } else if (data.statusText === "OK") {
+                if (data.statusText === "OK") {
                     this.props.authenticate();
-                    sessionStorage.setItem('userAuth', 'yes');
-                    sessionStorage.setItem("userUsername", username);
+                    serializeUser(user);
                     this.setState({
-                        redirectToReferrer: true
+                        redirectToReferrer: true,
+                        user
                     });
                 }
-            }.bind(this)).catch(function (err) {
+            }.bind(this))
+            .catch(function (err) {
                 console.log(err);
             });
     }
@@ -188,8 +188,6 @@ export default class Register extends Component {
 
         if (!userData.username || !userData.email || !userData.password) {
             return alert("Please don't leave fields blank");
-        }else{
-            alert("You registered successfully, Please Login!");
         }
 
         // If we have an email and password, run the signUpUser function
@@ -207,17 +205,25 @@ export default class Register extends Component {
     }
 
     render() {
-        const { from } = this.props.location.state || { from: { pathname: '/login' } };
+        const destination = { pathname: '/userForm', state: { user: this.state.user } };
         const { redirectToReferrer } = this.state;
 
         if (redirectToReferrer) {
-        return (
-            <Redirect to={from} />
-        )
+            return (
+                <Redirect to={destination} />
+            )
         }
+        // const { from } = this.props.location.state || { from: { pathname: '/userForm' } };
+        // const { redirectToReferrer } = this.state;
+
+        // if (redirectToReferrer) {
+        // return (
+        //     <Redirect to={from} />
+        // )
+        // }
         return (
             <div>
-                <Nav/>
+                <Nav />
                 <div id="registration-container" >
                     <h1>Registration</h1>
                     <section className="container">
@@ -262,7 +268,7 @@ export default class Register extends Component {
                                 </div>
                             </form>
                             <div className="login-help">
-                                <p>Already have an account? <i className="fas fa-cog fa-spin"/><Link to={"/login"}> Login </Link></p>
+                                <p>Already have an account? <i className="fas fa-cog fa-spin" /><Link to={"/login"}> Login </Link></p>
                             </div>
                         </div>
                     </section>

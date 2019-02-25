@@ -3,6 +3,7 @@ import { Link, Redirect } from 'react-router-dom';
 import { userAPI } from "../../utils/API";
 import './Login.css';
 import Nav from "../../components/Nav";
+import { serializeUser, deserializeUser } from '../../utils/helpers';
 
 export default class Login extends Component {
 
@@ -12,7 +13,7 @@ export default class Login extends Component {
       username: '',
       password: '',
       redirectToReferrer: false,
-      userForms: null
+      userForms: null,
     };
 
     this.handleUsernameChange = this.handleUsernameChange.bind(this);
@@ -38,13 +39,14 @@ export default class Login extends Component {
       .then(function (data) {
         console.log(data.data);
         if (data.data.success) {
-          this.props.authenticate();
-          sessionStorage.setItem('userAuth', 'yes');
-          sessionStorage.setItem("userUsername", username);
+          serializeUser(data.data.user);
           this.setState({
             redirectToReferrer: true,
-            user: data.data.user
+            user: data.data.user,
+            username: "",
+            password: ""
           });
+          this.props.authenticate();
         }
         else {
           alert("Username or password is Incorrect.");
@@ -55,10 +57,7 @@ export default class Login extends Component {
         console.log(err);
       });
 
-    this.setState({
-      username: "",
-      password: ""
-    });
+    
   }
 
   handleSubmit(event) {
@@ -79,12 +78,9 @@ export default class Login extends Component {
   }
 
   render() {
-    const destination =   { pathname: '/userForm', state: { user: this.state.user } };
-    const { redirectToReferrer } = this.state;
-
-    if (redirectToReferrer) {
+    if (this.props.authenticated) {
       return (
-        <Redirect to={destination} />
+        <Redirect to='/userForm' />
       )
     }
 
@@ -92,7 +88,6 @@ export default class Login extends Component {
       <div>
         <Nav/>
         <div className="loginWrap">
-          <h2 className="LogOrReg">Log In Or Register</h2>
           <div className="loginmodal-container">
             <form className="login" onSubmit={this.handleSubmit.bind(this)}>
               <input  id="username-input" ref="user" type="text" name="user" placeholder="Username" onChange={this.handleUsernameChange} value={this.state.username} />
@@ -100,9 +95,9 @@ export default class Login extends Component {
               <input type="submit" name="login" className="login loginmodal-submit" value="Login" />
             </form>
             <div className="login-help">
-              <Link to={"/register"}> Register <i className="fas fa-pencil-alt fa-xs"/></Link>
+              <Link to={"/register"}> Register &nbsp;<i className="fas fa-pencil-alt fa-xs"/></Link>
             </div>
-            <hr/>
+            {/* <hr/> */}
           </div>
         </div>
         {/* <div className="row">

@@ -37,6 +37,8 @@
     "passport": "^0.4.0",
     "passport-http": "*",
     "passport-local": "^1.0.0",
+    "react-confirm-alert": "^2.1.0",
+    "react-modal": "^3.8.1",
     "react-router-dom": "^4.3.1"
   }
 }

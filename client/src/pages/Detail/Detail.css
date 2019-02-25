@@ -28,7 +28,7 @@ article, textarea{
 h3{
     color: rgb(72, 109, 110);
 }
-.backLink{
-    font-size: 0.8em;
-    color: red;
+p {
+    font-family: 'Crimson Text', serif;
+    color:black;
 }
