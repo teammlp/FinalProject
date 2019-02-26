@@ -3,6 +3,6 @@
 module.exports = {
     User: require("./user"),
     UserForm: require("./UserForm"),
-    JobBoard: require("./JobBoard"),
+    // JobBoard: require("./JobBoard"),
     // Task: require("./Task")
 };
