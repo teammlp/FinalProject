@@ -1,86 +1,113 @@
-@import url('https://fonts.googleapis.com/css?family=Arima+Madurai|Berkshire+Swash|Libre+Barcode+39+Text|Monoton');
-@import url('https://fonts.googleapis.com/css?family=Crimson+Text');
+@import url("https://fonts.googleapis.com/css?family=Arima+Madurai|Berkshire+Swash|Libre+Barcode+39+Text|Monoton");
+@import url("https://fonts.googleapis.com/css?family=Crimson+Text");
+
+#registration-container {
+  margin-top: 2em;
+}
 
 #registration-container h2 {
-	padding-top: 15px;
-	margin-bottom: 15px;
+  padding-top: 15px;
+  margin-bottom: 15px;
   text-align: center;
   font-size: 40px;
   color: rgb(19, 99, 72);
-	font-family: 'Crimson Text', serif;
+  font-family: "Crimson Text", serif;
 }
+
+.create-account {
+  text-shadow: -2px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+.create-account:hover {
+  text-decoration: unset;
+}
+
 #registration-container .container-page {
-	max-width: 400px;
-    margin: 0 auto;
+  max-width: 400px;
+  margin: 0 auto;
 }
 #registration-container input {
-    border-radius: 10px !important;
-    background-color: rgba(255, 255, 255, 0.863) !important; 
-    border: none;
-    padding: 7px;
-	  width: 100%;
-	  color: darkcyan;
-    font-family: 'Crimson Text', serif;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-small, p#email-feedback {
-	color: rgb(20, 8, 129);
-	font-family: 'Arima Madurai', cursive;
+  border-radius: 10px !important;
+  background-color: rgba(255, 255, 255, 0.863) !important;
+  /* border: 0px; */
+  /* border-bottom-style: double; */
+  padding: 7px 15px;
+  width: 100%;
+  color: darkcyan;
+  font-family: "Crimson Text", serif;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-button[type=submit] {
-    color: rgb(255, 255, 255)!important;
-    background: rgb(49, 114, 92);
-    font-weight: 200!important;
-    font-family: 'Monoton', cursive;
-    text-transform: uppercase!important;
-    font-size: 20px!important;
-    border: solid 2px rgb(252, 244, 244)!important;
-    padding: 7px 20px!important;
-    border-radius: 10px!important;
-    display: block!important;
-    margin: 23px auto 0px;
-  }
-  button[type=submit]:hover {
-    background: #ffffff; 
-    color: rgb(60, 112, 91)!important;
-    /* transition: all 0.7s;
+.form-control {
+  height: 52px;
+  font-size: 24px;
+  border: solid 1px gray;}
+
+small,
+p#email-feedback {
+  color: rgb(20, 8, 129);
+  font-family: "Arima Madurai", cursive;
+  padding: unset;
+}
+
+button[type="submit"] {
+  color: rgb(255, 255, 255) !important;
+  background: rgb(49, 114, 92);
+  font-weight: 200 !important;
+  font-family: "Monoton", cursive;
+  text-transform: uppercase !important;
+  font-size: 20px !important;
+  border: solid 2px rgb(252, 244, 244) !important;
+  padding: 7px 20px !important;
+  border-radius: 10px !important;
+  display: block !important;
+  margin: 23px auto 0px;
+}
+
+button[type="submit"]:hover {
+  background: #ffffff;
+  color: rgb(60, 112, 91) !important;
+  /* transition: all 0.7s;
     transform: scale(1.1); */
-    border: solid 1px rgb(2, 2, 2)!important;
-  }
+  border: solid 1px rgb(2, 2, 2) !important;
+}
 
-  .login-help {
-    text-align: center;
-  }
-  .login-help p {
-	color: rgb(19, 99, 72);
-	font-family: 'Crimson Text', serif;
-	font-weight: bolder;
-	margin-top: 10px;
-  }
-  .login-help a{
-    color: rgb(238, 65, 65);
-    font-size: 40px;
-    padding-top: 5px;
-    font-family: 'Libre Barcode 39 Text', cursive;
-  }
+.login-help {
+  text-align: center;
+  font-size: 0.7em;
+}
+.login-help p {
+  color: rgb(19, 99, 72);
+  font-family: "Crimson Text", serif;
+  font-weight: bolder;
+  margin-top: -20px;
+}
+.login-help a span {
+  color: rgb(238, 65, 65);
+  font-size: .4em;
+  text-decoration: underline;
+  padding-top: 5px;
+  font-family: "Crimson Text", cursive;
+}
+
+.account-holder {
+  padding: 0px;
+  text-shadow: -2px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
 
 /* media query */
 
 @media (max-width: 1199.98px) {
-
 }
 @media (max-width: 991.98px) {
-
 }
 @media (max-width: 767.98px) {
-
 }
 @media (max-width: 575.98px) {
-	#registration-container h1 {
-		font-size: 30px;
-	}
-	#registration-container {
-		padding-top: 80px;
-	}
+  #registration-container h1 {
+    font-size: 30px;
+  }
+  #registration-container {
+    padding-top: 80px;
+  }
 }
