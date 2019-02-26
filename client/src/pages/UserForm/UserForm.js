@@ -12,7 +12,7 @@ import { List, ListItem } from "../../components/List";
 import Nav from "../../components/Nav";
 import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
-import { logoutUser, deserializeUser } from "../../utils/helpers";
+import { logoutUser, deserializeUser, serializeUser } from "../../utils/helpers";
 
 require("./UserForm.css");
 
@@ -73,6 +73,7 @@ class UserForm extends Component {
     userAPI
       .deleteUserForm(id)
       .then(res => this.loadUserForm())
+      .then(_ => serializeUser(this.state.user))
       .catch(err => console.log(err));
   };
 
@@ -89,7 +90,7 @@ class UserForm extends Component {
     if (this.state.company && this.state.position) {
       userAPI
         .saveUserForm({
-          _user: this.props.location.state.user._id,
+          _user: this.state.user._id,
           company: this.state.company,
           position: this.state.position,
           detail: this.state.detail,
