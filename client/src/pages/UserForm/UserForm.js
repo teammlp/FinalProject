@@ -103,13 +103,19 @@ class UserForm extends Component {
 
   render() {
     const { user, userForms } = this.state;
+    const options = [
+      { label: '* Location', value: 0 },
+      { label: 'Chicago, IL', value: 'Chicago, IL' },
+      { label: 'Seattle, WA', value: 'Chicago, IL' },
+      { label: 'Chicago, IL', value: 'Chicago, IL' },
+      { label: 'Chicago, IL', value: 'Chicago, IL' }
+    ];
 
     return !user ? (
       <Redirect to={{ pathname: "/login" }} />
     ) : (
       <Container fluid>
-        <Nav user={user} />
-        <FormBtn onClick={this.logout}>logout</FormBtn>
+        <Nav user={user} logoutHandler={this.logout} />
         <Row>
           <Col size="md-12">
             <div className="dashboard">
@@ -182,8 +188,10 @@ class UserForm extends Component {
                 value={this.state.location}
                 onChange={this.handleInputChange}
                 name="location"
-                placeholder="Location"
+                placeholder="Location" 
+                options={options}
               />
+              
               <TextArea
                 value={this.state.detail}
                 onChange={this.handleInputChange}
