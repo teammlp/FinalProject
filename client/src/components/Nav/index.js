@@ -41,15 +41,16 @@ function Nav(props) {
             </div>
             {
               props.user ?
-              <div className="two columns">
+              <div className="two columns userName">
                   <Link
                     to={{
                       pathname: "/userForm",
                       state:{user: props.user}
                     }}
-                  >{props.user.username}
+                  ><h2>{props.user.username}</h2>
                   </Link>
               <a href="/task">TASKS</a>
+              <a href="#" onClick={props.logoutHandler}>LOGOUT</a>
                 </div>
                 
                 :

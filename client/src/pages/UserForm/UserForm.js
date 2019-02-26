@@ -12,7 +12,7 @@ import { List, ListItem } from "../../components/List";
 import Nav from "../../components/Nav";
 import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
-import { logoutUser, deserializeUser } from "../../utils/helpers";
+import { logoutUser, deserializeUser, serializeUser } from "../../utils/helpers";
 
 require("./UserForm.css");
 
@@ -73,6 +73,7 @@ class UserForm extends Component {
     userAPI
       .deleteUserForm(id)
       .then(res => this.loadUserForm())
+      .then(_ => serializeUser(this.state.user))
       .catch(err => console.log(err));
   };
 
@@ -89,7 +90,7 @@ class UserForm extends Component {
     if (this.state.company && this.state.position) {
       userAPI
         .saveUserForm({
-          _user: this.props.location.state.user._id,
+          _user: this.state.user._id,
           company: this.state.company,
           position: this.state.position,
           detail: this.state.detail,
@@ -103,13 +104,19 @@ class UserForm extends Component {
 
   render() {
     const { user, userForms } = this.state;
+    const options = [
+      { label: '* Location', value: 0 },
+      { label: 'Chicago, IL', value: 'Chicago, IL' },
+      { label: 'Seattle, WA', value: 'Chicago, IL' },
+      { label: 'Chicago, IL', value: 'Chicago, IL' },
+      { label: 'Chicago, IL', value: 'Chicago, IL' }
+    ];
 
     return !user ? (
       <Redirect to={{ pathname: "/login" }} />
     ) : (
       <Container fluid>
-        <Nav user={user} />
-        <FormBtn onClick={this.logout}>logout</FormBtn>
+        <Nav user={user} logoutHandler={this.logout} />
         <Row>
           <Col size="md-12">
             <div className="dashboard">
@@ -182,8 +189,10 @@ class UserForm extends Component {
                 value={this.state.location}
                 onChange={this.handleInputChange}
                 name="location"
-                placeholder="Location"
+                placeholder="Location" 
+                options={options}
               />
+              
               <TextArea
                 value={this.state.detail}
                 onChange={this.handleInputChange}

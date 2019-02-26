@@ -225,7 +225,7 @@ export default class Register extends Component {
             <div>
                 <Nav />
                 <div id="registration-container" >
-                    <h2>Registration</h2>
+                    <h2 className="create-account">Create a New Account</h2>
                     <section className="container">
                         <div className="container-page">
                             <form onSubmit={this.handleSubmit.bind(this)}>
@@ -268,7 +268,7 @@ export default class Register extends Component {
                                 </div>
                             </form>
                             <div className="login-help">
-                                <p>Already have an account? <i className="fas fa-cog fa-spin" /><Link to={"/login"}> Login   <i className="fas fa-pencil-alt fa-xs"/></Link></p>
+                                <p className="account-holder">Already have an account? <Link to={"/login"}> <span>Login</span></Link></p>
                             </div>
                         </div>
                     </section>
