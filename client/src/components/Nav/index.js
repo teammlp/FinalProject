@@ -25,7 +25,7 @@ function Nav(props) {
             <div className="four columns">
               <a
                 onClick="trackEvent('landing_go_to_advisor_page_clicked')"
-                href="/JobBoard"
+                href="/jobBoard"
               >
                 JOBS
               </a>

@@ -1,0 +1,27 @@
+.card{
+    border-radius: 10px;
+    background-color: lightgrey
+}
+
+.search-list{
+    border-radius: 15px;
+    background-color: rgb(230, 230, 230);
+    font-family: 'Suranna', serif;
+}
+
+
+.saveBook {
+    border-radius: 5px;
+    margin-left: 10px;
+    background-color: rgb(236, 222, 204);
+    color: black;
+    border-color: black;
+}
+
+.viewBook {
+    border-radius: 5px;
+    margin-left: 5px;
+    background-color: rgba(150, 150, 146, 0.842);
+    border-color: black;
+
+}
