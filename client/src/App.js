@@ -7,9 +7,8 @@ import Home from "./pages/Home";
 import Notfound from "./pages/NotFound";
 import Detail from "./pages/Detail";
 import "./App.css";
-import TodoLists from "./pages/TodoLists";
 import Footer from "./components/Footer/Footer";
-import Carousel from "./components/Carousel/Carousel";
+// import Carousel from "./components/Carousel/Carousel";
 import Task from './pages/Task';
 import JobBoard from './pages/JobBoard';
 import { deserializeUser } from './utils/helpers';
@@ -82,10 +81,10 @@ export default class App extends Component {
               <Route exact path="/userForm" component={UserForm} />
 
               <Route exact path="/userForm/:id" component={Detail} />
-              <Route exact path="/todoLists" component={TodoLists} />
+             
               <Route exact path="/task" component={Task} />
 
-               <Route exact path="/JobBoard" component={JobBoard} />
+               <Route exact path="/jobBoard" component={JobBoard} />
 
                 <Route component={Notfound} />
 

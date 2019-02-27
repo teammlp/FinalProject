@@ -71,7 +71,8 @@ export default {
 //=========JobBoard=========
 
     getJobBoardSearch: function(query) {
-        return axios.get("https://www.googleapis.com/books/v1/volumes?q=" + query)
+
+        return axios.get("http://usajobs.gov/JobSearch/Search/GetResults?" + query)
     },
 
     // Gets all jobBoards
