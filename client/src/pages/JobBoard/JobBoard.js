@@ -6,13 +6,13 @@ import Nav from "../../components/Nav";
 import { Container, Row, Col } from "../../components/Grid";
 // import { Input } from "../../components/Form";
 import SearchForm from "../../components/SearchForm";
-// import SearchResult from "../../components/SearchResult";
+import SearchResult from "../../components/SearchResult";
 
 
 export default class JobBoard extends Component {
 
   state = {
-    
+    search:"",
     jobBoard: [],
     jobTitle: "",
     company: "",
@@ -34,6 +34,7 @@ handleFormSubmit = event => {
   // once it clicks it connects to the google book api with the search value
   userAPI.getJobBoardSearch(this.state.search)
       .then(res => {
+        console.log(res);
           if (res.data.items === "error") {
               throw new Error(res.data.items);
           }
@@ -73,36 +74,40 @@ handleSavedButton = event => {
       .catch(err => console.log(err))
 }
 
-// componentDidMount() {
-//   let userId = sessionStorage.getItem("userId");
-//   this.setState({userId});
-//   this.loadIncidents();
-// }
+componentDidMount() {
+  
+}
 
-// searchJobs = query => {
-//   console.log("searching...")
-//   userAPI.search(query)
-//     .then(res => this.setState({ results: res.data.incidents }))
+searchJobs = query => {
+  console.log("searching...")
+  userAPI.search(query)
+    .then(res => this.setState({ results: res.data }))
+    .catch(err => console.log(err));
+};
+
+handleSearchSubmit  = event => {
+  if(event.key === 'Enter') {
+    console.log("submittng...", event)
+
+    event.preventDefault();
+    this.searchJobs(this.state.description);
+
+    // this.setState({
+   
+    // });
+  }
+};
+
+// loadJobBoard = () => {
+//   userAPI.getJobBoards()
+//     .then(res => {
+//       console.log(res)
+//       this.setState({ 
+//         jobBoard: res.data 
+//       })
+//     })
 //     .catch(err => console.log(err));
-// };
-
-// handleSearchSubmit  = event => {
-//   if(event.key === 'Enter') {
-//     console.log("submittng...", event)
-
-//     // event.preventDefault();
-//     this.searchBikeIncidents(this.state.searchTerm);
-
-//     this.setState({
-//       blah: ""
-//     });
-//   }
-// };
-
-// loadIncidents = () => {
-//   API.getIncidents()
-//     .then(res => this.setState({ incidents: res.data }))
-//     .catch(err => console.log(err));
+    
 // };
 
 // handleInputChange = event => {
@@ -131,13 +136,14 @@ handleSavedButton = event => {
                                 handleFormSubmit={this.handleFormSubmit}
                                 handleInputChange={this.handleInputChange}
                             />
+                           < button type="submit" onKeyPress={this.handleSearchSubmit}>Click here</ button>
                         </Col>
                     </Row>
                 </Container>
                 <br></br>
-                {/* <Container>
+                <Container>
                     <SearchResult jobBoard={this.state.jobBoard} handleSavedButton={this.handleSavedButton} />
-                </Container> */}
+                </Container>
            
             <Link/>
             <a href="/" onClick={() => this.props.history.goBack()} id="back-link">← Back to main page</a>

@@ -104,13 +104,6 @@ class UserForm extends Component {
 
   render() {
     const { user, userForms } = this.state;
-    const options = [
-      { label: '* Location', value: 0 },
-      { label: 'Chicago, IL', value: 'Chicago, IL' },
-      { label: 'Seattle, WA', value: 'Chicago, IL' },
-      { label: 'Chicago, IL', value: 'Chicago, IL' },
-      { label: 'Chicago, IL', value: 'Chicago, IL' }
-    ];
 
     return !user ? (
       <Redirect to={{ pathname: "/login" }} />
@@ -190,7 +183,6 @@ class UserForm extends Component {
                 onChange={this.handleInputChange}
                 name="location"
                 placeholder="Location" 
-                options={options}
               />
               
               <TextArea

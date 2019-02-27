@@ -20,6 +20,7 @@ export default class Task extends Component {
 
   componentDidMount = () => {
     try {
+    
       const json = localStorage.getItem("tasks");
       const tasks = JSON.parse(json);
 

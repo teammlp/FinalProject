@@ -11,6 +11,7 @@ import Footer from "./components/Footer/Footer";
 // import Carousel from "./components/Carousel/Carousel";
 import Task from './pages/Task';
 import JobBoard from './pages/JobBoard';
+import Talks from './pages/Talks';
 import { deserializeUser } from './utils/helpers';
 
 
@@ -79,14 +80,11 @@ export default class App extends Component {
                 />}
               />
               <Route exact path="/userForm" component={UserForm} />
-
               <Route exact path="/userForm/:id" component={Detail} />
-             
               <Route exact path="/task" component={Task} />
-
-               <Route exact path="/jobBoard" component={JobBoard} />
-
-                <Route component={Notfound} />
+              <Route exact path="/jobBoard" component={JobBoard} />
+              <Route exact path="/talks" component={Talks} />
+              <Route component={Notfound} />
 
             </Switch>
           </div>

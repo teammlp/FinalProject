@@ -33,10 +33,10 @@ function Nav(props) {
             <div className="two columns">
               <a
                 onclick="trackEvent('landing_pricing_clicked')"
-                href="#about"
+                href="/talks"
                 className="login"
               >
-                ABOUT
+            Inspiration
               </a>
             </div>
             {

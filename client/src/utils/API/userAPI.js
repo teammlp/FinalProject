@@ -72,7 +72,7 @@ export default {
 
     getJobBoardSearch: function(query) {
 
-        return axios.get("http://usajobs.gov/JobSearch/Search/GetResults?" + query)
+        return axios.get(`https://cors-anywhere.herokuapp.com/https://data.usajobs.gov/api/search&apikey=${process.env.REACT_APP_JB_KEY}` + query)
     },
 
     // Gets all jobBoards

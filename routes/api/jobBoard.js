@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const jobBoardController = require("../../controllers/jobBoardController");
 
-// Matches with "/api/books"
+// Matches with "/api/jobBoard"
 router.route("/")
   .get(jobBoardController.findAll)
   .post(jobBoardController.create);
