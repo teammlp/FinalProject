@@ -20,8 +20,7 @@ function Nav(props) {
             </a>
           </span>
         </div>
-        <div className="one columns"></div>
-        <div className="seven columns menu" id="menu">
+        <div className="eight columns menu" id="menu">
           <div className="row" id="row-menu">
               <a href="/jobBoard" className="login">JOBS</a>
               <a href="/talks" className="login">Inspiration</a>
