@@ -12,7 +12,11 @@ import { List, ListItem } from "../../components/List";
 import Nav from "../../components/Nav";
 import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
-import { logoutUser, deserializeUser, serializeUser } from "../../utils/helpers";
+import {
+  logoutUser,
+  deserializeUser,
+  serializeUser
+} from "../../utils/helpers";
 
 require("./UserForm.css");
 
@@ -49,7 +53,7 @@ class UserForm extends Component {
   logout = () => {
     this.props.deAuthenticate();
     logoutUser();
-    this.setState({user: null});
+    this.setState({ user: null });
     // window.location.reload();
   };
 
@@ -104,13 +108,6 @@ class UserForm extends Component {
 
   render() {
     const { user, userForms } = this.state;
-    const options = [
-      { label: '* Location', value: 0 },
-      { label: 'Chicago, IL', value: 'Chicago, IL' },
-      { label: 'Seattle, WA', value: 'Chicago, IL' },
-      { label: 'Chicago, IL', value: 'Chicago, IL' },
-      { label: 'Chicago, IL', value: 'Chicago, IL' }
-    ];
 
     return !user ? (
       <Redirect to={{ pathname: "/login" }} />
@@ -125,8 +122,8 @@ class UserForm extends Component {
             </div>
           </Col>
         </Row>
-        <Row>
-          <Col size="md-6 sm-6">
+        <Row id="UserContent"> 
+          <Col size="md-5 sm-5">
             {/* <Jumbotron> */}
             <h3 className="List">
               Companies On My List <i className="fas fa-archive fa-xs" />
@@ -142,8 +139,9 @@ class UserForm extends Component {
                         {userForm.location}
                       </strong>
                     </Link>
-                    <DeleteBtn
+                    <DeleteBtn 
                       onClick={() => this.deleteUserForm(userForm._id)}
+                      
                     />
                     {/* <button onClick={this.submit}>Confirm dialog</button> */}
                   </ListItem>
@@ -153,7 +151,7 @@ class UserForm extends Component {
               <h3>No Results to Display</h3>
             )}
           </Col>
-          <Col size="md-6">
+          <Col size="md-5">
             <h3 className="List">
               New application <i className="far fa-copy fa-xs" />
             </h3>
@@ -189,10 +187,9 @@ class UserForm extends Component {
                 value={this.state.location}
                 onChange={this.handleInputChange}
                 name="location"
-                placeholder="Location" 
-                options={options}
+                placeholder="Location"
               />
-              
+
               <TextArea
                 value={this.state.detail}
                 onChange={this.handleInputChange}

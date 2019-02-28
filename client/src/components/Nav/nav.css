@@ -30,22 +30,55 @@
     margin-right: auto; */
 }
 
+#logo-column {
+  margin-left: 1.2em;
+}
+
+.menu {
+justify-content: center;
+}
+
+#row-menu {
+  display: flex;
+  justify-content: center;
+}
+
 @media (min-width: 550px) {
   .column,
   .columns {
     margin-left: 4%;
   }
 
+  .one.columns {
+    width: 10%;
+  }
+
   .two.columns {
     width: 13.3333333333%;
+  }
+
+  .special.columns {
+    width: 22%;
+  }
+
+  .three.columns {
+    width: 23.3333333333%;
   }
 
   .four.columns {
     width: 30.6666666667%;
   }
 
+  .seven.columns {
+    width: 55%;
+  }
+
   .eight.columns {
     width: 65.3333333333%;
+  }
+
+  .nine.columns {
+    width: 72.33333333333%;
   }
 
   .column:first-child,

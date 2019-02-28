@@ -1,0 +1,34 @@
+.cardSize {
+    
+    display: inline;
+}
+#story{
+    
+}
+.card img{
+    height: 210px;
+    width: auto;
+    
+}
+
+
+@media (max-width: 1199.98px) {
+    /* .cardSize {
+        width: 100%;
+    } */
+}
+@media (max-width: 991.98px) {
+    .cardSize {
+        width: 100%;
+    }
+}
+@media (max-width: 767.98px) {
+    .cardSize {
+        width: 100%;
+    }
+}
+@media (max-width: 400px) {
+    .cardSize {
+        width: 100%;
+    }
+}

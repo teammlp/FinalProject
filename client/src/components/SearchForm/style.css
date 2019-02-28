@@ -1,4 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Pattaya|Rye|Suranna|UnifrakturMaguntia');
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text');
+
+#JobSearchForm{
+    font-family: 'Crimson Text', serif;
+    justify-content: space-between;
+    color: rgb(25, 73, 71);
+    border: solid 1px gray;
+    border-radius: 5px;
+    width: 100%;
+}
+
+
+
 /* form{
     background: rgb(217, 218, 216);
     border-radius: 10px;

@@ -7,18 +7,33 @@ import Deleteall from "../../components/Delete-All";
 import ModalAlert from "../../components/Modal";
 import Link from "../../components/Link";
 import { Redirect } from "react-router-dom";
+import { userAPI } from "../../utils/API";
 import Logo from "../../components/Logo";
 import { Col, Row, Container } from "../../components/Grid";
-import { deserializeUser } from "../../utils/helpers";
+import { deserializeUser, serializeUser} from "../../utils/helpers";
 import "./Task.css";
 
 export default class Task extends Component {
   state = {
+    user: {},
     tasks: [],
     selectedTask: undefined
   };
 
+  // componentDidMount() {
+  //   const user = deserializeUser();
+  //   this.setState({
+  //     user: user,
+  //     username: user && user.username
+  //   });
+  // }
+
   componentDidMount = () => {
+    const user = deserializeUser();
+    this.setState({
+      user: user,
+      username: user && user.username
+    });
     try {
       const json = localStorage.getItem("tasks");
       const tasks = JSON.parse(json);
@@ -31,13 +46,31 @@ export default class Task extends Component {
     }
   };
 
+  loadUserTask = () => {
+    userAPI
+      .getTasks(this.state.user._id)
+      .then(res => {
+        console.log(res);
+        this.setState({
+          tasks: res.data
+        });
+      })
+      .catch(err => console.log(err, "Why error, huh?"));
+  };
+
   componentDidUpdate = (prevProps, prevState) => {
     if (prevState.tasks.length !== this.state.tasks.length) {
       const json = JSON.stringify(this.state.tasks);
       localStorage.setItem("tasks", json);
     }
   };
-
+  // deleteUserTask = id => {
+  //   userAPI
+  //     .deleteTask(id)
+  //     .then(res => this.loadUserTask())
+  //     .then(_ => serializeUser(this.state.user))
+  //     .catch(err => console.log(err));
+  // };
   deleteTask = taskTodelete => {
     this.setState(prevState => ({
       tasks: prevState.tasks.filter(task => taskTodelete !== task)

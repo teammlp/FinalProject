@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const jobBoardSchema = new Schema({
+const jobSchema = new Schema({
 
     jobTitle: String,
     company: String,
@@ -12,6 +12,6 @@ const jobBoardSchema = new Schema({
 
 });
 
-const JobBoard = mongoose.model('JobBoard', jobBoardSchema);
+const Jobs = mongoose.model('Jobs', jobSchema);
 
-module.export = JobBoard;
+module.export = Jobs;
