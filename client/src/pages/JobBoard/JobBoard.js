@@ -1,155 +1,116 @@
 
 import React, { Component } from 'react';
 import Link from '../../components/Link';
-import { userAPI } from "../../utils/API";
-import Nav from "../../components/Nav";
-import { Container, Row, Col } from "../../components/Grid";
-// import { Input } from "../../components/Form";
-import SearchForm from "../../components/SearchForm";
-import SearchResult from "../../components/SearchResult";
+import './JobBoard.css'
+import axios from 'axios';
 
 
 export default class JobBoard extends Component {
-
   state = {
-    search:"",
-    jobBoard: [],
-    jobTitle: "",
-    company: "",
-    description: "",
-    salary: "",
-    link:"",
-    dateAdded: "",
-    user: null
+    results: [],
+    keyword: "",
+    location: "",
+    locT: "C",
+    locId: "",
+    options: [],
+    showOptions: true
+  };
 
-};
-//function to take value of what enter in the search bar
-handleInputChange = event => {
-  this.setState({ search: event.target.value })
-}
-
-//function to control the submit button of the search form 
-handleFormSubmit = event => {
-  event.preventDefault();
-  // once it clicks it connects to the google book api with the search value
-  userAPI.getJobBoardSearch(this.state.search)
-      .then(res => {
-        console.log(res);
-          if (res.data.items === "error") {
-              throw new Error(res.data.items);
-          }
-          else {
-              // store response in a array
-              let results = res.data.items
-              //map through the array 
-              results = results.map(result => {
-                  //store each book information in a new object 
-                  result = {
-                      key: result.id,
-                      id: result.id,
-                      jobTitle: result.volumeInfo.jobTitle,
-                      company: result.volumeInfo.company,
-                      description: result.volumeInfo.description,
-                      salary: result.volumeInfo.salary,
-                      link: result.volumeInfo.infoLink,
-                      dateAdded: result.volumeInfo.dateAdded
-                  }
-                  return result;
-              })
-              // reset the sate of the empty books array to the new arrays of objects with properties geting back from the response
-              this.setState({ jobBoard: results, error: "" })
-          }
-      })
-      .catch(err => this.setState({ error: err.items }));
-}
-
-handleSavedButton = event => {
-  // console.log(event)
-  event.preventDefault();
-  console.log(this.state.jobBoard)
-  let savedJobBoard = this.state.jobBoard.filter(jobBoard => jobBoard.id === event.target.id)
-  savedJobBoard = savedJobBoard[0];
-  userAPI.saveJobBoard(savedJobBoard)
-      .then(this.setState({ message: alert("Your job is saved") }))
-      .catch(err => console.log(err))
-}
-
-componentDidMount() {
-  
-}
-
-searchJobs = query => {
-  console.log("searching...")
-  userAPI.search(query)
-    .then(res => this.setState({ results: res.data }))
-    .catch(err => console.log(err));
-};
-
-handleSearchSubmit  = event => {
-  if(event.key === 'Enter') {
-    console.log("submittng...", event)
-
-    event.preventDefault();
-    this.searchJobs(this.state.description);
-
-    // this.setState({
-   
-    // });
+  constructor(props) {
+    super(props);
+    this.locationField = React.createRef();
   }
-};
 
-// loadJobBoard = () => {
-//   userAPI.getJobBoards()
-//     .then(res => {
-//       console.log(res)
-//       this.setState({ 
-//         jobBoard: res.data 
-//       })
-//     })
-//     .catch(err => console.log(err));
-    
-// };
+  componentDidMount() {
+    axios.get('https://www.glassdoor.com/Job/jobs.htm?sc.keyword=Software%20Developer&locT=C&locId=1128808&locKeyword=Chicago,%20IL&srs=RECENT_SEARCHES')
+      .then(res => {
+        const jobTitle = res.data
+        console.log(jobTitle)
+        this.setState({ results: jobTitle })
 
-// handleInputChange = event => {
-//   console.log('im here!')
-//   const { name, value } = event.target;
-//   this.setState({
-//     [name]: value
-//   });
-//   // this.searchBikeIncidents(this.state.searchTerm);
-// };
+      })
+  }
 
-// deleteIncident = id => {
-//   API.deleteIncident(id)
-//     .then(res => this.loadIncidents())
-//     .catch(err => console.log(err));
-// };
+  locationChangeHandler = (e) => {
+    const location = e.target.value;
+    this.setState({ location, showOptions: true }, () => {
+      if (location.length >= 3)
+        axios.get(`api/jobs/complete?term=${location}`)
+          .then(
+            res => this.setState({ options: res.data })
+          )
+      else
+        this.setState({ options: [], showOptions: true })
+    });
+    console.log(this.locationField.current.getBoundingClientRect())
+  }
 
-    render() {
-        return (
-          <Container fluid>
-                    <h2 className="">Search Job Here</h2>
-                <Container>
-                    <Row>
-                        <Col size="12">
-                            <SearchForm
-                                handleFormSubmit={this.handleFormSubmit}
-                                handleInputChange={this.handleInputChange}
-                            />
-                           < button type="submit" onKeyPress={this.handleSearchSubmit}>Click here</ button>
-                        </Col>
-                    </Row>
-                </Container>
-                <br></br>
-                <Container>
-                    <SearchResult jobBoard={this.state.jobBoard} handleSavedButton={this.handleSavedButton} />
-                </Container>
-           
-            <Link/>
-            <a href="/" onClick={() => this.props.history.goBack()} id="back-link">← Back to main page</a>
-            </Container>
-        );
+  get dropdownStyle() {
+    if (this.state.options.length && this.state.showOptions) {
+      const rect = this.locationField.current.getBoundingClientRect();
+      return {
+        display: this.state.options.length ? "block" : "none",
+        positon: "absolute",
+        left: rect.left,
+        top: rect.bottom,
+        cursor: "pointer"
       }
+    }
+    return {};
+  }
+
+  changeHandler = ({ target }) => this.setState({ [target.name]: target.value })
+
+  sumbitHandler = event => {
+    event.preventDefault();
+    axios.get("/api/jobs/search", {
+      keyword: this.state.keyword,
+      locT: this.state.locT,
+      locId: this.state.locId
+    })
+      .then(res => console.log(res.data));
+  }
+
+  render() {
+    return (
+
+      <div>
+
+        <Link />
+        <a href="/" onClick={() => this.props.history.goBack()} id="back-link">← Back to main page</a>
+        <form onSubmit={this.sumbitHandler}>
+          <label>keyword</label>
+          <input name="keyword" type="text" onChange={this.changeHandler} />
+          <label>location</label>
+          <input
+            name="location"
+            type="text"
+            autoComplete="off"
+            onChange={this.locationChangeHandler}
+            ref={this.locationField}
+            value={this.state.location}
+          />
+
+          <ul className="dropdown-menu" style={this.dropdownStyle}>
+            {this.state.options.map(opt =>
+              <li onClick={() => this.setState({ 
+                location: opt.label, 
+                locT: opt.locationType,
+                locId: opt.locationId,
+                showOptions: false 
+                })}>
+                {opt.label}
+              </li>)
+            }
+
+          </ul>
+          <input type="submit"/>
+        </form>
+      </div>
+
+
+    );
+  };
 
 
 }
