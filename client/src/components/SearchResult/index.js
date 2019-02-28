@@ -7,7 +7,7 @@ const SearchResult = props => {
         <div className="card">
             <div className="card-body player">
                 <div className="article">
-                    <h3>Search Results || <i className="fas fa-alt"></i></h3>
+                    <h1>Search Results <i className="fas fa-alt"></i></h1>
                 </div>
             </div>
         </div>
@@ -15,23 +15,23 @@ const SearchResult = props => {
             <div className="card">
                 <div className="card-body player">
                     <div className="article">
-                        <h3>Search Results || <i class="fas fa-book"></i></h3>
+                        <h1>Search Results || <i class="fas fa-alt"></i></h1>
                         {props.jobBoard.map(jobBoard => {
                             return (
                                 <li className="search-list list-group-item">
                                     <Row className="SearchResult row" id={jobBoard.jobTitle + "Card"} key={jobBoard._id}>
-                                        {/* col-3 show image of the book */}
+                                       
                                         <Col size="2" className="jobImage">
                                             {/* <img src={jobBoard.image} alt={book.title} /> */}
                                         </Col>
                                         <Col size="1" className="emptyCol"/>
-                                        {/* col-9 show information of the book */}
-                                        <Col size="9" className="bookInfo">
+                                      
+                                        <Col size="9" className="Info">
                                             <Row>
-                                                <h3 className="bookTitle">{jobBoard.jobTitle}</h3>
+                                                <h3 className="Title">{jobBoard.jobTitle}</h3>
                                             </Row>
                                             <Row>
-                                                <h4 className="bookAuthor">{jobBoard.company}</h4>
+                                                <h4 className="company">{jobBoard.company}</h4>
                                             </Row>
                                             <Row>
                                                 <p className="bookDescription">{jobBoard.description}</p>
@@ -40,7 +40,7 @@ const SearchResult = props => {
                                     </Row>
                                     <br></br>
                                     <Row className="buttonDiv ">
-                                        <button className="saveBook btn btn-primary" id={jobBoard.id} onClick={(event) => props.handleSavedButton(event)}>
+                                        <button className="saveJob btn btn-primary" id={jobBoard.id} onClick={(event) => props.handleSavedButton(event)}>
                                             Save Job
                                         </button>
                                         <a href={jobBoard.link} target="_blank" rel="noopener noreferrer" >

@@ -3,19 +3,19 @@ import "./style.css";
 
 const SearchForm = props => {
     return (
-        <form>
+        <form id="jobSearchForm">
             <div className="form-group">
-                <label className="JobSearchLabel"><h3>Search here...</h3></label>
+                <label className="JobSearchLabel"><h2>Search here...</h2></label>
                 <br></br>
                 <input className="col-12 form-control"
                     value={props.search}
                     type="text"
                     name="searchJob"
-                    placeholder="Search here..."
+                    placeholder="Enter job name"
                     onChange={props.handleInputChange}
                 />
             </div>
-            <button type="submit" className="submitBtn btn btn-secondary" onClick={props.handleFormSubmit}>
+            <button type="submit" className="submitBtn btn btn-secondary" onClick={props.handleSubmit}>
                 Click me!
             </button>
         </form>

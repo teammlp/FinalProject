@@ -33,6 +33,7 @@ function Nav(props) {
                     }}
                   >{props.user.username}
                   </Link>
+               
                 <a href="/task">TASKS</a>
                 <a href="#" onClick={props.logoutHandler}>LOGOUT</a>
               </>

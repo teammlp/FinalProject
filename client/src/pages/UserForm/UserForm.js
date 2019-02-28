@@ -122,8 +122,8 @@ class UserForm extends Component {
             </div>
           </Col>
         </Row>
-        <Row>
-          <Col size="md-6 sm-6">
+        <Row id="UserContent"> 
+          <Col size="md-5 sm-5">
             {/* <Jumbotron> */}
             <h3 className="List">
               Companies On My List <i className="fas fa-archive fa-xs" />
@@ -139,8 +139,9 @@ class UserForm extends Component {
                         {userForm.location}
                       </strong>
                     </Link>
-                    <DeleteBtn
+                    <DeleteBtn 
                       onClick={() => this.deleteUserForm(userForm._id)}
+                      
                     />
                     {/* <button onClick={this.submit}>Confirm dialog</button> */}
                   </ListItem>
@@ -150,7 +151,7 @@ class UserForm extends Component {
               <h3>No Results to Display</h3>
             )}
           </Col>
-          <Col size="md-6">
+          <Col size="md-5">
             <h3 className="List">
               New application <i className="far fa-copy fa-xs" />
             </h3>

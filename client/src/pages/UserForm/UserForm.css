@@ -9,6 +9,9 @@
     margin-bottom: 25px;
     text-shadow: -2px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
+#UserContent{
+    justify-content: center;
+}
 .List{
     /* background-color: rgb(239, 241, 241); */
     padding: 10px;
