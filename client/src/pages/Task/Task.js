@@ -18,6 +18,14 @@ export default class Task extends Component {
     selectedTask: undefined
   };
 
+  // componentDidMount() {
+  //   const user = deserializeUser();
+  //   this.setState({
+  //     user: user,
+  //     username: user && user.username
+  //   });
+  // }
+
   componentDidMount = () => {
     try {
     

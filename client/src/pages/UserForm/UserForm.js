@@ -12,7 +12,11 @@ import { List, ListItem } from "../../components/List";
 import Nav from "../../components/Nav";
 import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
-import { logoutUser, deserializeUser, serializeUser } from "../../utils/helpers";
+import {
+  logoutUser,
+  deserializeUser,
+  serializeUser
+} from "../../utils/helpers";
 
 require("./UserForm.css");
 
@@ -49,7 +53,7 @@ class UserForm extends Component {
   logout = () => {
     this.props.deAuthenticate();
     logoutUser();
-    this.setState({user: null});
+    this.setState({ user: null });
     // window.location.reload();
   };
 
@@ -182,9 +186,9 @@ class UserForm extends Component {
                 value={this.state.location}
                 onChange={this.handleInputChange}
                 name="location"
-                placeholder="Location" 
+                placeholder="Location"
               />
-              
+
               <TextArea
                 value={this.state.detail}
                 onChange={this.handleInputChange}

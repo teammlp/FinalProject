@@ -82,8 +82,22 @@ export default class App extends Component {
               <Route exact path="/userForm" component={UserForm} />
               <Route exact path="/userForm/:id" component={Detail} />
               <Route exact path="/task" component={Task} />
-              <Route exact path="/jobBoard" component={JobBoard} />
-              <Route exact path="/talks" component={Talks} />
+              <Route exact path="/jobBoard" render={props =>
+                <JobBoard
+                {...props}
+                authenticate={this.authenticate}
+                deAuthenticate={this.deAuthenticate}
+                authenticated={this.state.authenticated}
+                />}
+              />
+              <Route exact path="/talks" render={props =>
+                <Talks
+                {...props}
+                authenticate={this.authenticate}
+                deAuthenticate={this.deAuthenticate}
+                authenticated={this.state.authenticated}
+                />}
+              />
               <Route component={Notfound} />
 
             </Switch>
