@@ -9,7 +9,7 @@ function Nav(props) {
   return (
     <div className="full-width-container header">
       <div className="row">
-        <div className="four columns">
+        <div className="three columns" id="logo-column">
           <span className="logo">
             <a href="/">
               <img
@@ -20,59 +20,27 @@ function Nav(props) {
             </a>
           </span>
         </div>
-        <div className="eight columns menu" id="menu">
-          <div className="row">
-            <div className="four columns">
-              <a
-                onClick="trackEvent('landing_go_to_advisor_page_clicked')"
-                href="/jobBoard"
-              >
-                JOBS
-              </a>
-            </div>
-            <div className="two columns">
-              <a
-                onclick="trackEvent('landing_pricing_clicked')"
-                href="/talks"
-                className="login"
-              >
-            Inspiration
-              </a>
-            </div>
-            {
-              props.user ?
-              <div className="two columns userName">
+        <div className="one columns"></div>
+        <div className="seven columns menu" id="menu">
+          <div className="row" id="row-menu">
+              <a href="/jobBoard" className="login">JOBS</a>
+              <a href="/talks" className="login">Inspiration</a>
+            {props.user ?
+              <>
                   <Link
                     to={{
                       pathname: "/userForm",
                       state:{user: props.user}
                     }}
-                  ><h2>{props.user.username}</h2>
+                  >{props.user.username}
                   </Link>
-              <a href="/task">TASKS</a>
-              <a href="#" onClick={props.logoutHandler}>LOGOUT</a>
-                </div>
-                
+                <a href="/task">TASKS</a>
+                <a href="#" onClick={props.logoutHandler}>LOGOUT</a>
+              </>
                 :
                 <>
-                  <div className="two columns">
-                    <a
-                      onclick="trackEvent('landing_login_clicked')"
-                      href="/login"
-                      className="login"
-                    >
-                      LOGIN
-              </a>
-                  </div>
-                  <div className="two columns">
-                    <a
-                      onclick="trackEvent('landing_signup_clicked')"
-                      href="/register"
-                      className="login"
-                    >
-                      SIGNUP
-              </a>
-                  </div>
+                    <a href="/login" className="login">LOGIN</a>
+                    <a href="/register" className="login">SIGNUP</a>
                 </>
             }
           </div>
