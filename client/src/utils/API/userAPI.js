@@ -76,22 +76,22 @@ export default {
     },
 
     // Gets all jobBoards
-    getJobBoards: function () {
-        return axios.get("/api/jobBoard");
-    },
+    // getJobBoards: function () {
+    //     return axios.get("/api/jobBoard");
+    // },
 
-    // Gets the jobBoard with the given id
-    getJobBoard: function (id) {
-        return axios.get("/api/jobBoard/" + id);
-    },
+    // // Gets the jobBoard with the given id
+    // getJobBoard: function (id) {
+    //     return axios.get("/api/jobBoard/" + id);
+    // },
 
-    // Saves a jobBoard to the database
-    saveJobBoard: function (savedJobBoard) {
-        return axios.post("/api/jobBoard", savedJobBoard);
-    },
+    // // Saves a jobBoard to the database
+    // saveJobBoard: function (savedJobBoard) {
+    //     return axios.post("/api/jobBoard", savedJobBoard);
+    // },
 
-    // Deletes the jobBoard with the given id
-    deleteJobBoard: function (id) {
-        return axios.delete("/api/jobBoard/" + id);
-    }
+    // // Deletes the jobBoard with the given id
+    // deleteJobBoard: function (id) {
+    //     return axios.delete("/api/jobBoard/" + id);
+    // }
 };
