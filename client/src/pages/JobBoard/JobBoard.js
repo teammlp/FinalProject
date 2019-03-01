@@ -1,8 +1,9 @@
 
 import React, { Component } from 'react';
-import Link from '../../components/Link';
+// import Link from '../../components/Link';
 import './JobBoard.css'
 import axios from 'axios';
+import Carousel from '../../components/Carousel';
 
 
 export default class JobBoard extends Component {
@@ -26,7 +27,14 @@ export default class JobBoard extends Component {
       .then(res => {
         const jobTitle = res.data
         console.log(jobTitle)
-        this.setState({ results: jobTitle })
+        this.setState({ results: jobTitle, 
+        company:"",
+        location: "",
+        description: "",
+        position: "",
+        date: ""
+      
+      })
 
       })
   }
@@ -75,11 +83,11 @@ export default class JobBoard extends Component {
     return (
 
       <div>
-
-        <Link />
-        <a href="/" onClick={() => this.props.history.goBack()} id="back-link">← Back to main page</a>
+        <Carousel/>
+        {/* <Link /> */}
+        
         <form onSubmit={this.sumbitHandler}>
-          <label>keyword</label>
+          <label>Keyword</label>
           <input name="keyword" type="text" onChange={this.changeHandler} />
           <label>location</label>
           <input
@@ -106,6 +114,9 @@ export default class JobBoard extends Component {
           </ul>
           <input type="submit"/>
         </form>
+        <ul>{JobBoard.jobTitle}</ul>
+
+        <a href="/" onClick={() => this.props.history.goBack()} id="back-link">← Back to main page</a>
       </div>
 
 

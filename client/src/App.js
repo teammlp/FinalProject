@@ -8,10 +8,10 @@ import Notfound from "./pages/NotFound";
 import Detail from "./pages/Detail";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
-// import Carousel from "./components/Carousel/Carousel";
 import Task from './pages/Task';
 import JobBoard from './pages/JobBoard';
 import Talks from './pages/Talks';
+import PlaceSearch from "./pages/PlaceSearch"
 import { deserializeUser } from './utils/helpers';
 
 
@@ -79,11 +79,19 @@ export default class App extends Component {
                   authenticated={this.state.authenticated}
                 />}
               />
-              <Route exact path="/userForm" component={UserForm} />
-              <Route exact path="/userForm/:id" component={Detail} />
+              {/* <Route exact path="/userForm" component={UserForm} /> */}
+              {/* <Route exact path="/userForm/:id" component={Detail} /> */}
+              <Route exact path="/userForm/:id" render={props =>
+                <Detail
+                  {...props}
+                  authenticate={this.authenticate}
+                  deAuthenticate={this.deAuthenticate}
+                  authenticated={this.state.authenticated}
+                />}
+              />
               <Route exact path="/task" component={Task} />
-              <Route exact path="/jobBoard" render={props =>
-                <JobBoard
+              <Route exact path="/place" render={props =>
+                <PlaceSearch
                 {...props}
                 authenticate={this.authenticate}
                 deAuthenticate={this.deAuthenticate}

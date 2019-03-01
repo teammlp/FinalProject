@@ -22,7 +22,7 @@ function Nav(props) {
         </div>
         <div className="eight columns menu" id="menu">
           <div className="row" id="row-menu">
-              <a href="/jobBoard" className="login">JOBS</a>
+              <a href="/place" className="login">Place to go</a>
               <a href="/talks" className="login">Inspiration</a>
             {props.user ?
               <>

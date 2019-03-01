@@ -120,14 +120,7 @@ exports.saveUser = function (req, res, next) {
 }
 
 exports.updateUser = function (req, res) {
-    /*DELETE_ON_PRODUCTION
-      req.body syntax:
-        {
-            id: {_id of question to be updated}
-            username: {new username of user}
-            password: {new password of user}
-        }
-        */
+   
     db.User.findByIdAndUpdate(req.body.id,
         {
             username: req.body.username,

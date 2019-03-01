@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text');
+
+.placeHeader{
+    text-shadow: -2px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+.SearchForm {
+    background-color: rgb(250, 249, 246);
+    padding: 30px;
+    border-radius: 7px;
+    border: solid 1px rgb(149, 170, 154);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: rgb(72, 109, 110);
+    font-family: 'Crimson Text', serif;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.form-group input{
+    font-size: 20px;
+    padding: 10px;
+}
+.SearchZButton {
+    justify-content: end;
+}

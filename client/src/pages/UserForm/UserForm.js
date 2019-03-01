@@ -1,17 +1,14 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Redirect, Link } from "react-router-dom";
-// import DatePicker from 'react-datepicker';
-// import moment from 'moment';
 import { userAPI } from "../../utils/API";
-// import ButtonBtn from "../../components/ButtonBtn";
 import { Input, TextArea, FormBtn, Date } from "../../components/Form";
 import DeleteBtn from "../../components/DeleteBtn";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import Nav from "../../components/Nav";
-import { confirmAlert } from "react-confirm-alert"; // Import
-import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
+// import { confirmAlert } from "react-confirm-alert"; 
+// import "react-confirm-alert/src/react-confirm-alert.css"; 
 import {
   logoutUser,
   deserializeUser,
