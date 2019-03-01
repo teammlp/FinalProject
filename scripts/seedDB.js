@@ -44,25 +44,3 @@ const userSeed = [
       console.error(err);
       process.exit(1);
     });
-
-    const jobBoardSeed = [
-    {
-      jobTitle: "CEO",
-      company: "EzHunt LLC",
-      description: "Test Description",
-      Salary: "250000",
-      dateAdded: new Date(Date.now())
-  }
-];
-  
-  db.JobBoard
-    .remove({})
-    .then(() => db.JobBoard.collection.insertMany(jobBoardSeed))
-    .then(data => {
-      console.log(data.result.n + " records inserted!");
-      process.exit(0);
-    })
-    .catch(err => {
-      console.error(err);
-      process.exit(1);
-    });

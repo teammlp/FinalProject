@@ -49,11 +49,12 @@ export default class Talks extends Component {
         <hr />
         <Row>
           <Col size="md-12">
-            <h2>Talks</h2>
-            <p className="text-center">
+            {/* <h2>Talks</h2> */}
+            <h2 className="text-center">
               Stories from job seekers and their journey to getting their dream
               jobs.
-            </p>
+            </h2>
+            <br/>
           </Col>
         </Row>
         <Row>

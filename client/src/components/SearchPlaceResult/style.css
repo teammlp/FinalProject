@@ -1,0 +1,44 @@
+.resultContent {
+    background-color: rgb(250, 249, 246);
+    padding: 15px;
+    font-family: 'Crimson Text', serif;
+    /* margin-left: 10px; */
+    text-align: center;
+    border-radius: 7px;
+    border: solid 1px rgb(149, 170, 154);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.place_image {
+    height: 200px;
+    width: 220px;
+}
+h5 {
+    color: rgb(72, 109, 110);
+    font-family: 'Crimson Text', serif;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 28px;
+    font-weight: bold;
+}
+.rating {
+    color: red;
+    font-weight: bold;
+}
+.Link {
+    color: blue;
+}
+.Link:hover{
+    font-weight: bold;
+    color: blue;
+    text-decoration: underline;
+}
+
+.location{
+    color: rgb(72, 109, 110);
+    font-family: 'Crimson Text', serif;
+}
+
+.phone{
+    color: rgb(72, 109, 110);
+    font-family: 'Crimson Text', serif;
+}

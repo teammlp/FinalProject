@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import {userAPI} from "../../utils/API";
 import Logo from "../../components/Logo";
+import Moment from 'react-moment';
 
 require('./Detail.css');
 
@@ -46,7 +47,9 @@ class Detail extends Component {
           <dt className="col-sm-3">Location:</dt>
           <dd className="col-sm-9">{this.state.userForm.location}</dd>
           <dt className="col-sm-3">Date applied:</dt>
-          <dd className="col-sm-9">{this.state.userForm.date}</dd>
+          <dd className="col-sm-9">
+          <Moment format="MM/DD/YYYY">
+          {this.state.userForm.date}</Moment></dd>
           </div>
           </Col>
           <Col size="md-5">
