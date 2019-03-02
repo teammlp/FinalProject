@@ -2,8 +2,7 @@
 
 # [ezHunt](https://finalprojectmlp.herokuapp.com/)
 
-![alt text][logo]
-[logo]: https://github.com/teammlp/FinalProject/client/public/Images/ezHunt.png "ezHunt Logo"
+![ezHunt](https://github.com/teammlp/FinalProject/client/public/Images/ezHunt.png "ezHunt Logo") 
 
 ## ezMotivation
 ezHunt is designed to improve your job hunting experience. This app eliminates messy spreadsheets and keeps track of every detail about your job applications - notes, dates, tasks, job descriptions, salaries, locations, company data and more.
