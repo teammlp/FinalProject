@@ -8,14 +8,17 @@ import ModalAlert from "../../components/Modal";
 import Link from "../../components/Link";
 import { Redirect } from "react-router-dom";
 import { userAPI } from "../../utils/API";
-import Nav from "../../components/Nav/index"
+import Nav from "../../components/Nav/index";
 import Logo from "../../components/Logo";
 import { Col, Row, Container } from "../../components/Grid";
-import { logoutUser, deserializeUser, serializeUser} from "../../utils/helpers";
+import {
+  logoutUser,
+  deserializeUser,
+  serializeUser
+} from "../../utils/helpers";
 import "./Task.css";
 
 export default class Task extends Component {
-
   state = {
     user: {},
     userID: "",
@@ -24,7 +27,6 @@ export default class Task extends Component {
     selectedTask: undefined
   };
 
-  
   // componentDidMount() {
   //   const user = deserializeUser();
   //   this.setState({
@@ -129,16 +131,43 @@ export default class Task extends Component {
     ) : (
       <div>
         <Container fluid>
-        {/* <Logo/> */}
-        <Nav user={this.state.user} logoutHandler={this.logout}/>
+          {/* <Logo/> */}
+          <Nav user={this.state.user} logoutHandler={this.logout} />
           <Row>
-            <Col size="md-12">
-            <h2>Enter your tasks to achieve your Goal!</h2>
+            <Col size="md-10" id="dashboard">
+              <div className="dashboard">
+                <h1 id="h1-dashboard">
+                  You are brilliant,{" "}
+                  <a id="dashboard-username">{this.state.user.username}</a>!{" "}
+                  <br />
+                  <h3 id="h3-dashboard">
+                    Get ahead with your goals with our Task-Maker
+                  </h3>
+                </h1>
+                {/* want to display User name on the welcome line */}
+              </div>
             </Col>
           </Row>
-
           <Row>
             <Col size="md-12 sm-12">
+              {/* <!-- Create task header --> */}
+              <div class="row" id="create-task-h">
+                <div class="col-sm-10">
+                  <br />
+
+                  <div class="card">
+                    {/* <!-- card Heading for the retrieved tasks box --> */}
+                    <div class="card-header">
+                      <strong id="card-text">
+                        <i class="fas fa-tasks" /> Create A New Task Below
+                      </strong>
+                    </div>
+
+                    {/* <!-- This main card will hold each of the resulting tasks --> */}
+                    <div class="card-body" id="article-section" />
+                  </div>
+                </div>
+              </div>
               <Create onSubmit={this.onSubmit} />
               {this.state.tasks.length > 0 ? (
                 <Guess whatTodo={this.whatTodo} />
@@ -148,6 +177,25 @@ export default class Task extends Component {
                   <h2>Please Enter a task!</h2>
                 </div>
               )}
+              {/* <!-- Header --> */}
+              <div class="row" id="delete-task-h">
+                <div class="col-sm-10">
+                  <br />
+
+                  <div class="card">
+                    {/* <!-- card Heading for the retrieved articles box --> */}
+                    <div class="card-header">
+                      <strong id="card-text">
+                        <i class="fas fa-minus-square" /> Done With A Task?
+                        Delete it!
+                      </strong>
+                    </div>
+
+                    {/* <!-- This main card will hold each of the resulting articles --> */}
+                    <div class="card-body" id="article-section" />
+                  </div>
+                </div>
+              </div>
               {this.state.tasks.length > 0 ? (
                 <Tasks tasks={this.state.tasks} deleteTask={this.deleteTask} />
               ) : null}
@@ -161,7 +209,7 @@ export default class Task extends Component {
             </Col>
           </Row>
           <Row>
-            <Col size="md-12" >
+            <Col size="md-12">
               <a id="backLink" onClick={() => this.props.history.goBack()}>
                 ← Back to main page
               </a>

@@ -51,7 +51,7 @@ export default class Talks extends Component {
             <div className="dashboard">
               <h1 id="h1-dashboard">Stories from job seekers
               <br />
-              <h3 id="h3-dashboard">and their journey to getting their dream
+              <h3 id="h3-dashboard">And their journey to getting their dream
               jobs</h3>
               </h1>
               

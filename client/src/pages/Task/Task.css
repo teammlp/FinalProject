@@ -9,6 +9,24 @@
 .mustEnter h2{
     color: white!important;
 }
+#create-task-h, #delete-task-h {
+  justify-content: center;
+  text-align: center;
+}
+#create-task-h strong {
+  color: #212529;
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+.guess {
+  margin-bottom: 2.5em;
+}
+#delete-task-h strong {
+  color: #212529;
+  background-color: #d83546a8;
+  border-color: #dc3545;
+}
+
 @media screen and (max-width: 1200px) {
     .create .card  {
         padding: 2rem 8rem;

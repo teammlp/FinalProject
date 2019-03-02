@@ -3,7 +3,7 @@ require("./Delete.css");
 
 const Deleteall = (props) => (
     <div className="text-center deleteall">
-            <button onClick={props.deleteAll} className="btn btn-rounded btn-outlined red-btn">Delete All</button>
+            <button onClick={props.deleteAll} className="btn btn-danger btn-rounded btn-outlined">DELETE ALL</button>
     </div>
 )
 

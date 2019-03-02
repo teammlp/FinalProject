@@ -1,19 +1,19 @@
-.deleteall  {
+.deleteall {
   color: rgb(255, 255, 255) !important;
   /* background: rgb(49, 114, 92); */
   font-weight: 200 !important;
-  font-family: "Monoton", cursive;
+  font-family: "Lato", sans-serif;
   text-transform: uppercase !important;
   font-size: 20px !important;
   padding: 7px 20px !important;
   border-radius: 10px !important;
   display: block !important;
   margin: 23px auto 0px;
-  }
-  .deleteall .red-btn  {
-    /* margin-left: 40%; */
-    background-color: #f03f3f;
-  }
-  .deleteall .red-btn:hover{
-    color: white;
-  }
+  /* text-shadow: -2px 0 white, 0 1px white, 1px 0 white, 0 -1px white; */
+}
+
+.btn-danger:hover {
+  background: #ffffff;
+  color: rgb(60, 112, 91) !important;
+  border: solid 1px rgb(2, 2, 2) !important;
+}

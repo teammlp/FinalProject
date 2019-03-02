@@ -112,7 +112,7 @@ class UserForm extends Component {
       <Container fluid>
         <Nav user={user} logoutHandler={this.logout} />
         <Row>
-          <Col size="md-11" id="dashboard">
+          <Col size="md-10" id="dashboard">
             <div className="dashboard">
               <h1 id="h1-dashboard">Welcome <a id="dashboard-username">{this.state.user.username}</a>! Let's add another job.<br />
               <h3 id="h3-dashboard">Fill out the form below to keep track of your job applications</h3>

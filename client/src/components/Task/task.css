@@ -3,7 +3,7 @@
 .single-task  {
     display: flex;
     align-items: center;
-    font-family: 'Crimson Text', serif;
+    font-family: "Lato", sans-serif;
     justify-content: space-between;
     color: rgb(25, 73, 71);
     background-color: #fff;
@@ -16,14 +16,16 @@
 .single-task:last-child  {
     margin-bottom: unset;
 }
-
 .tasks  {
-    margin-bottom: 3rem;
-    margin-top: 2rem;
+    /* margin-bottom: 3rem; */
+    margin-top: 3rem;
     padding: 3rem 2rem;
     border-radius: 5px;
     overflow-Y: scroll;
     background-color: #a9c2b8;
+}
+#card-tasks-text {
+    margin-top: -20px;
 }
 .fa-times {
     cursor: pointer;
