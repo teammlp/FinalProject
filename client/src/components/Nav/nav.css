@@ -1,7 +1,7 @@
 #ezHunt {
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 44px;
-  font-weight: normal;
+  font-family: 'Lato', sans-serif;
+  font-size: 55px;
+  font-weight: bolder;
   color: green;
   text-shadow: -2px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
   font-weight: 600;
@@ -36,6 +36,10 @@
 
 .menu {
 justify-content: center;
+}
+
+.menu:hover {
+  text-shadow: -2px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
 #row-menu {

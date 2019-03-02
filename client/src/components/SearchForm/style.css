@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Crimson+Text');
 
 #JobSearchForm{
-    font-family: 'Crimson Text', serif;
+    font-family: "Lato", sans-serif;
     justify-content: space-between;
     color: rgb(25, 73, 71);
     border: solid 1px gray;

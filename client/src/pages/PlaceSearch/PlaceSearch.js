@@ -78,12 +78,10 @@ class PlaceSearch extends Component {
             <>
             <Nav user={this.state.user} logoutHandler={this.logout} />
             <Container>
-                
                 <SearchPlaceForm
                     handleFormSubmit={this.handleFormSubmit}
                     handleInputChange={this.handleInputChange}
                 />
-           <hr/>
                 <SearchPlaceResult places={this.state.places}
                     handleSavedButton={this.handleSavedButton}
                 />

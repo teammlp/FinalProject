@@ -1,7 +1,7 @@
 .resultContent {
     background-color: rgb(250, 249, 246);
     padding: 15px;
-    font-family: 'Crimson Text', serif;
+    font-family: "Lato", sans-serif;
     /* margin-left: 10px; */
     text-align: center;
     border-radius: 7px;
@@ -11,21 +11,25 @@
 .place_image {
     height: 200px;
     width: 220px;
+    margin-top: 1.0em;
+    /* background-size: contain; */
 }
 h5 {
-    color: rgb(72, 109, 110);
-    font-family: 'Crimson Text', serif;
+    color: rebeccapurple;
+    font-family: "Lato", sans-serif;
     text-align: center;
     margin-bottom: 15px;
     font-size: 28px;
     font-weight: bold;
+    text-shadow: -2px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 .rating {
     color: red;
     font-weight: bold;
 }
 .Link {
-    color: blue;
+    color: rebeccapurple;
+    text-shadow: -2px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 .Link:hover{
     font-weight: bold;
@@ -35,10 +39,30 @@ h5 {
 
 .location{
     color: rgb(72, 109, 110);
-    font-family: 'Crimson Text', serif;
+    font-family: "Lato", sans-serif;
+    float: left;
+    text-align: left;
+}
+
+input {
+    font-family: "Lato", sans-serif;
 }
 
 .phone{
     color: rgb(72, 109, 110);
-    font-family: 'Crimson Text', serif;
+    font-family: "Lato", sans-serif;
+    float: left;
+}
+
+.rating-link {
+    display: inline-flex;
+}
+
+a .btn-primary {
+    font-family: "Lato", sans-serif;
+    margin: 0px;
+}
+
+hr {
+    color: red;
 }

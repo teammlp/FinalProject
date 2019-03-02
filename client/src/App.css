@@ -24,9 +24,13 @@ body {
 }
 
 body::after {
+  background: url("");
+}
+
+body::after {
   content: "";
-  background: url("images/desk.jpg");
-  background-repeat: repeat-y;
+  /* background: url("images/desk.jpg"); */
+  /* background-repeat: repeat-y; */
   opacity: 0.7;
   top: 0;
   left: 0;
