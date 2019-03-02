@@ -8,18 +8,23 @@ import ModalAlert from "../../components/Modal";
 import Link from "../../components/Link";
 import { Redirect } from "react-router-dom";
 import { userAPI } from "../../utils/API";
+import Nav from "../../components/Nav/index"
 import Logo from "../../components/Logo";
 import { Col, Row, Container } from "../../components/Grid";
-import { deserializeUser, serializeUser} from "../../utils/helpers";
+import { logoutUser, deserializeUser, serializeUser} from "../../utils/helpers";
 import "./Task.css";
 
 export default class Task extends Component {
+
   state = {
     user: {},
+    userID: "",
+    username: "",
     tasks: [],
     selectedTask: undefined
   };
 
+  
   // componentDidMount() {
   //   const user = deserializeUser();
   //   this.setState({
@@ -64,6 +69,14 @@ export default class Task extends Component {
       localStorage.setItem("tasks", json);
     }
   };
+
+  logout = () => {
+    this.props.deAuthenticate();
+    logoutUser();
+    this.setState({ user: null });
+    // window.location.reload();
+  };
+
   // deleteUserTask = id => {
   //   userAPI
   //     .deleteTask(id)
@@ -108,14 +121,16 @@ export default class Task extends Component {
       this.setState(prevState => ({ tasks: [...prevState.tasks, singletask] }));
     event.target.elements.singletask.value = "";
   };
+
   render() {
-    const user = deserializeUser();
+    const user = this.state;
     return !user ? (
       <Redirect to={{ pathname: "/login" }} />
     ) : (
       <div>
         <Container fluid>
-        <Logo/>
+        {/* <Logo/> */}
+        <Nav user={this.state.user} logoutHandler={this.logout}/>
           <Row>
             <Col size="md-12">
             <h2>Enter your tasks to achieve your Goal!</h2>

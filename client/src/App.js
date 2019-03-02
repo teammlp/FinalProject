@@ -8,7 +8,7 @@ import Notfound from "./pages/NotFound";
 import Detail from "./pages/Detail";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
-import Task from './pages/Task';
+import Task from './pages/Task/Task';
 import JobBoard from './pages/JobBoard';
 import Talks from './pages/Talks';
 import PlaceSearch from "./pages/PlaceSearch"
@@ -89,7 +89,13 @@ export default class App extends Component {
                   authenticated={this.state.authenticated}
                 />}
               />
-              <Route exact path="/task" component={Task} />
+              <Route exact path="/task" render={props =>
+                <Task
+                {...props}
+                authenticate={this.authenticate}
+                deAuthenticate={this.deAuthenticate}
+                authenticated={this.state.authenticated}
+                />} />
               <Route exact path="/place" render={props =>
                 <PlaceSearch
                 {...props}
