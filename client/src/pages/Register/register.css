@@ -11,7 +11,7 @@
   text-align: center;
   font-size: 40px;
   color: rgb(19, 99, 72);
-  font-family: "Crimson Text", serif;
+  font-family: "Lato", sans-serif;
 }
 
 .create-account {
@@ -34,7 +34,7 @@
   padding: 7px 15px;
   width: 100%;
   color: darkcyan;
-  font-family: "Crimson Text", serif;
+  font-family: "Lato", sans-serif;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -45,16 +45,18 @@
 
 small,
 p#email-feedback {
-  color: rgb(20, 8, 129);
-  font-family: "Arima Madurai", cursive;
+  color:red;
+  font-family: "Lato", sans-serif;
   padding: unset;
+  background-color: #ffc10714;
+  text-shadow: -2px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
 button[type="submit"] {
   color: rgb(255, 255, 255) !important;
   background: rgb(49, 114, 92);
-  font-weight: 200 !important;
-  font-family: "Monoton", cursive;
+  font-weight: 400 !important;
+  font-family: "Lato", sans-serif;
   text-transform: uppercase !important;
   font-size: 20px !important;
   border: solid 2px rgb(252, 244, 244) !important;
@@ -78,16 +80,16 @@ button[type="submit"]:hover {
 }
 .login-help p {
   color: rgb(19, 99, 72);
-  font-family: "Crimson Text", serif;
+  font-family: "Lato", sans-serif;
   font-weight: bolder;
-  margin-top: -20px;
+  margin-top: -10px;
 }
 .login-help a span {
   color: rgb(238, 65, 65);
   font-size: .4em;
   text-decoration: underline;
   padding-top: 5px;
-  font-family: "Crimson Text", cursive;
+  font-family: "Lato", sans-serif;
 }
 
 .account-holder {

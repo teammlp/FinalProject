@@ -12,7 +12,7 @@
 .loginmodal-container input[type="text"] {
   margin-bottom: 20px;
   color: darkcyan;
-  font-family: "Crimson Text", serif;
+  font-family: "Lato", sans-serif;
 }
 .loginmodal-container input[type="text"],
 input[type="password"] {
@@ -20,10 +20,10 @@ input[type="password"] {
   /* background-color: rgba(255, 255, 255, 0.863) !important; */
   border-bottom-style: double;
   padding: 7px 20px;
-  width: 100%;
+  width: 105%;
   text-align: left;
   justify-content: center;
-  font-family: "Crimson Text", serif;
+  font-family: "Lato", sans-serif;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -31,11 +31,15 @@ input[type="password"] {
   text-align: center;
 }
 
+#login-help p {
+  margin-top: -20px;
+}
+
 .login-help a {
   color: red;
   font-size: 40px;
   padding-top: 10px;
-  font-family: "Libre Barcode 39 Text", cursive;
+  font-family: "Lato", sans-serif;
 }
 
 form.login {
@@ -53,7 +57,7 @@ form.login {
   font-weight: bold;
   font-size: 50px;
   margin: 0 auto 26px;
-  font-family: "Libre Barcode 39 Text", cursive;
+  font-family: "Lato", sans-serif;
 }
 .loginWrap {
   /* padding-top: 15px; */
@@ -63,12 +67,13 @@ form.login {
 .loginmodal-submit {
   color: rgb(255, 255, 255) !important;
   background: rgb(49, 114, 92);
-  font-weight: 200 !important;
-  font-family: "Monoton", cursive;
+  font-weight: 500 !important;
+  font-family: "Lato", sans-serif;
   text-transform: uppercase !important;
   font-size: 20px !important;
   border: solid 2px rgb(252, 244, 244) !important;
   padding: 7px 20px !important;
+  width: 105%;
   border-radius: 10px !important;
   display: block !important;
   margin: 23px auto 0px;

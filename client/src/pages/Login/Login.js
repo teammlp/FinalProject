@@ -94,7 +94,7 @@ export default class Login extends Component {
               <input id="password-input" ref="password" type="password" name="pass" placeholder="Password" onChange={this.handlePasswordChange} value={this.state.password} />
               <input type="submit" name="login" className="login loginmodal-submit" value="Login" />
             </form>
-            <div className="login-help">
+            <div className="login-help" id="login-help">
             <p className="create-account">Don't have an account?&nbsp;<Link to={"/register"}><span>Sign-up</span></Link></p>
             </div>
 
