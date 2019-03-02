@@ -131,8 +131,8 @@ export default class Task extends Component {
     ) : (
       <div>
         <Container fluid>
-          {/* <Logo/> */}
-          <Nav user={this.state.user} logoutHandler={this.logout} />
+          <Logo/>
+          {/* <Nav user={this.state.user} logoutHandler={this.logout} /> */}
           <Row>
             <Col size="md-10" id="dashboard">
               <div className="dashboard">
@@ -210,7 +210,7 @@ export default class Task extends Component {
           </Row>
           <Row>
             <Col size="md-12">
-              <a id="backLink" onClick={() => this.props.history.goBack()}>
+              <a id="backLink" href="/userForm" onClick={() => this.props.history.goBack()}>
                 ← Back to main page
               </a>
             </Col>
