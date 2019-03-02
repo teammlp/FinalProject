@@ -62,15 +62,19 @@ export default class Talks extends Component {
           <Col size="md-8">
             <div class="card-deck">
               <div class="card">
-                <img
+              <a id="card-title-a"
+                    href="https://medium.freecodecamp.org/my-journey-to-becoming-a-software-engineer-4ae301fc02b"><img
                   src="https://cdn-images-1.medium.com/max/2600/1*nu0yZpgOPHSTkV_PiWzOpA.jpeg"
                   class="card-img-top"
                   alt="story1"
-                />
+                /></a>
                 <div class="card-body">
-                  <h5 class="card-title">
+                <h5 class="card-title">
+                <a id="card-title-a"
+                    href="https://medium.freecodecamp.org/my-journey-to-becoming-a-software-engineer-4ae301fc02b">
                     My journey from first generation college grad to Software
                     Engineer
+                    </a>
                   </h5>
                   <article class="card-text" id="card-insights">
                     I am sharing my journey on how I learned the ins and outs of
@@ -91,14 +95,18 @@ export default class Talks extends Component {
                 </div>
               </div>
               <div class="card">
-                <img
+              <a
+                    href="https://medium.freecodecamp.org/how-i-became-a-programmer-with-the-100daysofcode-challenge-19b01f17bca1"><img
                   src="https://cdn-images-1.medium.com/max/1600/1*dj_JFPtEe7wdGR3DlkXG_Q.png"
                   class="card-img-top"
                   alt="story2"
-                />
+                /></a>
                 <div class="card-body">
-                  <h5 class="card-title">
+                <h5 class="card-title">
+                <a id="card-title-a"
+                    href="https://medium.freecodecamp.org/how-i-became-a-programmer-with-the-100daysofcode-challenge-19b01f17bca1">
                     How I became a programmer with the #100DaysofCode challenge
+                  </a>
                   </h5>
                   <article class="card-text" id="card-insights">
                     As a child that grew up in the village, with no access to a
@@ -119,14 +127,16 @@ export default class Talks extends Component {
                 </div>
               </div>
               <div class="card">
-                <img
+              <a
+                    href="https://medium.freecodecamp.org/the-things-i-wish-i-had-done-before-my-first-job-fe79c36e2211"><img
                   src="https://cdn-images-1.medium.com/max/2000/0*-V0Ttl49odU5zNz5"
                   class="card-img-top"
                   alt="story3"
-                />
+                /></a>
                 <div class="card-body">
                   <h5 class="card-title">
-                    The things I wish I had done before my first job
+                  <a id="card-title-a"
+                    href="https://medium.freecodecamp.org/the-things-i-wish-i-had-done-before-my-first-job-fe79c36e2211">The things I wish I had done before my first job</a>
                   </h5>
                   <br />
                   <article class="card-text" id="card-insights">
