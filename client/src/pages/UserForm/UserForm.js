@@ -114,7 +114,7 @@ class UserForm extends Component {
         <Row>
           <Col size="md-11" id="dashboard">
             <div className="dashboard">
-              <h1 id="h1-dashboard">Welcome <a id="dashboard-username">{this.state.user.username}</a>! Let's add your first job.<br />
+              <h1 id="h1-dashboard">Welcome <a id="dashboard-username">{this.state.user.username}</a>! Let's add another job.<br />
               <h3 id="h3-dashboard">Fill out the form below to keep track of your job applications</h3>
               </h1>
               {/* want to display User name on the welcome line */}

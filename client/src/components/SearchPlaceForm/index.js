@@ -7,14 +7,24 @@ import "./style.css";
 const SearchPlace = props => {
   return (
     <>
-      <Row>
+    <Row>
+          <Col size="md-12" id="dashboard">
+            <div className="dashboard">
+              <h1 id="h1-dashboard">Connect with others!
+              <br />
+              <h3 id="h3-dashboard">Search for networking opportunities near you </h3>
+              </h1>
+            </div>
+          </Col>
+        </Row>
+      {/* <Row>
         <Col>
           <h2 className="placeHeader text-center">
             Connect With Others — Find A Place Near You!
           </h2>
           <br />
         </Col>
-      </Row>
+      </Row> */}
 
       <div className="SearchForm">
         <Row>

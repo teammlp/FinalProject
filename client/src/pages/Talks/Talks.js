@@ -46,19 +46,20 @@ export default class Talks extends Component {
     return (
       <Container fluid>
         <Nav user={this.state.user} logoutHandler={this.logout} />
-        <hr />
         <Row>
-          <Col size="md-12">
-            {/* <h2>Talks</h2> */}
-            <h2 className="text-center">
-              Stories from job seekers and their journey to getting their dream
-              jobs.
-            </h2>
-            <br/>
+          <Col size="md-8" id="dashboard">
+            <div className="dashboard">
+              <h1 id="h1-dashboard">Stories from job seekers
+              <br />
+              <h3 id="h3-dashboard">and their journey to getting their dream
+              jobs</h3>
+              </h1>
+              
+            </div>
           </Col>
         </Row>
         <Row>
-          <Col>
+          <Col size="md-8">
             <div class="card-deck">
               <div class="card">
                 <img
@@ -71,7 +72,7 @@ export default class Talks extends Component {
                     My journey from first generation college grad to Software
                     Engineer
                   </h5>
-                  <article class="card-text">
+                  <article class="card-text" id="card-insights">
                     I am sharing my journey on how I learned the ins and outs of
                     software development and how I finally landed my first
                     Software Engineer role — so that others on a similar path
@@ -83,7 +84,7 @@ export default class Talks extends Component {
                   <a
                     href="https://medium.freecodecamp.org/my-journey-to-becoming-a-software-engineer-4ae301fc02b"
                     target="_blank"
-                    className="btn btn-secondary"
+                    className="btn btn-success"
                   >
                     Read full article...
                   </a>
@@ -99,7 +100,7 @@ export default class Talks extends Component {
                   <h5 class="card-title">
                     How I became a programmer with the #100DaysofCode challenge
                   </h5>
-                  <article class="card-text">
+                  <article class="card-text" id="card-insights">
                     As a child that grew up in the village, with no access to a
                     regular power supply or the internet and, losing her Dad at
                     a very young age, the idea of a modern world never left me.
@@ -111,7 +112,7 @@ export default class Talks extends Component {
                   <a
                     href="https://medium.freecodecamp.org/how-i-became-a-programmer-with-the-100daysofcode-challenge-19b01f17bca1"
                     target="_blank"
-                    className="btn btn-secondary"
+                    className="btn btn-success"
                   >
                     Read full article...
                   </a>
@@ -127,7 +128,8 @@ export default class Talks extends Component {
                   <h5 class="card-title">
                     The things I wish I had done before my first job
                   </h5>
-                  <article class="card-text">
+                  <br />
+                  <article class="card-text" id="card-insights">
                     Before I landed my first paying role as a software
                     developer, I had to learn how to stay fired up about working
                     in tech. After graduating, it took me 9 months to get my
@@ -139,7 +141,7 @@ export default class Talks extends Component {
                   <a
                     href="https://medium.freecodecamp.org/the-things-i-wish-i-had-done-before-my-first-job-fe79c36e2211"
                     target="_blank"
-                    className="btn btn-secondary"
+                    className="btn btn-success"
                   >
                     Read full article...
                   </a>

@@ -11,6 +11,14 @@
     
 }
 
+.card-deck {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+#card-insights {
+    color:black;
+}
+
 
 @media (max-width: 1199.98px) {
     /* .cardSize {

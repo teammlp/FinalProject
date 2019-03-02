@@ -2,7 +2,7 @@
 
 .dashboard h1 {
   font-family: "Lato", sans-serif;
-  padding: 15px;
+  padding: 35px;
   color: #136348;
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -20,7 +20,7 @@
   font-size: 36px;
 }
 #h1-dashboard {
-    margin-top: 0.5em;
+  margin-top: 0.5em;
 }
 #h3-dashboard {
   margin-top: 0.6em;
@@ -39,7 +39,7 @@
   font-family: "Lato", sans-serif;
   color: #136348;
   /* background-color: #ffc10714; */
-  background-color: rgba(0,0,0,.03);
+  background-color: rgba(0, 0, 0, 0.03);
   font-weight: 400;
   text-shadow: -2px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);

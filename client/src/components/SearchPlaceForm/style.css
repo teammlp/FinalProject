@@ -5,10 +5,11 @@ h2:hover {
 }
 
 .placeHeader{
-    /* color: rebeccapurple; */
-    color: rgb(72, 109, 110);
+    color: rebeccapurple;
+    /* color: #136348; */
     font-family: "Lato", sans-serif;
     font-size: 40px;
+    font-weight: 600;
     /* background-color: rgba(0,0,0,.03); */
     background-color: #ffc10714;
     box-shadow: 0 4px 40px rgba(25, 4, 69, 0);
@@ -19,6 +20,7 @@ h2:hover {
 .SearchForm {
     background-color: rgb(250, 249, 246);
     padding: 30px;
+    width: 97%;
     border-radius: 7px;
     border: solid 1px rgb(149, 170, 154);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
