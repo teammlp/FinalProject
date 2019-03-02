@@ -112,7 +112,7 @@ class UserForm extends Component {
       <Container fluid>
         <Nav user={user} logoutHandler={this.logout} />
         <Row>
-          <Col size="md-12">
+          <Col size="md-11" id="dashboard">
             <div className="dashboard">
               <h1>Welcome to your "ezHunt" DashBoard!</h1>
               {/* want to display User name on the welcome line */}

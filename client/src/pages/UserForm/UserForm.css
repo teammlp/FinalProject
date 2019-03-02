@@ -9,6 +9,9 @@
     margin-bottom: 25px;
     text-shadow: -2px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
+#dashboard {
+    border-radius: 10px;
+}
 #UserContent{
     justify-content: center;
 }
@@ -35,7 +38,6 @@ strong {
 .UserWrap {
     padding-top: 130px;
 }
-
 .UserWrap input.form-control{
     margin-bottom: 20px;
 }

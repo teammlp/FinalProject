@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Crimson+Text');
 
+h2:hover {
+    text-decoration: none;
+}
+
 .placeHeader{
     text-shadow: -2px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
+
 .SearchForm {
     background-color: rgb(250, 249, 246);
     padding: 30px;
