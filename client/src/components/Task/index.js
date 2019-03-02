@@ -6,7 +6,7 @@ const Tasks = (props) => (
         <div className="row">
             <div className="column xlarge-2 medium-2 hide-mobile"></div>
             <div className="column xlarge-8 medium 8 small-12">
-                <div className="card tasks">
+                <div className="card tasks" id="card-tasks-text">
                     {   
                         props.tasks.map((task) =>
                             <div className="single-task text-capitalize" key={task}>

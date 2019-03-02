@@ -25,25 +25,10 @@ h1 {
 h3 {
   letter-spacing: -0.5px;
   font-size: 35px;
-  color: rgba(255, 255, 255, 0.9);
+  color: purple;
   font-weight: 100;
   padding-bottom: 8px;
 }
-
-/* .colored-background {
-  height: 756px;
-  z-index: -10000;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
-}
-
-.purple-gradient-bkgd {
-  background: -webkit-linear-gradient(-45deg, #166851 0%, #199266 100%);
-  background: linear-gradient(135deg, #166851 0%, #199266 100%);
-} */
 
 .row {
   margin-right: 15px;
@@ -156,61 +141,3 @@ h3 {
     border-radius: 15px;
   }
 }
-
-/* .homeWrap h1 {
-    text-transform: uppercase;
-    padding: 7px;
-    background: rgba(255, 255, 255, 0.781);
-    color: rgba(25, 149, 251, .80);
-    font-weight: 700;
-    font-size: 40px;
-    margin: 0 auto 26px;
-}
-.homeWrap h3 {
-    font-size: 12px;
-    color: #fff;
-    font-weight: 200;
-    max-width: 740px;
-    margin: 10px auto;
-    margin-top: 14rem;
-    padding: 0 50px;
-}
-.homeWrap a{
-    color: white!important;
-}
-.homeLogo {
-    width: 50%;
-    margin: auto;
-}
-.homeWrap {
-    height: 100vh;
-    margin: 0 auto;
-}
-.homeContain {
-    position: relative;
-    top: 50%;
-    transform: perspective(1px) translateY(-50%);
-}
-
-.link {
-    color: #fff!important;
-}
-
-media query
-
-@media (max-width: 1199.98px) {
-
-}
-@media (max-width: 991.98px) {
-    
-}
-@media (max-width: 767.98px) {
-    .homeLogo {
-        width: 70%;
-    }
-}
-@media (max-width: 575.98px) {
-    .homeWrap h1 {
-        font-size: 30px;
-    }
-} */

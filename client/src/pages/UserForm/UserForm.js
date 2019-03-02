@@ -112,42 +112,17 @@ class UserForm extends Component {
       <Container fluid>
         <Nav user={user} logoutHandler={this.logout} />
         <Row>
-          <Col size="md-11" id="dashboard">
+          <Col size="md-10" id="dashboard">
             <div className="dashboard">
-              <h1>Welcome to your "ezHunt" DashBoard!</h1>
+              <h1 id="h1-dashboard">Welcome <a id="dashboard-username">{this.state.user.username}</a>! Let's add another job.<br />
+              <h3 id="h3-dashboard">Fill out the form below to keep track of your job applications</h3>
+              </h1>
               {/* want to display User name on the welcome line */}
             </div>
           </Col>
         </Row>
         <Row id="UserContent"> 
-          <Col size="md-5 sm-5">
-            {/* <Jumbotron> */}
-            <h3 className="List">
-              Companies On My List <i className="fas fa-archive fa-xs" />
-            </h3>
-            {/* </Jumbotron> */}
-            {userForms.length ? (
-              <List>
-                {userForms.map(userForm => (
-                  <ListItem key={userForm._id}>
-                    <Link to={"/userForm/" + userForm._id}>
-                      <strong>
-                        {userForm.position} at {userForm.company}, 📍{" "}
-                        {userForm.location}
-                      </strong>
-                    </Link>
-                    <DeleteBtn 
-                      onClick={() => this.deleteUserForm(userForm._id)}
-                      
-                    />
-                    {/* <button onClick={this.submit}>Confirm dialog</button> */}
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-              <h3>No Results to Display</h3>
-            )}
-          </Col>
+          
           <Col size="md-5">
             <h3 className="List">
               New application <i className="far fa-copy fa-xs" />
@@ -200,6 +175,34 @@ class UserForm extends Component {
                 Submit
               </FormBtn>
             </form>
+          </Col>
+          <Col size="md-5 sm-5">
+            {/* <Jumbotron> */}
+            <h3 className="List">
+              Companies On My List <i className="fas fa-archive fa-xs" />
+            </h3>
+            {/* </Jumbotron> */}
+            {userForms.length ? (
+              <List>
+                {userForms.map(userForm => (
+                  <ListItem key={userForm._id}>
+                    <Link to={"/userForm/" + userForm._id}>
+                      <strong>
+                        {userForm.position} at {userForm.company}, 📍{" "}
+                        {userForm.location}
+                      </strong>
+                    </Link>
+                    <DeleteBtn 
+                      onClick={() => this.deleteUserForm(userForm._id)}
+                      
+                    />
+                    {/* <button onClick={this.submit}>Confirm dialog</button> */}
+                  </ListItem>
+                ))}
+              </List>
+            ) : (
+              <h3>No Results to Display</h3>
+            )}
           </Col>
         </Row>
       </Container>

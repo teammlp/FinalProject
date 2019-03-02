@@ -1,7 +1,7 @@
 #ezHunt {
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 44px;
-  font-weight: normal;
+  font-family: 'Lato', sans-serif;
+  font-size: 55px;
+  font-weight: bolder;
   color: green;
   text-shadow: -2px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
   font-weight: 600;
@@ -41,6 +41,16 @@ justify-content: center;
 #row-menu {
   display: flex;
   justify-content: center;
+}
+
+#menu-n:hover, #menu-i:hover, #nav-username:hover, #menu-t:hover, #menu-lt:hover {
+  text-shadow: -2px 0 rgb(238, 228, 228), 0 1px rgb(233, 222, 222), 1px 0 rgb(233, 222, 222), 0 -1px rgb(233, 222, 222);
+
+}
+
+#nav-username {
+  color: rebeccapurple;
+  text-shadow: -2px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
 @media (min-width: 550px) {

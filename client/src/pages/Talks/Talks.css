@@ -11,6 +11,23 @@
     
 }
 
+#card-title-a {
+    color: blue;
+}
+
+#card-title-a:hover {
+    color:rebeccapurple;
+}
+
+.card-deck {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+#card-insights {
+    color:black;
+    background-color: rgba(0,0,0,.03);
+}
+
 
 @media (max-width: 1199.98px) {
     /* .cardSize {

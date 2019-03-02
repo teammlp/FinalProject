@@ -5,19 +5,30 @@ h2:hover {
 }
 
 .placeHeader{
+    color: rebeccapurple;
+    /* color: #136348; */
+    font-family: "Lato", sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    /* background-color: rgba(0,0,0,.03); */
+    background-color: #ffc10714;
+    box-shadow: 0 4px 40px rgba(25, 4, 69, 0);
     text-shadow: -2px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    border-radius: 10px;
 }
 
 .SearchForm {
     background-color: rgb(250, 249, 246);
     padding: 30px;
+    width: 97%;
     border-radius: 7px;
     border: solid 1px rgb(149, 170, 154);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    color: rgb(72, 109, 110);
-    font-family: 'Crimson Text', serif;
+    color: rebeccapurple;
+    font-family: "Lato", sans-serif;
     font-size: 28px;
     font-weight: bold;
+    text-shadow: -2px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
 .form-group input{
@@ -26,4 +37,10 @@ h2:hover {
 }
 .SearchZButton {
     justify-content: end;
+}
+
+#card-text {
+    color: rgb(72, 109, 110);
+    font-size: 30px;
+    text-shadow: -2px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }

@@ -17,23 +17,18 @@ const SearchPlaceResult = props => {
                         <Col key={place.id} size="md-12">
                             <div key={place.id} className="">
                                 <div className="">
-                                    <h5>♾ || {place.name} || ♾</h5>
-                                    <hr/>
+                                    <h5><a className="Link" href={place.link} target="_blank">♾ || {place.name} || ♾</a></h5>
                                     <Row>
-                                        <Col size="" >
-                                            <img className="img-thumbnail place_image" alt={place.name} src={place.image} />
+                                        <Col size="md-4" >
+                                        <a className="Link" href={place.link} target="_blank"><img className="img-thumbnail place_image" alt={place.name} src={place.image}/></a>
                                         </Col>
-                                        <Col size="" >
-                                            <p className="location">📍 Location: {place.location}</p>
-                                            <p className="phone"> 📞 Phone: {place.phone}</p>
-                                        </Col>
-                                    </Row>
-                                    <Row>
-                                        <Col size="md-6">
+                                        <Col size="md-8" >
+                                            <p className="location"><i className="fas fa-map-marker-alt">&nbsp;&nbsp; &nbsp;</i>{place.location}</p>
+                                            <p className="phone"> 📞 &nbsp;&nbsp; {place.phone}</p>
+                                        <div className="rating-link">
                                         <p className="rating"> <i className="fas fa-stars"></i>Rating 🌟: {place.rating}</p>
-                                        </Col>
-                                        <Col size="md-6">
-                                        <p><a className="Link" href={place.link} target="_blank">Website Link 🔗 </a><i className="fas fa-external-link"></i></p>
+                                        <p><a className="Link" href={place.link} target="_blank"><button class="btn btn-primary"> Yelp &nbsp;<i className="fab fa-yelp"></i></button></a></p>
+                                        </div>
                                         </Col>
                                     </Row>
                                     <hr/>
@@ -43,10 +38,8 @@ const SearchPlaceResult = props => {
                     )
                 })}
             </Row>
-            
         </Container>
         </div>
-            <hr/>
         </>
     )
 }

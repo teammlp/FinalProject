@@ -1,40 +1,53 @@
-@import url('https://fonts.googleapis.com/css?family=Crimson+Text');
+@import url("https://fonts.googleapis.com/css?family=Crimson+Text");
 
-.create  {
-    position: relative;
-    top: -3rem;
+.create {
+  position: relative;
+  top: -3rem;
 }
-  
-  .create .card  {
-    background-color: #bdd6cc;
-    box-shadow: 0 0 14px 0 rgba(0, 0, 0, .19);
-    padding: 2rem 12rem;
-    margin-top: 50px;
-  }
- 
-  input {
-    font-family: 'Crimson Text', serif;
-    justify-content: space-between;
-    color: rgb(25, 73, 71);
-    border: solid 1px gray;
-    border-radius: 5px;
-    width: 100%;
-  }
 
-  @media screen and (max-width: 1200px) {
-    .create .card  {
-        padding: 2rem 8rem;
-      }
+.create .card {
+  background-color: #bdd6cc;
+  box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.19);
+  padding: 2rem 12rem;
+  margin-top: 50px;
+}
+
+#container-create-card {
+  margin-top: 30px;
+}
+
+input {
+  font-family: "Lato", sans-serif;
+  justify-content: space-between;
+  color: rgb(25, 73, 71);
+  border: solid 1px gray;
+  border-radius: 5px;
+  width: 100%;
+}
+
+#task-submit-btn {
+  color: #fff !important;
+  background-color: #007bff !important;
+  border-color: #007bff !important;
+  padding: 6px 12px 6px 12px !important;
+  border-radius: 4px !important;
+  font-size: 16px !important;
+}
+
+@media screen and (max-width: 1200px) {
+  .create .card {
+    padding: 2rem 8rem;
   }
-  
-  @media screen and (max-width: 900px) {
-    .create .card  {
-        padding: 2rem 4rem;
-      }
+}
+
+@media screen and (max-width: 900px) {
+  .create .card {
+    padding: 2rem 4rem;
   }
-  
-  @media screen and (max-width: 600px) {
-    .create .card  {
-        padding: 2rem 2rem;
-      }
+}
+
+@media screen and (max-width: 600px) {
+  .create .card {
+    padding: 2rem 2rem;
   }
+}

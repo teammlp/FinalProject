@@ -22,8 +22,8 @@ function Nav(props) {
         </div>
         <div className="eight columns menu" id="menu">
           <div className="row" id="row-menu">
-              <a href="/place" className="login">NETWORK</a>
-              <a href="/talks" className="login">INSIGHTS</a>
+              <a href="/place" className="login" id="menu-n">NETWORK</a>
+              <a href="/talks" className="login" id="menu-i">INSIGHTS</a>
             {props.user ?
               <>
                   <Link
@@ -31,16 +31,17 @@ function Nav(props) {
                       pathname: "/userForm",
                       state:{user: props.user}
                     }}
+                    id="nav-username"
                   >{props.user.username}
                   </Link>
                
-                <a href="/task">TASKS</a>
-                <a href="#" onClick={props.logoutHandler}>LOGOUT</a>
+                <a href="/task" id="menu-t">TASKS</a>
+                <a href="#" onClick={props.logoutHandler} id="menu-lt">LOGOUT</a>
               </>
                 :
                 <>
-                    <a href="/login" className="login">LOGIN</a>
-                    <a href="/register" className="login">SIGNUP</a>
+                    <a href="/login" className="login" id="menu-l">LOGIN</a>
+                    <a href="/register" className="login" id="menu-s">SIGNUP</a>
                 </>
             }
           </div>
