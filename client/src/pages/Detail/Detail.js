@@ -12,6 +12,11 @@ class Detail extends Component {
   state = {
     userForm: {},
     user: {}
+    // company,
+    // position: "",
+    // detail: "",
+    // date: "",
+    // location: ""
   };
   componentDidMount() {
     userAPI.getUserForm(this.props.match.params.id)
@@ -30,14 +35,20 @@ class Detail extends Component {
       <Container fluid>
       <Logo/>
       <Row>
-          <Col size="md-12">
-              <h2>Job Application Detailed Info</h2>
+          <Col size="md-11" id="dashboard">
+            <div className="dashboard">
+              <h1 id="h1-dashboard">
+              {this.state.userForm.company}
+              <br />
+              <h3 id="h3-dashboard">Job Application Snapshot</h3>
+              </h1>
+            </div>
           </Col>
-      </Row>
+        </Row>
         <Row>
-          <Col size="md-7">
-           <div className="row detailInfo">  
-           <dt className="col-sm-3">Company Name: </dt>
+          <Col size="md-6">
+           <div className="row detailInfo"> 
+           <dt className="col-sm-3">Company: </dt>
            <dd className="col-sm-9">{this.state.userForm.company}</dd>
           <dt className="col-sm-3">Position:</dt>
           <dd className="col-sm-9"> {this.state.userForm.position} 
@@ -46,7 +57,7 @@ class Detail extends Component {
 
           <dt className="col-sm-3">Location:</dt>
           <dd className="col-sm-9">{this.state.userForm.location}</dd>
-          <dt className="col-sm-3">Date applied:</dt>
+          <dt className="col-sm-3">Applied:</dt>
           <dd className="col-sm-9">
           <Moment format="MM/DD/YYYY">
           {this.state.userForm.date}</Moment></dd>
@@ -54,7 +65,7 @@ class Detail extends Component {
           </Col>
           <Col size="md-5">
             <div id="comment">
-              <h2>Your Comment</h2>
+              <h2 id="detail-comment">Your Comment:</h2>
               <p>
                 {this.state.userForm.detail}
               </p>
@@ -63,7 +74,7 @@ class Detail extends Component {
         </Row>
         <hr/>
         <Row>
-          <Col size="md-12">
+          <Col size="md-6">
           <blockquote className="blockquote text-center">
             <p className="mb-0">“Character cannot be developed in ease and quiet. Only through experience of trial and suffering can the soul be strengthened, ambition inspired, and success achieved.”</p>
             <footer className="blockquote-footer"> Helen Keller <cite title="Source Title"></cite></footer>
